@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<DataTypesDesign class="oracle.dbtools.crest.model.design.datatypes.DataTypesDesign" name="DataTypes" id="EA804D26-A5EB-B718-3F03-C0B284EB4038" mainViewID="80A779BD-822D-B651-DBBC-F481CD373F1F">
+   <createdBy>Evan</createdBy>
+   <createdTime>2011-12-03 04:43:46 UTC</createdTime>
+   <ownerDesignName>Project ERD</ownerDesignName>
+   <shouldBeOpen>false</shouldBeOpen>
+   <collectionOfRefsPrefix>array_ref_</collectionOfRefsPrefix>
+   <collectionPrefix>array_</collectionPrefix>
+   <defaultArrayLimit>10</defaultArrayLimit>
+   <defaultCollectionType_Kind>ARRAY</defaultCollectionType_Kind>
+   <defaultCollectionType_Suffix>_Array</defaultCollectionType_Suffix>
+   <embeddedStructuredTypePrefix>inst_</embeddedStructuredTypePrefix>
+   <referencePrefix>ref_</referencePrefix>
+   <useRoleInAssociationEndAsName>true</useRoleInAssociationEndAsName>
+</DataTypesDesign>

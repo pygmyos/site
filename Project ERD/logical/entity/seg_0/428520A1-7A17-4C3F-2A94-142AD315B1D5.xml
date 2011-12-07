@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="428520A1-7A17-4C3F-2A94-142AD315B1D5" directorySegmentName="seg_0" name="ORDER">
+   <createdBy>Evan</createdBy>
+   <createdTime>2011-12-03 05:35:22 UTC</createdTime>
+   <ownerDesignName>Project ERD</ownerDesignName>
+   <engineerTo>
+      <item key="570AA5ED-868B-5A1C-1347-349C36408E87" value="true"/>
+   </engineerTo>
+   <pkName>ORDER PK</pkName>
+   <adequatelyNormalized>NO</adequatelyNormalized>
+   <expectedVolumes>0</expectedVolumes>
+   <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+   <growthPercent>0</growthPercent>
+   <growthType>Year</growthType>
+   <maxVolumes>9999999</maxVolumes>
+   <minVolumes>0</minVolumes>
+   <normalForm>Third</normalForm>
+   <preferredAbbreviation>ORD</preferredAbbreviation>
+   <fonts>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Title</foType>
+         <fontStyle>1</fontStyle>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Attribute</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Datatype</foType>
+         <colorRGB>-16744448</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>PK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>FK Element</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>UK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Not Null</foType>
+         <colorRGB>-65536</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Key</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+   </fonts>
+   <attributes>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="D9242550-18B2-0460-7B50-36FF6C23BE5C">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-03 05:35:41 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <engineerTo>
+            <item key="570AA5ED-868B-5A1C-1347-349C36408E87" value="true"/>
+         </engineerTo>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="date" id="FF836CEB-3E08-7280-9BF5-A6FE47E35D86">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-03 05:35:55 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <engineerTo>
+            <item key="570AA5ED-868B-5A1C-1347-349C36408E87" value="true"/>
+         </engineerTo>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="cost" id="A5006D14-E624-C828-4294-72DC8513EDFC">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-03 05:35:57 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <engineerTo>
+            <item key="570AA5ED-868B-5A1C-1347-349C36408E87" value="true"/>
+         </engineerTo>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="1C2C3FAF-47D2-8701-D570-7FB9DFC86E5C">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-03 05:41:50 UTC</createdTime>
+         <generatorID>E3892E13-0660-297F-3E9C-DE147611490B</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <engineerTo>
+            <item key="570AA5ED-868B-5A1C-1347-349C36408E87" value="true"/>
+         </engineerTo>
+         <referedAttribute>DAD0F47A-66AA-D081-619A-EED6B26114A1</referedAttribute>
+         <use>1</use>
+      </Attribute>
+   </attributes>
+   <identifiers>
+      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="846ECE39-4318-5EB5-F017-857D12451C7C" name="ORDER PK">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-03 05:35:48 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <engineerTo>
+            <item key="570AA5ED-868B-5A1C-1347-349C36408E87" value="true"/>
+         </engineerTo>
+         <pk>true</pk>
+         <usedAttributes>
+            <attributeRef>D9242550-18B2-0460-7B50-36FF6C23BE5C</attributeRef>
+         </usedAttributes>
+      </identifier>
+   </identifiers>
+</Entity>
