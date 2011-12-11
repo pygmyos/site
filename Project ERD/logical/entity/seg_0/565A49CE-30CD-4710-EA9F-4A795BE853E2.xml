@@ -2,10 +2,9 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="565A49CE-30CD-4710-EA9F-4A795BE853E2" directorySegmentName="seg_0" name="PART">
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-03 05:23:04 UTC</createdTime>
+   <changedBy>Evan</changedBy>
+   <changedTime>2011-12-11 22:00:21 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
-   <engineerTo>
-      <item key="570AA5ED-868B-5A1C-1347-349C36408E87" value="true"/>
-   </engineerTo>
    <pkName>PART PK</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
    <expectedVolumes>0</expectedVolumes>
@@ -55,103 +54,8 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-03 05:23:14 UTC</createdTime>
+         <changedTime>2011-12-11 19:25:53 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <engineerTo>
-            <item key="570AA5ED-868B-5A1C-1347-349C36408E87" value="true"/>
-         </engineerTo>
-         <use>1</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="package" id="6E5174A9-3136-B749-1B91-BFAC9BF9E163">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-03 05:23:17 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <engineerTo>
-            <item key="570AA5ED-868B-5A1C-1347-349C36408E87" value="true"/>
-         </engineerTo>
-         <nullsAllowed>true</nullsAllowed>
-         <use>1</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="description" id="168EFFBC-5AEF-871D-3AE2-6605DA94C0C4">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-03 05:23:21 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <engineerTo>
-            <item key="570AA5ED-868B-5A1C-1347-349C36408E87" value="true"/>
-         </engineerTo>
-         <nullsAllowed>true</nullsAllowed>
-         <use>1</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="value" id="FFDAA6D5-4CC3-3772-37B1-F603294F2354">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-03 05:23:25 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <engineerTo>
-            <item key="570AA5ED-868B-5A1C-1347-349C36408E87" value="true"/>
-         </engineerTo>
-         <nullsAllowed>true</nullsAllowed>
-         <use>1</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="val_tol" id="C56724BB-2CA4-C7E8-36C1-10B26B007EB5">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-03 05:23:40 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <engineerTo>
-            <item key="570AA5ED-868B-5A1C-1347-349C36408E87" value="true"/>
-         </engineerTo>
-         <nullsAllowed>true</nullsAllowed>
-         <use>1</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="volt_tol" id="C2E6CEE1-9D71-EE4C-66F8-641928D991DB">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-03 05:23:28 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <engineerTo>
-            <item key="570AA5ED-868B-5A1C-1347-349C36408E87" value="true"/>
-         </engineerTo>
-         <nullsAllowed>true</nullsAllowed>
-         <use>1</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="heat_tol" id="ACB9601D-46E0-8811-2DEA-D99B47E7CD88">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-03 05:23:34 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <engineerTo>
-            <item key="570AA5ED-868B-5A1C-1347-349C36408E87" value="true"/>
-         </engineerTo>
-         <nullsAllowed>true</nullsAllowed>
-         <use>1</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="current_consumption" id="D576C0A5-D8F1-7F2F-8A39-05DF79A63E5A">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-03 05:23:47 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <engineerTo>
-            <item key="570AA5ED-868B-5A1C-1347-349C36408E87" value="true"/>
-         </engineerTo>
-         <nullsAllowed>true</nullsAllowed>
-         <use>1</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="url" id="F7D407C5-35E8-1744-2728-CCE49CCAA279">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-03 05:43:32 UTC</createdTime>
-         <generatorID>354BF717-434B-6FF4-F901-6369008EC8BD</generatorID>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <engineerTo>
-            <item key="570AA5ED-868B-5A1C-1347-349C36408E87" value="true"/>
-         </engineerTo>
-         <nullsAllowed>true</nullsAllowed>
-         <referedAttribute>9E51C6FC-2712-109F-D4E0-327B2DF678B3</referedAttribute>
-         <use>1</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="89E5F441-2455-64BA-D1BF-CA02B52F746F">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-03 05:47:36 UTC</createdTime>
-         <generatorID>4FC6230E-2CB6-8817-3AEA-3FCF8D17D811</generatorID>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <engineerTo>
-            <item key="570AA5ED-868B-5A1C-1347-349C36408E87" value="true"/>
-         </engineerTo>
-         <referedAttribute>0249CA1D-5511-F7D1-D6A0-940129C15740</referedAttribute>
          <use>1</use>
       </Attribute>
    </attributes>
@@ -159,10 +63,9 @@
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="283E09EB-06D2-17CC-6332-6182F1A401EA" name="PART PK">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-03 05:24:05 UTC</createdTime>
+         <changedBy>Evan</changedBy>
+         <changedTime>2011-12-11 19:42:19 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <engineerTo>
-            <item key="570AA5ED-868B-5A1C-1347-349C36408E87" value="true"/>
-         </engineerTo>
          <pk>true</pk>
          <usedAttributes>
             <attributeRef>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</attributeRef>

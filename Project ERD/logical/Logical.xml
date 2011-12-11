@@ -2,6 +2,8 @@
 <LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="6F36FF93-FDA1-244F-CA1D-EEF2A8EAAA4C" mainViewID="3C4C9A04-0BA4-5630-FEB2-2B133D386DA7">
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-03 04:43:44 UTC</createdTime>
+   <changedBy>Evan</changedBy>
+   <changedTime>2011-12-11 19:29:15 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <shouldBeOpen>false</shouldBeOpen>
 </LogicalDesign>
