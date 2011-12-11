@@ -7,9 +7,10 @@
    <object objectType="Entity" objectID="C2EF8490-37F0-642A-E0C6-99C410AE9196" name="MANUFACTURER" seqName="seg_0"/>
    <object objectType="Entity" objectID="805A0066-7509-43E1-AADF-50B4080D203C" name="MANUFACTURER_PART" seqName="seg_0"/>
    <object objectType="Entity" objectID="428520A1-7A17-4C3F-2A94-142AD315B1D5" name="ORDER" seqName="seg_0"/>
-   <object objectType="Entity" objectID="C0AC5A4E-F526-868C-A77E-52388A1B448E" name="ORDER_LIST" seqName="seg_0"/>
    <object objectType="Entity" objectID="F85187A8-A28C-E52C-E677-52DA1832EBCB" name="PACKAGE" seqName="seg_0"/>
    <object objectType="Entity" objectID="565A49CE-30CD-4710-EA9F-4A795BE853E2" name="PART" seqName="seg_0"/>
+   <object objectType="Entity" objectID="C0AC5A4E-F526-868C-A77E-52388A1B448E" name="PART_ORDER" seqName="seg_0"/>
+   <object objectType="Entity" objectID="AA26A085-8AC6-8F30-808A-050A976ADF6F" name="PART_OWNERSHIP" seqName="seg_0"/>
    <object objectType="Entity" objectID="B471A8A7-5086-958C-3B2B-8181588F1069" name="PCB" seqName="seg_0"/>
    <object objectType="Entity" objectID="115C9C64-D963-73FF-D4E0-771EC069F77A" name="PERSON" seqName="seg_0"/>
    <object objectType="Entity" objectID="528ACFEA-EB4D-50AD-5278-614E5C381B87" name="PICTURE" seqName="seg_0"/>
@@ -34,10 +35,14 @@
    <object objectType="Relation" objectID="C262BE2E-729D-0CD1-BB18-3A50534713EA" name="Relation_39" seqName="seg_0"/>
    <object objectType="Relation" objectID="EF9B5315-76E8-ADEF-4E89-9DC38E2A65F1" name="Relation_40" seqName="seg_0"/>
    <object objectType="Relation" objectID="DD70DF3D-F1FC-5E05-429F-8E29DEAAD5D1" name="Relation_41" seqName="seg_0"/>
+   <object objectType="Relation" objectID="9F63D85D-C992-865D-13F6-ABF0AE51BCA4" name="Relation_42" seqName="seg_0"/>
+   <object objectType="Relation" objectID="122AF6F5-017B-7100-213C-13E808730594" name="Relation_43" seqName="seg_0"/>
+   <object objectType="Relation" objectID="97CFF346-B758-3776-5FD4-2DE6C34A11B2" name="Relation_44" seqName="seg_0"/>
+   <object objectType="Relation" objectID="EB64CC01-5635-EDDF-FFB1-6507FDE05359" name="Relation_45" seqName="seg_0"/>
    <object objectType="Relation" objectID="E3892E13-0660-297F-3E9C-DE147611490B" name="Relation_8" seqName="seg_0"/>
    <object objectType="Hierarchy relation" objectID="66DD7D98-E726-9945-7E19-3EFC935DF937" name="Hierarchy_1" seqName="seg_0"/>
    <object objectType="Hierarchy relation" objectID="77A3C876-4B36-903D-D8F0-EF6EA266858F" name="Hierarchy_2" seqName="seg_0"/>
    <object objectType="Hierarchy relation" objectID="83F37AC0-697F-BA9A-AC9C-1882947DFAC6" name="Hierarchy_3" seqName="seg_0"/>
    <object objectType="Arc" objectID="44E043D4-4D74-486F-9BE2-4A6DF58B5DA1" name="Arc_1" seqName="seg_0"/>
-   <object objectType="Arc" objectID="BFC03F9C-2938-BAAE-5FF9-E67A5E3BDA0F" name="Arc_2" seqName="seg_0"/>
+   <object objectType="Arc" objectID="5B5263BC-B103-4263-F6A2-F50DD9A1690F" name="Arc_4" seqName="seg_0"/>
 </oracle.dbtools.crest.model.design.logical.LogicalDesign>

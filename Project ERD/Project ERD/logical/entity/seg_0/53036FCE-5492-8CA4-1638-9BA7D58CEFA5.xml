@@ -1,0 +1,158 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="53036FCE-5492-8CA4-1638-9BA7D58CEFA5" directorySegmentName="seg_0" name="COMPONENT">
+   <createdBy>Evan</createdBy>
+   <createdTime>2011-12-11 19:48:33 UTC</createdTime>
+   <changedBy>Evan</changedBy>
+   <changedTime>2011-12-11 22:18:07 UTC</changedTime>
+   <ownerDesignName>Project ERD</ownerDesignName>
+   <pkName>COMPONENT PK</pkName>
+   <adequatelyNormalized>NO</adequatelyNormalized>
+   <expectedVolumes>0</expectedVolumes>
+   <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+   <growthPercent>0</growthPercent>
+   <growthType>Year</growthType>
+   <hierarchicalParent>565A49CE-30CD-4710-EA9F-4A795BE853E2</hierarchicalParent>
+   <maxVolumes>9999999</maxVolumes>
+   <minVolumes>0</minVolumes>
+   <normalForm>Third</normalForm>
+   <fonts>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Title</foType>
+         <fontStyle>1</fontStyle>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Attribute</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Datatype</foType>
+         <colorRGB>-16744448</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>PK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>FK Element</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>UK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Not Null</foType>
+         <colorRGB>-65536</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Key</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+   </fonts>
+   <attributes>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="type" id="51AAEBA9-0305-3061-3585-FAE89B6B30D1">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-11 19:49:51 UTC</createdTime>
+         <changedBy>Evan</changedBy>
+         <changedTime>2011-12-11 19:49:57 UTC</changedTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="value" id="655CAAAA-4AE5-03A4-F627-CB93472A7BC9">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-11 19:49:40 UTC</createdTime>
+         <changedBy>Evan</changedBy>
+         <changedTime>2011-12-11 19:49:45 UTC</changedTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="tolerance" id="BD99EC81-0ADB-B19A-B06D-975F2324D743">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-11 19:49:22 UTC</createdTime>
+         <changedBy>Evan</changedBy>
+         <changedTime>2011-12-11 19:49:34 UTC</changedTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="current_consumption" id="812B0F13-0CE6-E42C-FDE4-E9F63A0F05AF">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-11 19:48:55 UTC</createdTime>
+         <changedBy>Evan</changedBy>
+         <changedTime>2011-12-11 19:49:02 UTC</changedTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="volt_min" id="BB8C201A-3F25-029F-1D22-DA437382F525">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-11 19:49:08 UTC</createdTime>
+         <changedBy>Evan</changedBy>
+         <changedTime>2011-12-11 19:49:12 UTC</changedTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="volt_max" id="D11465A3-54C5-B30F-60F5-6106324502F2">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-11 19:49:19 UTC</createdTime>
+         <changedBy>Evan</changedBy>
+         <changedTime>2011-12-11 19:49:22 UTC</changedTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="heat_min" id="A01D0CD8-53F7-2A12-60A1-6D95421A56A5">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-11 19:49:02 UTC</createdTime>
+         <changedBy>Evan</changedBy>
+         <changedTime>2011-12-11 19:51:03 UTC</changedTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="heat_max" id="C13087BF-4766-9370-6AE3-039E70036105">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-11 19:51:03 UTC</createdTime>
+         <changedBy>Evan</changedBy>
+         <changedTime>2011-12-11 19:51:08 UTC</changedTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="reflow_max" id="5C6C311A-BF55-DAEC-A2C6-36E32AD62122">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-11 19:49:34 UTC</createdTime>
+         <changedBy>Evan</changedBy>
+         <changedTime>2011-12-11 19:49:40 UTC</changedTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="48B9B771-949A-C619-4874-6FF2E325BDD7">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-11 21:16:41 UTC</createdTime>
+         <changedBy>Evan</changedBy>
+         <changedTime>2011-12-11 21:16:41 UTC</changedTime>
+         <generatorID>160C7AA7-4672-F5C6-5934-4750E01846F2</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <referedAttribute>51185F41-07AA-05FD-A206-703DCA01D819</referedAttribute>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="url" id="2132AD7D-58D9-F02F-7886-8BDEF2D3370D">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-11 22:00:21 UTC</createdTime>
+         <changedBy>Evan</changedBy>
+         <changedTime>2011-12-11 22:00:21 UTC</changedTime>
+         <generatorID>57C708E7-2CB9-44AC-CF26-73B7855BA502</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <referedAttribute>9E51C6FC-2712-109F-D4E0-327B2DF678B3</referedAttribute>
+         <use>1</use>
+      </Attribute>
+   </attributes>
+</Entity>
