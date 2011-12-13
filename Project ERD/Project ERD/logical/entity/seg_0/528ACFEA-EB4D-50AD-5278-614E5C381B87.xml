@@ -3,7 +3,7 @@
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-11 22:34:39 UTC</createdTime>
    <changedBy>Evan</changedBy>
-   <changedTime>2011-12-11 23:15:38 UTC</changedTime>
+   <changedTime>2011-12-12 20:48:40 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <pkName>PICTURE PK</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
@@ -109,13 +109,35 @@
          <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
          <use>1</use>
       </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="D0826755-C623-5701-AA9D-0296FC1F59B8">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-12 20:48:40 UTC</createdTime>
+         <changedBy>Evan</changedBy>
+         <changedTime>2011-12-12 20:48:40 UTC</changedTime>
+         <generatorID>EF9B5315-76E8-ADEF-4E89-9DC38E2A65F1</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <referedAttribute>7311BCE1-AB1E-6555-B86A-5FF1D4FA2A3B</referedAttribute>
+         <use>0</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name1" id="6B3A3E0B-CCF6-43C6-4E8D-1EDB66855E58">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-12 20:48:40 UTC</createdTime>
+         <changedBy>Evan</changedBy>
+         <changedTime>2011-12-12 20:48:40 UTC</changedTime>
+         <generatorID>C262BE2E-729D-0CD1-BB18-3A50534713EA</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <referedAttribute>CC093362-A882-4471-A781-DED81A300811</referedAttribute>
+         <use>0</use>
+      </Attribute>
    </attributes>
    <identifiers>
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="4452DB8F-4B98-E21B-4D7E-E3A32606E4E2" name="PICTURE PK">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 22:35:38 UTC</createdTime>
          <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 23:15:38 UTC</changedTime>
+         <changedTime>2011-12-12 20:48:40 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>

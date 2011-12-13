@@ -3,14 +3,14 @@
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-11 21:16:33 UTC</createdTime>
    <changedBy>Evan</changedBy>
-   <changedTime>2011-12-11 23:18:08 UTC</changedTime>
+   <changedTime>2011-12-12 20:14:38 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <identifying>false</identifying>
    <optionalSource>false</optionalSource>
    <optionalTarget>true</optionalTarget>
    <sourceCardinality>1</sourceCardinality>
    <sourceEntity>7028D00D-7DED-9B59-8AE7-25A3391A0E6C</sourceEntity>
-   <targetCardinalityString>*</targetCardinalityString>
+   <targetCardinalityString>1</targetCardinalityString>
    <targetEntity>B471A8A7-5086-958C-3B2B-8181588F1069</targetEntity>
    <transferable>true</transferable>
 </Relation>

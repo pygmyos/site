@@ -3,7 +3,7 @@
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-03 05:33:44 UTC</createdTime>
    <changedBy>Evan</changedBy>
-   <changedTime>2011-12-11 23:15:31 UTC</changedTime>
+   <changedTime>2011-12-12 20:14:38 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <pkName>BOARD PK</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
@@ -94,13 +94,23 @@
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="6C25EDA0-F6C1-0725-B95B-7E63E27B2261">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-12 20:14:38 UTC</createdTime>
+         <changedBy>Evan</changedBy>
+         <changedTime>2011-12-12 20:14:38 UTC</changedTime>
+         <generatorID>7B2E61B8-A355-F037-D198-EC2C35C2E810</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
+         <use>1</use>
+      </Attribute>
    </attributes>
    <identifiers>
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="E5FE8027-B8C9-DC09-D19B-F376929C14EB" name="BOARD PK">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-03 05:34:40 UTC</createdTime>
          <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 22:50:29 UTC</changedTime>
+         <changedTime>2011-12-12 20:14:38 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>

@@ -1,11 +1,11 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="F85187A8-A28C-E52C-E677-52DA1832EBCB" directorySegmentName="seg_0" name="PACKAGE">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="5079533B-9CB9-5907-18FD-3F8B07B4F834" directorySegmentName="seg_0" name="EMAIL">
    <createdBy>Evan</createdBy>
-   <createdTime>2011-12-11 22:14:02 UTC</createdTime>
+   <createdTime>2011-12-12 20:09:21 UTC</createdTime>
    <changedBy>Evan</changedBy>
-   <changedTime>2011-12-12 20:48:40 UTC</changedTime>
+   <changedTime>2011-12-13 01:25:42 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
-   <pkName>PACKAGE PK</pkName>
+   <pkName>EMAIL PK</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
    <expectedVolumes>0</expectedVolumes>
    <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
@@ -50,52 +50,58 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="7311BCE1-AB1E-6555-B86A-5FF1D4FA2A3B">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="address" id="4EA97FDA-F879-F770-88A4-ADFAFCE9CD50">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-12 20:48:32 UTC</createdTime>
+         <createdTime>2011-12-12 20:10:05 UTC</createdTime>
          <changedBy>Evan</changedBy>
-         <changedTime>2011-12-12 20:48:40 UTC</changedTime>
+         <changedTime>2011-12-12 20:10:18 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>0</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="type" id="00DFFCC9-A144-15F4-F530-FCE420FEC6A6">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="8657B01D-5EFD-F107-1C30-A3E6D2697BF1">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 22:15:54 UTC</createdTime>
+         <createdTime>2011-12-12 20:24:46 UTC</createdTime>
          <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 22:16:19 UTC</changedTime>
+         <changedTime>2011-12-12 20:24:46 UTC</changedTime>
+         <generatorID>BF898AA1-78A6-9DD3-D512-C3F96315AF16</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
-         <use>0</use>
+         <referedAttribute>E17CCF0E-8F0A-5D81-9976-C51E20C029EA</referedAttribute>
+         <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="pin_number" id="41AC4F61-6571-E1B0-B776-15A3F12C8D7B">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="91B3466A-34B8-C64D-C1F2-5016655E778E">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 22:15:34 UTC</createdTime>
+         <createdTime>2011-12-12 20:24:49 UTC</createdTime>
          <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 22:16:07 UTC</changedTime>
+         <changedTime>2011-12-12 20:24:49 UTC</changedTime>
+         <generatorID>78BBBEA6-E054-53E8-141C-571F7E89C598</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
-         <use>0</use>
+         <referedAttribute>DAD0F47A-66AA-D081-619A-EED6B26114A1</referedAttribute>
+         <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="description" id="C22E15D0-CB68-0C72-83D5-F2DE1790F060">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="0BDE154D-8C67-29E2-5858-F54D19733DB6">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 22:15:26 UTC</createdTime>
+         <createdTime>2011-12-12 20:24:56 UTC</createdTime>
          <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 22:15:34 UTC</changedTime>
+         <changedTime>2011-12-12 20:24:56 UTC</changedTime>
+         <generatorID>F46A32F7-F6F3-9316-AEAB-D4CAF6EDA435</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
+         <referedAttribute>C689A814-D975-925E-A6FE-ADC42357B9FB</referedAttribute>
          <use>0</use>
       </Attribute>
    </attributes>
    <identifiers>
-      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="E44EDEF4-7AB8-5B81-13D8-469696895204" name="PACKAGE PK">
+      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="00EBF4B4-97A5-5104-9B9C-0BCE60837A63" name="EMAIL PK">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-12 20:48:38 UTC</createdTime>
+         <createdTime>2011-12-12 20:10:18 UTC</createdTime>
          <changedBy>Evan</changedBy>
-         <changedTime>2011-12-12 20:48:38 UTC</changedTime>
+         <changedTime>2011-12-13 01:25:42 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>
-            <attributeRef>7311BCE1-AB1E-6555-B86A-5FF1D4FA2A3B</attributeRef>
+            <attributeRef>4EA97FDA-F879-F770-88A4-ADFAFCE9CD50</attributeRef>
          </usedAttributes>
       </identifier>
    </identifiers>

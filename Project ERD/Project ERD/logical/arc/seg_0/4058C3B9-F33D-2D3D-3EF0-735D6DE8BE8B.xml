@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Arc class="oracle.dbtools.crest.model.design.logical.Arc" id="4058C3B9-F33D-2D3D-3EF0-735D6DE8BE8B" directorySegmentName="seg_0" name="Arc_6">
+   <createdBy>Evan</createdBy>
+   <createdTime>2011-12-12 20:30:54 UTC</createdTime>
+   <changedBy>Evan</changedBy>
+   <changedTime>2011-12-12 20:30:54 UTC</changedTime>
+   <ownerDesignName>Project ERD</ownerDesignName>
+   <entity>5079533B-9CB9-5907-18FD-3F8B07B4F834</entity>
+   <relations>
+      <relationID>BF898AA1-78A6-9DD3-D512-C3F96315AF16</relationID>
+      <relationID>78BBBEA6-E054-53E8-141C-571F7E89C598</relationID>
+      <relationID>F46A32F7-F6F3-9316-AEAB-D4CAF6EDA435</relationID>
+   </relations>
+</Arc>

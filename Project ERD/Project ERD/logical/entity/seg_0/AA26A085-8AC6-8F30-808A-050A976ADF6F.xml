@@ -3,7 +3,7 @@
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-11 22:59:23 UTC</createdTime>
    <changedBy>Evan</changedBy>
-   <changedTime>2011-12-11 23:17:15 UTC</changedTime>
+   <changedTime>2011-12-12 20:38:38 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <pkName>PK_PART_OWNERSHIP</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
@@ -64,7 +64,7 @@
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 23:00:19 UTC</createdTime>
          <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 23:00:19 UTC</changedTime>
+         <changedTime>2011-12-12 20:38:38 UTC</changedTime>
          <generatorID>EB64CC01-5635-EDDF-FFB1-6507FDE05359</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <referedAttribute>E17CCF0E-8F0A-5D81-9976-C51E20C029EA</referedAttribute>
