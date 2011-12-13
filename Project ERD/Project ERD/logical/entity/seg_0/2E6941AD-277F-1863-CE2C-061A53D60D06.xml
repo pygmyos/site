@@ -3,7 +3,7 @@
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-11 21:30:22 UTC</createdTime>
    <changedBy>Evan</changedBy>
-   <changedTime>2011-12-12 19:09:34 UTC</changedTime>
+   <changedTime>2011-12-13 01:52:03 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <pkName>PK_LISTING</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
@@ -85,7 +85,7 @@
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 22:03:51 UTC</createdTime>
          <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 22:03:57 UTC</changedTime>
+         <changedTime>2011-12-13 01:52:03 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>

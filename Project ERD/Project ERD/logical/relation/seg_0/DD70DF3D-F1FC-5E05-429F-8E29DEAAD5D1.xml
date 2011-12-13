@@ -3,10 +3,12 @@
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-11 22:50:23 UTC</createdTime>
    <changedBy>Evan</changedBy>
-   <changedTime>2011-12-11 23:15:31 UTC</changedTime>
+   <changedTime>2011-12-13 02:20:28 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <arc>5B5263BC-B103-4263-F6A2-F50DD9A1690F</arc>
    <identifying>false</identifying>
+   <nameOnSource>be of</nameOnSource>
+   <nameOnTarget>have</nameOnTarget>
    <optionalSource>true</optionalSource>
    <optionalTarget>true</optionalTarget>
    <sourceCardinality>*</sourceCardinality>

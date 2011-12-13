@@ -3,9 +3,11 @@
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-11 21:56:41 UTC</createdTime>
    <changedBy>Evan</changedBy>
-   <changedTime>2011-12-11 21:57:33 UTC</changedTime>
+   <changedTime>2011-12-13 02:17:21 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <identifying>true</identifying>
+   <nameOnSource>have</nameOnSource>
+   <nameOnTarget>be from</nameOnTarget>
    <optionalSource>true</optionalSource>
    <optionalTarget>false</optionalTarget>
    <sourceCardinality>1</sourceCardinality>
