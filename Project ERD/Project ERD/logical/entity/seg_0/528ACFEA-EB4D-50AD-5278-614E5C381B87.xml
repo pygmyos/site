@@ -2,8 +2,6 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="528ACFEA-EB4D-50AD-5278-614E5C381B87" directorySegmentName="seg_0" name="PICTURE">
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-11 22:34:39 UTC</createdTime>
-   <changedBy>Evan</changedBy>
-   <changedTime>2011-12-13 02:20:28 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <pkName>PICTURE PK</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
@@ -53,16 +51,12 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="idpic" id="0A7F77FA-5653-4F69-D2C3-C6A77BADFAB2">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 22:35:36 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 22:36:09 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>0</use>
       </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="caption" id="A371B851-2322-11B4-A0DA-D13FE7B12A26">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 22:35:42 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 22:36:24 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
@@ -70,8 +64,6 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="img" id="18EDC37B-FAAE-F674-CDC0-72F20033F1EA">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 22:36:24 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 22:36:35 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
@@ -79,8 +71,6 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="47B0CF7B-27A8-17A5-BB7B-06EFF6FC9E11">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 23:15:15 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 23:15:15 UTC</changedTime>
          <generatorID>C262BE2E-729D-0CD1-BB18-3A50534713EA</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
@@ -90,8 +80,6 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="B85922F1-2285-D7C6-C978-DFB52D11B34F">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 23:15:31 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 23:15:31 UTC</changedTime>
          <generatorID>DD70DF3D-F1FC-5E05-429F-8E29DEAAD5D1</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
@@ -101,8 +89,6 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="D741BA12-A73D-D713-1027-8EEBD43CB7FC">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 23:15:38 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 23:15:38 UTC</changedTime>
          <generatorID>8218CF93-64E5-90FA-B7FF-3A5CA1808AF9</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
@@ -112,8 +98,6 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="D0826755-C623-5701-AA9D-0296FC1F59B8">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-12 20:48:40 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-12 20:48:40 UTC</changedTime>
          <generatorID>EF9B5315-76E8-ADEF-4E89-9DC38E2A65F1</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
@@ -123,8 +107,6 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name1" id="6B3A3E0B-CCF6-43C6-4E8D-1EDB66855E58">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-12 20:48:40 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-12 20:48:40 UTC</changedTime>
          <generatorID>C262BE2E-729D-0CD1-BB18-3A50534713EA</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
@@ -136,8 +118,6 @@
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="4452DB8F-4B98-E21B-4D7E-E3A32606E4E2" name="PICTURE PK">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 22:35:38 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-13 02:20:28 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>

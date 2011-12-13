@@ -2,8 +2,6 @@
 <Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_35" id="6352A186-B335-F48F-8D36-34812EB7B522" directorySegmentName="seg_0">
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-12 20:07:06 UTC</createdTime>
-   <changedBy>Evan</changedBy>
-   <changedTime>2011-12-13 01:40:56 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <arc>A656A30E-162F-6143-EB8C-07EC10C6DED5</arc>
    <identifying>false</identifying>

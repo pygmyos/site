@@ -2,8 +2,6 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="F85187A8-A28C-E52C-E677-52DA1832EBCB" directorySegmentName="seg_0" name="PACKAGE">
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-11 22:14:02 UTC</createdTime>
-   <changedBy>Evan</changedBy>
-   <changedTime>2011-12-12 20:48:40 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <pkName>PACKAGE PK</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
@@ -53,16 +51,12 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="7311BCE1-AB1E-6555-B86A-5FF1D4FA2A3B">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-12 20:48:32 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-12 20:48:40 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>0</use>
       </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="type" id="00DFFCC9-A144-15F4-F530-FCE420FEC6A6">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 22:15:54 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 22:16:19 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
@@ -70,8 +64,6 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="pin_number" id="41AC4F61-6571-E1B0-B776-15A3F12C8D7B">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 22:15:34 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 22:16:07 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
@@ -79,8 +71,6 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="description" id="C22E15D0-CB68-0C72-83D5-F2DE1790F060">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 22:15:26 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 22:15:34 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
@@ -90,8 +80,6 @@
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="E44EDEF4-7AB8-5B81-13D8-469696895204" name="PACKAGE PK">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-12 20:48:38 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-12 20:48:38 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>

@@ -2,8 +2,6 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="5079533B-9CB9-5907-18FD-3F8B07B4F834" directorySegmentName="seg_0" name="EMAIL">
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-12 20:09:21 UTC</createdTime>
-   <changedBy>Evan</changedBy>
-   <changedTime>2011-12-13 02:19:09 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <pkName>EMAIL PK</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
@@ -53,16 +51,12 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="address" id="4EA97FDA-F879-F770-88A4-ADFAFCE9CD50">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-12 20:10:05 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-12 20:10:18 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>0</use>
       </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="8657B01D-5EFD-F107-1C30-A3E6D2697BF1">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-12 20:24:46 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-12 20:24:46 UTC</changedTime>
          <generatorID>BF898AA1-78A6-9DD3-D512-C3F96315AF16</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
@@ -72,8 +66,6 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="91B3466A-34B8-C64D-C1F2-5016655E778E">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-12 20:24:49 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-12 20:24:49 UTC</changedTime>
          <generatorID>78BBBEA6-E054-53E8-141C-571F7E89C598</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
@@ -83,8 +75,6 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="0BDE154D-8C67-29E2-5858-F54D19733DB6">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-12 20:24:56 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-12 20:24:56 UTC</changedTime>
          <generatorID>F46A32F7-F6F3-9316-AEAB-D4CAF6EDA435</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
@@ -96,8 +86,6 @@
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="00EBF4B4-97A5-5104-9B9C-0BCE60837A63" name="EMAIL PK">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-12 20:10:18 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-13 02:19:09 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>

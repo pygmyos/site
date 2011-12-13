@@ -2,8 +2,6 @@
 <Diagram class="oracle.dbtools.crest.swingui.logical.DPVLogical" name="Logical" id="3C4C9A04-0BA4-5630-FEB2-2B133D386DA7">
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-03 05:15:53 UTC</createdTime>
-   <changedBy>Evan</changedBy>
-   <changedTime>2011-12-13 02:28:27 UTC</changedTime>
    <autoRoute>false</autoRoute>
    <boxInbox>true</boxInbox>
    <showLegend>false</showLegend>
@@ -394,7 +392,7 @@
          <lineWidth>1</lineWidth>
          <sourceLabel class="oracle.dbtools.crest.model.design.Label">
             <site>0</site>
-            <labelBounds x="225" y="410" width="33" height="17"/>
+            <labelBounds x="253" y="370" width="28" height="12"/>
             <fonts>
                <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
                   <foType>Text</foType>
@@ -404,7 +402,7 @@
          </sourceLabel>
          <targetLabel class="oracle.dbtools.crest.model.design.Label">
             <site>2</site>
-            <labelBounds x="224" y="367" width="37" height="20"/>
+            <labelBounds x="251" y="334" width="37" height="20"/>
             <fonts>
                <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
                   <foType>Text</foType>

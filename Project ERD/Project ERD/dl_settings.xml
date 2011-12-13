@@ -222,7 +222,7 @@
 			<property name="Data Type Kind" selected="true"/>
 			<property name="Mandatory" selected="true"/>
 			<property name="Default Value" selected="true"/>
-			<property name="Check constraint name" selected="true"/>
+			<property name="Check Constraint Name" selected="true"/>
 			<property name="Use Domain Constraint" selected="true"/>
 			<property name="Comment" selected="true"/>
 			<property name="Comment in RDBMS" selected="true"/>
@@ -264,4 +264,8 @@
 			<naming_option class_name="oracle.dbtools.crest.model.design.logical.EntityView" max_name_length="254" case_type="2" valid_characters="" all_valid="true" />
 		</model_options>
 	</naming_options>
+	<merge_conflicts>
+	</merge_conflicts>
+	<deleted_files>
+	</deleted_files>
 </settings>

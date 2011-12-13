@@ -2,8 +2,6 @@
 <Arc class="oracle.dbtools.crest.model.design.logical.Arc" id="5B5263BC-B103-4263-F6A2-F50DD9A1690F" directorySegmentName="seg_0" name="Arc_4">
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-11 23:12:41 UTC</createdTime>
-   <changedBy>Evan</changedBy>
-   <changedTime>2011-12-11 23:12:41 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <entity>528ACFEA-EB4D-50AD-5278-614E5C381B87</entity>
    <relations>

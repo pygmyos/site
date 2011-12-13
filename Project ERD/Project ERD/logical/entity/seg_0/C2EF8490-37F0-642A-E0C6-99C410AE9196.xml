@@ -2,8 +2,6 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="C2EF8490-37F0-642A-E0C6-99C410AE9196" directorySegmentName="seg_0" name="MANUFACTURER">
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-11 19:39:48 UTC</createdTime>
-   <changedBy>Evan</changedBy>
-   <changedTime>2011-12-12 20:28:53 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <pkName>PARTLIST PK</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
@@ -53,24 +51,18 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="C689A814-D975-925E-A6FE-ADC42357B9FB">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 19:40:18 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 19:40:42 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>0</use>
       </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="8C080CD4-01EB-9D79-DFB1-8DAAFA6A3D8F">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 19:40:51 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 19:41:12 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>0</use>
       </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="url" id="9EDE1DA7-E6F2-466B-7305-F87708E15855">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 19:40:42 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 19:40:51 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
@@ -80,8 +72,6 @@
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="55A3E8B8-5492-05FB-EBA2-768D05BA5365" name="PARTLIST PK">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 19:40:40 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 19:41:50 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>

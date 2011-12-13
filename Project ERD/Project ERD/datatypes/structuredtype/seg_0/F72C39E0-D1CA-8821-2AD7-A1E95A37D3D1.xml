@@ -1,11 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <StructuredType class="oracle.dbtools.crest.model.design.datatypes.StructuredType" name="XMLTYPE" id="F72C39E0-D1CA-8821-2AD7-A1E95A37D3D1" directorySegmentName="seg_0">
    <createdBy>Evan</createdBy>
-   <createdTime>2011-12-03 04:43:47 UTC</createdTime>
+   <createdTime>2011-12-13 12:42:27 UTC</createdTime>
    <ownerDesignName>Project ERD</ownerDesignName>
-   <engineerTo>
-      <item key="2E7D434C-AB44-8D3B-2BDF-53F2979BF43D" value="true"/>
-   </engineerTo>
    <visible>false</visible>
    <predefined>true</predefined>
    <final>false</final>

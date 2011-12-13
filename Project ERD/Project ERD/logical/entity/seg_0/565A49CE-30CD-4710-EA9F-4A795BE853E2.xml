@@ -2,8 +2,6 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="565A49CE-30CD-4710-EA9F-4A795BE853E2" directorySegmentName="seg_0" name="PART">
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-03 05:23:04 UTC</createdTime>
-   <changedBy>Evan</changedBy>
-   <changedTime>2011-12-13 01:29:24 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <pkName>PART PK</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
@@ -54,7 +52,6 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-03 05:23:14 UTC</createdTime>
-         <changedTime>2011-12-11 19:25:53 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
@@ -63,8 +60,6 @@
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="283E09EB-06D2-17CC-6332-6182F1A401EA" name="PART PK">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-03 05:24:05 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 19:42:19 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>

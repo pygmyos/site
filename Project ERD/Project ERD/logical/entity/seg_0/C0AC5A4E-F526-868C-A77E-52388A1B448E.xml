@@ -2,8 +2,6 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="C0AC5A4E-F526-868C-A77E-52388A1B448E" directorySegmentName="seg_0" name="PART_ORDER">
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-11 22:46:23 UTC</createdTime>
-   <changedBy>Evan</changedBy>
-   <changedTime>2011-12-13 01:38:10 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <pkName>PK_PART_ORDER</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
@@ -53,8 +51,6 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="3293FC46-31E3-B685-D210-C0394E98C3D7">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 22:57:42 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 22:57:42 UTC</changedTime>
          <generatorID>9F63D85D-C992-865D-13F6-ABF0AE51BCA4</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
@@ -63,8 +59,6 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="32744D5F-758A-6EB0-8EA0-7D34E4FD4CFA">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 22:57:58 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 22:57:58 UTC</changedTime>
          <generatorID>122AF6F5-017B-7100-213C-13E808730594</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <referedAttribute>D9242550-18B2-0460-7B50-36FF6C23BE5C</referedAttribute>
@@ -73,8 +67,6 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="quantity" id="F0B32EE3-5BDB-4417-B054-3378D10B4E12">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 22:58:37 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 23:00:50 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>0</use>
       </Attribute>
@@ -83,8 +75,6 @@
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="283CEB00-EA07-6B9C-FDC6-D60B1B651EE5" name="PK_PART_ORDER">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 22:57:42 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-13 01:38:10 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>

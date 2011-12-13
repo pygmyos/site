@@ -2,8 +2,6 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="952B0120-975E-F466-5B89-EC23CFB24CD2" directorySegmentName="seg_0" name="DATASHEET">
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-03 05:40:29 UTC</createdTime>
-   <changedBy>Evan</changedBy>
-   <changedTime>2011-12-11 22:00:21 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <pkName>DATASHEET PK</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
@@ -54,7 +52,6 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="url" id="9E51C6FC-2712-109F-D4E0-327B2DF678B3">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-03 05:40:49 UTC</createdTime>
-         <changedTime>2011-12-11 19:25:52 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
@@ -63,7 +60,6 @@
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="74F4C9F4-91C4-A223-CBED-6C91ACAA8B5D" name="DATASHEET PK">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-03 05:40:53 UTC</createdTime>
-         <changedTime>2011-12-11 19:25:52 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>

@@ -2,8 +2,6 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="C420691D-797F-B92A-6A64-F5C6A0154A16" directorySegmentName="seg_0" name="STENCIL">
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-11 20:18:06 UTC</createdTime>
-   <changedBy>Evan</changedBy>
-   <changedTime>2011-12-11 21:16:36 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <adequatelyNormalized>NO</adequatelyNormalized>
    <expectedVolumes>0</expectedVolumes>
@@ -53,16 +51,12 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="material" id="02329857-D5CE-3C79-F7CD-CEB781C2E848">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 20:20:14 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 20:20:28 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>0</use>
       </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="71DA9BDF-8E7A-1028-EFC4-4347006E26F7">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 21:16:36 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-11 21:16:36 UTC</changedTime>
          <generatorID>AE7B7616-E8E6-5F46-631F-038D6178F089</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>

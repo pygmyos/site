@@ -1,9 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Project ERD" id="E73643F4-7049-B599-B607-8C122EC93F92" version="3.4">
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Project ERD" id="E73643F4-7049-B599-B607-8C122EC93F92" version="3.41">
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-03 04:43:44 UTC</createdTime>
-   <changedBy>Evan</changedBy>
-   <changedTime>2011-12-13 01:47:15 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <capitalNames>false</capitalNames>
    <designId>E73643F4-7049-B599-B607-8C122EC93F92</designId>

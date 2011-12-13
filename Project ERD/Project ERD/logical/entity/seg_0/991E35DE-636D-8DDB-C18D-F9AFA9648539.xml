@@ -2,8 +2,6 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="991E35DE-636D-8DDB-C18D-F9AFA9648539" directorySegmentName="seg_0" name="OTHER">
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-13 01:29:12 UTC</createdTime>
-   <changedBy>Evan</changedBy>
-   <changedTime>2011-12-13 02:26:44 UTC</changedTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <adequatelyNormalized>NO</adequatelyNormalized>
    <expectedVolumes>0</expectedVolumes>
@@ -53,16 +51,12 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="4865FBBB-6E55-AC41-0105-43B4899FD6EF">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-13 01:29:49 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-13 01:30:04 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>0</use>
       </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="description" id="7613E08F-65EE-3AB0-0053-BCF78D6C993F">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-13 01:29:58 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-13 01:30:02 UTC</changedTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
@@ -70,8 +64,6 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="8F732237-EF9E-0297-AA3B-BD93763A82B3">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-13 02:26:44 UTC</createdTime>
-         <changedBy>Evan</changedBy>
-         <changedTime>2011-12-13 02:26:44 UTC</changedTime>
          <generatorID>BE40D2B6-6502-64E5-0417-344E3C6AFE23</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
