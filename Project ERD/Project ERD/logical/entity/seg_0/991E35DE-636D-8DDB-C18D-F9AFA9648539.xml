@@ -61,14 +61,5 @@
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="8F732237-EF9E-0297-AA3B-BD93763A82B3">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-13 02:26:44 UTC</createdTime>
-         <generatorID>BE40D2B6-6502-64E5-0417-344E3C6AFE23</generatorID>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
-         <referedAttribute>51185F41-07AA-05FD-A206-703DCA01D819</referedAttribute>
-         <use>1</use>
-      </Attribute>
    </attributes>
 </Entity>

@@ -12,6 +12,7 @@
    <maxVolumes>9999999</maxVolumes>
    <minVolumes>0</minVolumes>
    <normalForm>Third</normalForm>
+   <preferredAbbreviation>PON</preferredAbbreviation>
    <fonts>
       <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
          <foType>Title</foType>
@@ -74,6 +75,7 @@
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 23:16:55 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
          <use>0</use>
       </Attribute>
    </attributes>

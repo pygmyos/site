@@ -63,6 +63,13 @@
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
       </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="library" id="16C0AA07-6683-843E-4EAF-794623D3631C">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-14 00:17:26 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="tolerance" id="BD99EC81-0ADB-B19A-B06D-975F2324D743">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 19:49:22 UTC</createdTime>
@@ -111,24 +118,6 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="48B9B771-949A-C619-4874-6FF2E325BDD7">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 21:16:41 UTC</createdTime>
-         <generatorID>160C7AA7-4672-F5C6-5934-4750E01846F2</generatorID>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
-         <referedAttribute>51185F41-07AA-05FD-A206-703DCA01D819</referedAttribute>
-         <use>1</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="url" id="2132AD7D-58D9-F02F-7886-8BDEF2D3370D">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 22:00:21 UTC</createdTime>
-         <generatorID>57C708E7-2CB9-44AC-CF26-73B7855BA502</generatorID>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
-         <referedAttribute>9E51C6FC-2712-109F-D4E0-327B2DF678B3</referedAttribute>
-         <use>1</use>
       </Attribute>
    </attributes>
 </Entity>

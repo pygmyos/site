@@ -67,5 +67,12 @@
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
       </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="color" id="4FEDC85C-32EC-31F0-09D8-67E0A7B274A2">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-13 13:18:59 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
    </attributes>
 </Entity>

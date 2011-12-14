@@ -55,6 +55,13 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="format" id="7C572636-8C9D-8240-C102-4E64FE9659CE">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-13 13:20:33 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
    </attributes>
    <identifiers>
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="74F4C9F4-91C4-A223-CBED-6C91ACAA8B5D" name="DATASHEET PK">

@@ -74,7 +74,7 @@
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="A334D994-0DEB-AE1E-15BB-05172092A127">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="A334D994-0DEB-AE1E-15BB-05172092A127">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 19:32:28 UTC</createdTime>
          <generatorID>4FC6230E-2CB6-8817-3AEA-3FCF8D17D811</generatorID>
@@ -83,7 +83,7 @@
          <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="17E64898-488C-0535-79CB-1DD5716DF69A">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="17E64898-488C-0535-79CB-1DD5716DF69A">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 21:50:49 UTC</createdTime>
          <generatorID>32B5A214-1066-8924-6161-B4CC4B4DDA47</generatorID>

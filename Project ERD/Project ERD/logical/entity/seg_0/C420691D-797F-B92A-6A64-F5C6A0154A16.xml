@@ -54,13 +54,11 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>0</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="71DA9BDF-8E7A-1028-EFC4-4347006E26F7">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="margin" id="B7450197-1547-DB4F-0865-1222DD075F7A">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 21:16:36 UTC</createdTime>
-         <generatorID>AE7B7616-E8E6-5F46-631F-038D6178F089</generatorID>
+         <createdTime>2011-12-13 13:18:26 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
-         <referedAttribute>51185F41-07AA-05FD-A206-703DCA01D819</referedAttribute>
          <use>1</use>
       </Attribute>
    </attributes>

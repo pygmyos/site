@@ -9,6 +9,7 @@
    <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
    <growthPercent>0</growthPercent>
    <growthType>Year</growthType>
+   <hierarchicalParent>565A49CE-30CD-4710-EA9F-4A795BE853E2</hierarchicalParent>
    <maxVolumes>9999999</maxVolumes>
    <minVolumes>0</minVolumes>
    <normalForm>Third</normalForm>
@@ -49,12 +50,6 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="51185F41-07AA-05FD-A206-703DCA01D819">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-03 05:35:05 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <use>1</use>
-      </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="C9947E43-BC84-4094-6264-409ECEDEE19B">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-03 05:33:53 UTC</createdTime>
@@ -73,37 +68,27 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="release date" id="D8032400-8874-7B75-0BEF-F2736AEEF128">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="start_date" id="D8032400-8874-7B75-0BEF-F2736AEEF128">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-03 05:34:07 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="end date" id="82843CCF-15C0-15A1-454A-35CD8462430A">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="end_date" id="82843CCF-15C0-15A1-454A-35CD8462430A">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-03 05:34:14 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="6C25EDA0-F6C1-0725-B95B-7E63E27B2261">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="E341232C-160D-DF54-3729-45CABFAFB0F3">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-12 20:14:38 UTC</createdTime>
-         <generatorID>7B2E61B8-A355-F037-D198-EC2C35C2E810</generatorID>
+         <createdTime>2011-12-13 20:47:35 UTC</createdTime>
+         <generatorID>0FD50B49-88DB-B294-65C9-DCC194EC0EF6</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
+         <nullsAllowed>true</nullsAllowed>
+         <referedAttribute>51185F41-07AA-05FD-A206-703DCA01D819</referedAttribute>
          <use>1</use>
       </Attribute>
    </attributes>
-   <identifiers>
-      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="E5FE8027-B8C9-DC09-D19B-F376929C14EB" name="BOARD PK">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-03 05:34:40 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <pk>true</pk>
-         <usedAttributes>
-            <attributeRef>51185F41-07AA-05FD-A206-703DCA01D819</attributeRef>
-         </usedAttributes>
-      </identifier>
-   </identifiers>
 </Entity>

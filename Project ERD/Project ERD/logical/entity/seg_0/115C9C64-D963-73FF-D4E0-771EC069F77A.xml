@@ -67,6 +67,20 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>0</use>
       </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="description" id="401969A5-C586-22A3-0C65-56E768BE8A67">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-13 19:48:59 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="gender" id="04E2791F-19FF-CC8E-A719-9BD43CC24446">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-13 19:47:52 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="username" id="2991FC45-17D5-2103-B714-12B4788ED960">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-03 05:22:01 UTC</createdTime>

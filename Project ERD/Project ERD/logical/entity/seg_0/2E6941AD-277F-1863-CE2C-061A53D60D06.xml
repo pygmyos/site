@@ -48,12 +48,17 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="215DA3D6-EED0-2E89-EBB3-BFF73BC6EAA8">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="url" id="5A1D4776-7676-CFCF-88B9-FF6AC6EC26E4">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 21:32:07 UTC</createdTime>
-         <generatorID>BCC67DF4-BE81-76B0-C380-688F03C0FFF1</generatorID>
+         <createdTime>2011-12-12 19:09:21 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <referedAttribute>51185F41-07AA-05FD-A206-703DCA01D819</referedAttribute>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="isSell" id="04E58F64-495C-BC74-7FF0-0F02AEFACFA6">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-13 20:49:45 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="43315139-5015-80CC-8E47-7EEDE57495D0">
@@ -64,22 +69,23 @@
          <referedAttribute>DAD0F47A-66AA-D081-619A-EED6B26114A1</referedAttribute>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="url" id="5A1D4776-7676-CFCF-88B9-FF6AC6EC26E4">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="0FB24C4D-988E-34B8-0912-956B2134AF77">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-12 19:09:21 UTC</createdTime>
+         <createdTime>2011-12-13 20:39:15 UTC</createdTime>
+         <generatorID>FAD2F9C0-A6BA-46B8-40AF-FC0A0F19F0A2</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
-         <use>0</use>
+         <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
+         <use>1</use>
       </Attribute>
    </attributes>
    <identifiers>
-      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="44FA5076-CC63-2070-BCDA-681A1A469B4E" name="PK_LISTING">
+      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="0139EC8E-AC96-D2F3-871E-DCCEC56A0B78" name="PK_LISTING">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 22:03:51 UTC</createdTime>
+         <createdTime>2011-12-13 22:05:16 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>
-            <attributeRef>215DA3D6-EED0-2E89-EBB3-BFF73BC6EAA8</attributeRef>
+            <attributeRef>0FB24C4D-988E-34B8-0912-956B2134AF77</attributeRef>
             <attributeRef>43315139-5015-80CC-8E47-7EEDE57495D0</attributeRef>
          </usedAttributes>
       </identifier>
