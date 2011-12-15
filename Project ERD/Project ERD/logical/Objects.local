@@ -1,62 +1,65 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.logical.LogicalDesign>
-   <object objectType="Entity" objectID="50F88D8F-0795-4929-F407-DE36C1E0D84A" name="ADDRESS" seqName="seg_0"/>
    <object objectType="Entity" objectID="7028D00D-7DED-9B59-8AE7-25A3391A0E6C" name="BOARD" seqName="seg_0"/>
    <object objectType="Entity" objectID="53036FCE-5492-8CA4-1638-9BA7D58CEFA5" name="COMPONENT" seqName="seg_0"/>
+   <object objectType="Entity" objectID="1816490E-5487-142D-CF55-5072CD9ED48E" name="CUSTOMER" seqName="seg_0"/>
    <object objectType="Entity" objectID="952B0120-975E-F466-5B89-EC23CFB24CD2" name="DATASHEET" seqName="seg_0"/>
-   <object objectType="Entity" objectID="5079533B-9CB9-5907-18FD-3F8B07B4F834" name="EMAIL" seqName="seg_0"/>
+   <object objectType="Entity" objectID="115C9C64-D963-73FF-D4E0-771EC069F77A" name="EMPLOYEE" seqName="seg_0"/>
    <object objectType="Entity" objectID="2E6941AD-277F-1863-CE2C-061A53D60D06" name="LISTING" seqName="seg_0"/>
    <object objectType="Entity" objectID="C2EF8490-37F0-642A-E0C6-99C410AE9196" name="MANUFACTURER" seqName="seg_0"/>
    <object objectType="Entity" objectID="805A0066-7509-43E1-AADF-50B4080D203C" name="MANUFACTURER_PART" seqName="seg_0"/>
    <object objectType="Entity" objectID="428520A1-7A17-4C3F-2A94-142AD315B1D5" name="ORDER" seqName="seg_0"/>
-   <object objectType="Entity" objectID="991E35DE-636D-8DDB-C18D-F9AFA9648539" name="OTHER" seqName="seg_0"/>
+   <object objectType="Entity" objectID="991E35DE-636D-8DDB-C18D-F9AFA9648539" name="OTHER_PART" seqName="seg_0"/>
+   <object objectType="Entity" objectID="87046BE3-561B-9501-BCA7-71F9EE86B8C0" name="OTHER_PERSON" seqName="seg_0"/>
    <object objectType="Entity" objectID="F85187A8-A28C-E52C-E677-52DA1832EBCB" name="PACKAGE" seqName="seg_0"/>
    <object objectType="Entity" objectID="565A49CE-30CD-4710-EA9F-4A795BE853E2" name="PART" seqName="seg_0"/>
    <object objectType="Entity" objectID="C0AC5A4E-F526-868C-A77E-52388A1B448E" name="PART_ORDER" seqName="seg_0"/>
    <object objectType="Entity" objectID="AA26A085-8AC6-8F30-808A-050A976ADF6F" name="PART_OWNERSHIP" seqName="seg_0"/>
    <object objectType="Entity" objectID="BAB56A1D-9523-F3A2-7A35-9D5F8346C4B8" name="PART_USAGE" seqName="seg_0"/>
    <object objectType="Entity" objectID="B471A8A7-5086-958C-3B2B-8181588F1069" name="PCB" seqName="seg_0"/>
-   <object objectType="Entity" objectID="115C9C64-D963-73FF-D4E0-771EC069F77A" name="PERSON" seqName="seg_0"/>
+   <object objectType="Entity" objectID="0037A1C9-CDB2-EB1C-ED6D-2F1A624D7409" name="PERSON" seqName="seg_0"/>
    <object objectType="Entity" objectID="528ACFEA-EB4D-50AD-5278-614E5C381B87" name="PICTURE" seqName="seg_0"/>
+   <object objectType="Entity" objectID="5C34B370-5696-44DE-BDCB-529352BCB6EB" name="PIC_TAG" seqName="seg_0"/>
    <object objectType="Entity" objectID="B02096D7-DBAB-07BD-621B-71AB78BE74E3" name="PRICE" seqName="seg_0"/>
    <object objectType="Entity" objectID="C420691D-797F-B92A-6A64-F5C6A0154A16" name="STENCIL" seqName="seg_0"/>
    <object objectType="Entity" objectID="ADA2897A-4D26-4055-86A7-B67D0DDC51C3" name="VARIANT" seqName="seg_0"/>
    <object objectType="Entity" objectID="C48BA620-5E56-0043-441A-8C5D2CB00B8E" name="VENDOR" seqName="seg_0"/>
    <object objectType="Relation" objectID="19ABD7BC-2965-365D-7155-876561800C23" name="Relation_10" seqName="seg_0"/>
    <object objectType="Relation" objectID="4FC6230E-2CB6-8817-3AEA-3FCF8D17D811" name="Relation_13" seqName="seg_0"/>
-   <object objectType="Relation" objectID="3E8B7AEE-FE94-785A-32F0-667887C208F6" name="Relation_16" seqName="seg_0"/>
+   <object objectType="Relation" objectID="B0E48AC6-69C9-1190-B898-9A7004806A1F" name="Relation_16" seqName="seg_0"/>
    <object objectType="Relation" objectID="FAD2F9C0-A6BA-46B8-40AF-FC0A0F19F0A2" name="Relation_28" seqName="seg_0"/>
+   <object objectType="Relation" objectID="1F7AEFCD-C2CF-EC9E-4A38-7CCEA8C7825D" name="Relation_28" seqName="seg_0"/>
    <object objectType="Relation" objectID="DC24A8E7-01F3-DF50-B2C9-5976102EDBAD" name="Relation_29" seqName="seg_0"/>
+   <object objectType="Relation" objectID="E6FD96E2-1E78-9903-2423-7531C850A19D" name="Relation_29" seqName="seg_0"/>
+   <object objectType="Relation" objectID="ECE8EA6A-A28D-56A7-9231-4C3FFA58A165" name="Relation_30" seqName="seg_0"/>
+   <object objectType="Relation" objectID="8C397C18-B1BE-60FC-3B44-26BAABC20835" name="Relation_31" seqName="seg_0"/>
    <object objectType="Relation" objectID="0643D02A-05B2-DF00-3405-863DD6B7D0DC" name="Relation_32" seqName="seg_0"/>
    <object objectType="Relation" objectID="0FE81AA8-E1EF-8107-78B0-5748C49F215A" name="Relation_33" seqName="seg_0"/>
    <object objectType="Relation" objectID="A8685BFD-B0F8-3BB6-4F67-3C81992F61FD" name="Relation_33" seqName="seg_0"/>
-   <object objectType="Relation" objectID="B71E73CA-774C-6524-8489-E684FF6DA83F" name="Relation_34" seqName="seg_0"/>
-   <object objectType="Relation" objectID="6352A186-B335-F48F-8D36-34812EB7B522" name="Relation_35" seqName="seg_0"/>
+   <object objectType="Relation" objectID="D8BE1265-3376-2CAA-70CF-B92EF291375F" name="Relation_33" seqName="seg_0"/>
    <object objectType="Relation" objectID="C35839D3-C319-C8C8-0ED9-A5E38FB79032" name="Relation_35" seqName="seg_0"/>
+   <object objectType="Relation" objectID="759C7BD0-DC80-A8C0-B906-FDA70D3C2FBE" name="Relation_35" seqName="seg_0"/>
    <object objectType="Relation" objectID="865192C3-0F2C-9F02-C8C0-BAA1729D74E6" name="Relation_36" seqName="seg_0"/>
    <object objectType="Relation" objectID="08FB0AB8-CA43-AF97-86B0-36F28CD3D981" name="Relation_37" seqName="seg_0"/>
-   <object objectType="Relation" objectID="FA3AD8C7-5024-F705-0383-0CFA209478CF" name="Relation_38" seqName="seg_0"/>
    <object objectType="Relation" objectID="0FD50B49-88DB-B294-65C9-DCC194EC0EF6" name="Relation_38" seqName="seg_0"/>
-   <object objectType="Relation" objectID="C262BE2E-729D-0CD1-BB18-3A50534713EA" name="Relation_39" seqName="seg_0"/>
-   <object objectType="Relation" objectID="EF9B5315-76E8-ADEF-4E89-9DC38E2A65F1" name="Relation_40" seqName="seg_0"/>
+   <object objectType="Relation" objectID="27D05587-83BB-AA82-FB0E-F5575D6A82D9" name="Relation_39" seqName="seg_0"/>
+   <object objectType="Relation" objectID="D7C48509-24CF-DF54-EB96-CF81EE316D72" name="Relation_41" seqName="seg_0"/>
    <object objectType="Relation" objectID="9F63D85D-C992-865D-13F6-ABF0AE51BCA4" name="Relation_42" seqName="seg_0"/>
    <object objectType="Relation" objectID="122AF6F5-017B-7100-213C-13E808730594" name="Relation_43" seqName="seg_0"/>
    <object objectType="Relation" objectID="97CFF346-B758-3776-5FD4-2DE6C34A11B2" name="Relation_44" seqName="seg_0"/>
    <object objectType="Relation" objectID="EB64CC01-5635-EDDF-FFB1-6507FDE05359" name="Relation_45" seqName="seg_0"/>
-   <object objectType="Relation" objectID="BF898AA1-78A6-9DD3-D512-C3F96315AF16" name="Relation_46" seqName="seg_0"/>
-   <object objectType="Relation" objectID="78BBBEA6-E054-53E8-141C-571F7E89C598" name="Relation_47" seqName="seg_0"/>
-   <object objectType="Relation" objectID="F46A32F7-F6F3-9316-AEAB-D4CAF6EDA435" name="Relation_48" seqName="seg_0"/>
-   <object objectType="Relation" objectID="E7692580-E46D-8EDE-40C8-14BADB28EA4B" name="Relation_49" seqName="seg_0"/>
-   <object objectType="Relation" objectID="B838EFD7-8A92-F5C7-5D18-1D286B6E6940" name="Relation_51" seqName="seg_0"/>
    <object objectType="Relation" objectID="E3892E13-0660-297F-3E9C-DE147611490B" name="Relation_8" seqName="seg_0"/>
    <object objectType="Hierarchy relation" objectID="66DD7D98-E726-9945-7E19-3EFC935DF937" name="Hierarchy_1" seqName="seg_0"/>
    <object objectType="Hierarchy relation" objectID="77A3C876-4B36-903D-D8F0-EF6EA266858F" name="Hierarchy_2" seqName="seg_0"/>
    <object objectType="Hierarchy relation" objectID="83F37AC0-697F-BA9A-AC9C-1882947DFAC6" name="Hierarchy_3" seqName="seg_0"/>
    <object objectType="Hierarchy relation" objectID="2DD4B2E1-7E77-2F6E-DB88-BA2F95044A1B" name="Hierarchy_4" seqName="seg_0"/>
    <object objectType="Hierarchy relation" objectID="EEC540FC-E1E9-2A55-3DF3-2294263D6151" name="Hierarchy_5" seqName="seg_0"/>
-   <object objectType="Arc" objectID="5B5263BC-B103-4263-F6A2-F50DD9A1690F" name="Arc_4" seqName="seg_0"/>
-   <object objectType="Arc" objectID="4058C3B9-F33D-2D3D-3EF0-735D6DE8BE8B" name="Arc_6" seqName="seg_0"/>
-   <object objectType="Arc" objectID="A656A30E-162F-6143-EB8C-07EC10C6DED5" name="Arc_7" seqName="seg_0"/>
+   <object objectType="Hierarchy relation" objectID="D046DE80-363D-7088-7E4A-497E39ABC06D" name="Hierarchy_6" seqName="seg_0"/>
+   <object objectType="Hierarchy relation" objectID="4586EE2D-0661-D688-9D48-C3020D60A709" name="Hierarchy_7" seqName="seg_0"/>
+   <object objectType="Hierarchy relation" objectID="6CCC9609-7038-0B84-C67C-A512D6FD6A1D" name="Hierarchy_8" seqName="seg_0"/>
+   <object objectType="Arc" objectID="797799A7-4DCA-D5C2-C66B-D39C6DB472BE" name="Arc_4" seqName="seg_0"/>
+   <object objectType="Arc" objectID="DB2FDFC9-A6D8-DC4E-D6F3-CC0B6B580AE2" name="Arc_5" seqName="seg_0"/>
+   <object objectType="Arc" objectID="D087486D-C6F3-7FBB-4CA2-B1F65F2C955D" name="Arc_6" seqName="seg_0"/>
    <object objectType="Note" objectID="E029F69A-8647-A154-B82B-A82284631F19" name="Note_1" seqName="seg_0"/>
    <object objectType="Note" objectID="4B1F7DE3-CC19-BD94-E392-4A63B79F12B7" name="Note_2" seqName="seg_0"/>
 </oracle.dbtools.crest.model.design.logical.LogicalDesign>

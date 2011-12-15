@@ -68,6 +68,41 @@
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="email" id="340B8582-7B48-09E2-BC94-FBD9373F3BE6">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:47:49 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="address" id="C9527D76-1C5A-60A8-D310-536C75FF88C1">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 03:10:14 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="city" id="89DF107F-7B45-90B5-9D8F-1188ED5775E5">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 03:10:19 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="state" id="5652B827-0465-75C4-6A94-986E46CCF6C5">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 03:10:21 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="zipcode" id="82A49D41-0286-5FD9-1E1D-FC6C7F61EBC4">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 03:10:23 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
    </attributes>
    <identifiers>
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="4C47CAF2-4319-CA93-D99D-F2F168409094" name="VENDOR PK">

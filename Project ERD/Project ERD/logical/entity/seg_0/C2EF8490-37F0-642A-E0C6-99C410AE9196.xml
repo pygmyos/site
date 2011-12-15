@@ -54,6 +54,13 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>0</use>
       </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="email" id="93E69B5A-42DC-0EFC-9D87-00CBAD4509F5">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:47:00 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="8C080CD4-01EB-9D79-DFB1-8DAAFA6A3D8F">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 19:40:51 UTC</createdTime>

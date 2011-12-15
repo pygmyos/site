@@ -55,13 +55,6 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="reusable" id="0918BF31-4572-25F2-199D-D0530D2D0F98">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-13 22:02:35 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
-         <use>1</use>
-      </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="url" id="BDF274E7-1E25-5180-2A1B-0606F15F2CDF">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-13 21:55:28 UTC</createdTime>
@@ -69,6 +62,13 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <referedAttribute>9E51C6FC-2712-109F-D4E0-327B2DF678B3</referedAttribute>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="phys_name" id="455ACBD5-33D2-25AC-B029-0A4F7C957BD5">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:25:40 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
    </attributes>

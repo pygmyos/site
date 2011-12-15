@@ -57,14 +57,6 @@
          <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="EAC1D682-601C-28BF-B5C0-AEECC6C5DCE1">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 23:00:19 UTC</createdTime>
-         <generatorID>EB64CC01-5635-EDDF-FFB1-6507FDE05359</generatorID>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <referedAttribute>E17CCF0E-8F0A-5D81-9976-C51E20C029EA</referedAttribute>
-         <use>1</use>
-      </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="quantity" id="8B8A077C-EF80-A1C7-024D-7FDCCFA772F6">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 23:00:39 UTC</createdTime>
@@ -78,6 +70,14 @@
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
       </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="6A266813-3157-7748-BCBF-8695713702B8">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:54:07 UTC</createdTime>
+         <generatorID>EB64CC01-5635-EDDF-FFB1-6507FDE05359</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <referedAttribute>AEDD815C-732A-C1EB-9B6C-5702647575B2</referedAttribute>
+         <use>1</use>
+      </Attribute>
    </attributes>
    <identifiers>
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="5989BC90-4342-F275-4807-2F7E9EBF4AA4" name="PK_PART_OWNERSHIP">
@@ -86,8 +86,8 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>
-            <attributeRef>EAC1D682-601C-28BF-B5C0-AEECC6C5DCE1</attributeRef>
             <attributeRef>34CD0AF6-9D11-771D-51EE-456B891D698C</attributeRef>
+            <attributeRef>6A266813-3157-7748-BCBF-8695713702B8</attributeRef>
          </usedAttributes>
       </identifier>
    </identifiers>

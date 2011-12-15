@@ -79,7 +79,6 @@
          <createdTime>2011-12-11 19:32:28 UTC</createdTime>
          <generatorID>4FC6230E-2CB6-8817-3AEA-3FCF8D17D811</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
          <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
          <use>1</use>
       </Attribute>
@@ -101,6 +100,7 @@
          <pk>true</pk>
          <usedAttributes>
             <attributeRef>0249CA1D-5511-F7D1-D6A0-940129C15740</attributeRef>
+            <attributeRef>A334D994-0DEB-AE1E-15BB-05172092A127</attributeRef>
          </usedAttributes>
       </identifier>
    </identifiers>

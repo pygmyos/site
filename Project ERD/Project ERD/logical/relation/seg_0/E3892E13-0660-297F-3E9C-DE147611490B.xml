@@ -3,11 +3,12 @@
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-03 05:41:50 UTC</createdTime>
    <ownerDesignName>Project ERD</ownerDesignName>
+   <arc>D087486D-C6F3-7FBB-4CA2-B1F65F2C955D</arc>
    <identifying>false</identifying>
    <nameOnSource>send</nameOnSource>
    <nameOnTarget>be from</nameOnTarget>
    <optionalSource>true</optionalSource>
-   <optionalTarget>false</optionalTarget>
+   <optionalTarget>true</optionalTarget>
    <sourceCardinality>1</sourceCardinality>
    <sourceEntity>C48BA620-5E56-0043-441A-8C5D2CB00B8E</sourceEntity>
    <targetCardinalityString>*</targetCardinalityString>
