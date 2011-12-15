@@ -1,0 +1,157 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="0037A1C9-CDB2-EB1C-ED6D-2F1A624D7409" directorySegmentName="seg_0" name="PERSON">
+   <createdBy>Evan</createdBy>
+   <createdTime>2011-12-15 02:49:21 UTC</createdTime>
+   <ownerDesignName>Project ERD</ownerDesignName>
+   <pkName>PERSON PK</pkName>
+   <adequatelyNormalized>NO</adequatelyNormalized>
+   <expectedVolumes>0</expectedVolumes>
+   <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+   <growthPercent>0</growthPercent>
+   <growthType>Year</growthType>
+   <maxVolumes>9999999</maxVolumes>
+   <minVolumes>0</minVolumes>
+   <normalForm>Third</normalForm>
+   <fonts>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Title</foType>
+         <fontStyle>1</fontStyle>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Attribute</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Datatype</foType>
+         <colorRGB>-16744448</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>PK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>FK Element</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>UK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Not Null</foType>
+         <colorRGB>-65536</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Key</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+   </fonts>
+   <attributes>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="AEDD815C-732A-C1EB-9B6C-5702647575B2">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:50:22 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="first_name" id="86BD457F-1A22-9EEE-2D81-C68BEDDDF674">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:50:44 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="last_name" id="4FF5B17C-D93F-96FE-9473-E40D92FB2F12">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:50:49 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="email" id="3042475D-2A43-E102-4289-6669DF8A5FD5">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:50:40 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="address" id="BE339CC0-430F-4B6E-6D9F-B4063E2462E7">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:50:00 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="city" id="EC6C616C-DD32-6493-C6A4-921EB9629FE8">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:50:04 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="state" id="354C26F4-AA57-B0CE-64E8-4C0FCEC81E9D">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:50:07 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="zipcode" id="43F1C724-26E0-0CC9-BA5F-754EAB0A97FB">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:50:08 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="23529A91-6A80-74F8-9658-AD0A8F3FC7C9">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:52:47 UTC</createdTime>
+         <generatorID>D8BE1265-3376-2CAA-70CF-B92EF291375F</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <referedAttribute>C689A814-D975-925E-A6FE-ADC42357B9FB</referedAttribute>
+         <use>0</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="gender" id="853CBDC3-AB31-5D5D-7D49-F36F75263AB6">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:53:28 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="username" id="942B55E5-94A9-504B-09CB-835637689D46">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:53:35 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="url" id="9F6DB0DB-5C57-8EAD-99D6-8EE46B5EE8B4">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:53:39 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id3" id="862AEEDB-2308-D147-76BF-3C9F1A676A9D">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:56:16 UTC</createdTime>
+         <generatorID>759C7BD0-DC80-A8C0-B906-FDA70D3C2FBE</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <referedAttribute>DAD0F47A-66AA-D081-619A-EED6B26114A1</referedAttribute>
+         <use>1</use>
+      </Attribute>
+   </attributes>
+   <identifiers>
+      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="952762F0-DB17-BB55-3107-917E2CA123D9" name="PERSON PK">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:50:25 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <pk>true</pk>
+         <usedAttributes>
+            <attributeRef>AEDD815C-732A-C1EB-9B6C-5702647575B2</attributeRef>
+         </usedAttributes>
+      </identifier>
+   </identifiers>
+</Entity>

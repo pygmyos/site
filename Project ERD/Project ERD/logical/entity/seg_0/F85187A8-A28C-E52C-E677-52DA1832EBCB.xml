@@ -75,6 +75,13 @@
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
       </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="url" id="9911CFE0-108E-B79F-6308-43B7CDD4697E">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 05:12:46 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
    </attributes>
    <identifiers>
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="E44EDEF4-7AB8-5B81-13D8-469696895204" name="PACKAGE PK">

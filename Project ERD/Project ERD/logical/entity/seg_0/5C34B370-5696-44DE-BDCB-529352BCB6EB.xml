@@ -1,0 +1,141 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="5C34B370-5696-44DE-BDCB-529352BCB6EB" directorySegmentName="seg_0" name="PIC_TAG">
+   <createdBy>Evan</createdBy>
+   <createdTime>2011-12-15 02:33:54 UTC</createdTime>
+   <ownerDesignName>Project ERD</ownerDesignName>
+   <pkName>PK_PIC_TAG</pkName>
+   <adequatelyNormalized>NO</adequatelyNormalized>
+   <expectedVolumes>0</expectedVolumes>
+   <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+   <growthPercent>0</growthPercent>
+   <growthType>Year</growthType>
+   <maxVolumes>9999999</maxVolumes>
+   <minVolumes>0</minVolumes>
+   <normalForm>Third</normalForm>
+   <fonts>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Title</foType>
+         <fontStyle>1</fontStyle>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Attribute</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Datatype</foType>
+         <colorRGB>-16744448</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>PK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>FK Element</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>UK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Not Null</foType>
+         <colorRGB>-65536</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Key</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+   </fonts>
+   <attributes>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="visible" id="6D2C272A-804B-36C2-4E19-488460D246CC">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:34:12 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="left_corner_x" id="E41084F2-F437-1D9F-2407-C99E8FE87CB9">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:34:04 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="left_corner_y" id="8BCAC295-FB5E-67CC-13D1-1D235A370E14">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:35:16 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="right_corner_x" id="46085DCB-09E0-609F-0F28-818CBC6791D4">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:36:10 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="right_corner_y" id="C444D3C3-B1E4-5F04-305A-DB425D01D0ED">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:36:16 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="idpic" id="C64BE762-E12C-0E68-FBFD-FC212E12B9CD">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:36:55 UTC</createdTime>
+         <generatorID>1F7AEFCD-C2CF-EC9E-4A38-7CCEA8C7825D</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <referedAttribute>0A7F77FA-5653-4F69-D2C3-C6A77BADFAB2</referedAttribute>
+         <use>0</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="16A856F4-974F-6D23-44EF-7F782C8F506B">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:37:17 UTC</createdTime>
+         <generatorID>ECE8EA6A-A28D-56A7-9231-4C3FFA58A165</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <referedAttribute>D842A798-4EF2-B0F5-54D8-56C80B2B2A46</referedAttribute>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="5BF214D1-7D76-73F7-2A39-27D3A4432478">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:37:17 UTC</createdTime>
+         <generatorID>ECE8EA6A-A28D-56A7-9231-4C3FFA58A165</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <referedAttribute>CC093362-A882-4471-A781-DED81A300811</referedAttribute>
+         <use>0</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name1" id="5F5E3BAC-BB79-307E-1E94-4321FEAB45D4">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:37:22 UTC</createdTime>
+         <generatorID>8C397C18-B1BE-60FC-3B44-26BAABC20835</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <referedAttribute>7311BCE1-AB1E-6555-B86A-5FF1D4FA2A3B</referedAttribute>
+         <use>0</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="D2B17CCF-0275-98D2-7932-435FD34A8B0F">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:41:11 UTC</createdTime>
+         <generatorID>E6FD96E2-1E78-9903-2423-7531C850A19D</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
+         <use>1</use>
+      </Attribute>
+   </attributes>
+   <identifiers>
+      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="010528E7-2FE1-4E05-F175-2941F3F5997B" name="PK_PIC_TAG">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-15 02:37:02 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <pk>true</pk>
+         <usedAttributes>
+            <attributeRef>C64BE762-E12C-0E68-FBFD-FC212E12B9CD</attributeRef>
+            <attributeRef>16A856F4-974F-6D23-44EF-7F782C8F506B</attributeRef>
+            <attributeRef>5BF214D1-7D76-73F7-2A39-27D3A4432478</attributeRef>
+            <attributeRef>5F5E3BAC-BB79-307E-1E94-4321FEAB45D4</attributeRef>
+            <attributeRef>D2B17CCF-0275-98D2-7932-435FD34A8B0F</attributeRef>
+         </usedAttributes>
+      </identifier>
+   </identifiers>
+</Entity>
