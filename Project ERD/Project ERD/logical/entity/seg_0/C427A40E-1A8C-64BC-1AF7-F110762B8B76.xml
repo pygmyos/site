@@ -1,9 +1,9 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="C0AC5A4E-F526-868C-A77E-52388A1B448E" directorySegmentName="seg_0" name="PART_ORDER">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="C427A40E-1A8C-64BC-1AF7-F110762B8B76" directorySegmentName="seg_0" name="CATEGORY">
    <createdBy>Evan</createdBy>
-   <createdTime>2011-12-11 22:46:23 UTC</createdTime>
+   <createdTime>2011-12-17 23:22:50 UTC</createdTime>
    <ownerDesignName>Project ERD</ownerDesignName>
-   <pkName>PK_PART_ORDER</pkName>
+   <pkName>CATEGORY PK</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
    <expectedVolumes>0</expectedVolumes>
    <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
@@ -48,38 +48,42 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="3293FC46-31E3-B685-D210-C0394E98C3D7">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="abrv" id="62499A99-DDB2-ADAB-C2AB-6D5D7FD707B4">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 22:57:42 UTC</createdTime>
-         <generatorID>9F63D85D-C992-865D-13F6-ABF0AE51BCA4</generatorID>
+         <createdTime>2011-12-17 23:22:56 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="32744D5F-758A-6EB0-8EA0-7D34E4FD4CFA">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="DA2ECF42-37A8-3AA6-583A-E59E9327FC17">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 22:57:58 UTC</createdTime>
-         <generatorID>122AF6F5-017B-7100-213C-13E808730594</generatorID>
+         <createdTime>2011-12-17 23:23:04 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <referedAttribute>D9242550-18B2-0460-7B50-36FF6C23BE5C</referedAttribute>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="quantity" id="F0B32EE3-5BDB-4417-B054-3378D10B4E12">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="visible" id="970A1F9E-A221-2AFC-B2AD-91F84B36A431">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 22:58:37 UTC</createdTime>
+         <createdTime>2011-12-17 23:23:54 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <use>0</use>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="35DA4414-700F-F511-7F4E-9E55C86AE6A9">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-17 23:38:43 UTC</createdTime>
+         <generatorID>922BCCE6-8198-8BA6-7F98-D4669E471DFB</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <referedAttribute>FE544300-2270-0EEF-EA93-466D3FA80F95</referedAttribute>
+         <use>1</use>
       </Attribute>
    </attributes>
    <identifiers>
-      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="283CEB00-EA07-6B9C-FDC6-D60B1B651EE5" name="PK_PART_ORDER">
+      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="0756CFEC-FB85-D892-062D-0BCDD97C8F9B" name="CATEGORY PK">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 22:57:42 UTC</createdTime>
+         <createdTime>2011-12-17 23:23:02 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>
-            <attributeRef>3293FC46-31E3-B685-D210-C0394E98C3D7</attributeRef>
-            <attributeRef>32744D5F-758A-6EB0-8EA0-7D34E4FD4CFA</attributeRef>
+            <attributeRef>62499A99-DDB2-ADAB-C2AB-6D5D7FD707B4</attributeRef>
          </usedAttributes>
       </identifier>
    </identifiers>

@@ -1,9 +1,9 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="952B0120-975E-F466-5B89-EC23CFB24CD2" directorySegmentName="seg_0" name="DATASHEET">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="80B7126F-3AA6-2BED-47C9-C3701391F3E8" directorySegmentName="seg_0" name="SESSION">
    <createdBy>Evan</createdBy>
-   <createdTime>2011-12-03 05:40:29 UTC</createdTime>
+   <createdTime>2011-12-17 02:08:44 UTC</createdTime>
    <ownerDesignName>Project ERD</ownerDesignName>
-   <pkName>DATASHEET PK</pkName>
+   <pkName>LOGIN_LOCATION PK</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
    <expectedVolumes>0</expectedVolumes>
    <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
@@ -12,7 +12,6 @@
    <maxVolumes>9999999</maxVolumes>
    <minVolumes>0</minVolumes>
    <normalForm>Third</normalForm>
-   <preferredAbbreviation>DAT</preferredAbbreviation>
    <fonts>
       <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
          <foType>Title</foType>
@@ -49,28 +48,46 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="url" id="9E51C6FC-2712-109F-D4E0-327B2DF678B3">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="E4D330DD-030A-DE3E-BBBB-023FA8D9F1C1">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-03 05:40:49 UTC</createdTime>
+         <createdTime>2011-12-17 02:47:17 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="format" id="7C572636-8C9D-8240-C102-4E64FE9659CE">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="user_agent" id="158F9B9A-1A57-C8A5-6E3F-FCEBF76EA1B4">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-13 13:20:33 UTC</createdTime>
+         <createdTime>2011-12-17 02:11:55 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="date" id="100C6553-6493-CF04-C1DE-03A10016E939">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-17 02:47:34 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="time" id="25596EB2-0EC8-164C-8D65-4254E102C2D2">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-17 02:47:35 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="ip" id="9683F6CD-D4F3-2A61-8BC7-1C8ED0A50A79">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-17 02:08:53 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
    </attributes>
    <identifiers>
-      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="74F4C9F4-91C4-A223-CBED-6C91ACAA8B5D" name="DATASHEET PK">
+      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="C38BAD28-DD33-649C-3C20-9AC7612610FE" name="LOGIN_LOCATION PK">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-03 05:40:53 UTC</createdTime>
+         <createdTime>2011-12-17 02:15:18 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>
-            <attributeRef>9E51C6FC-2712-109F-D4E0-327B2DF678B3</attributeRef>
+            <attributeRef>E4D330DD-030A-DE3E-BBBB-023FA8D9F1C1</attributeRef>
          </usedAttributes>
       </identifier>
    </identifiers>

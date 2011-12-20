@@ -3,9 +3,10 @@
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-15 02:37:22 UTC</createdTime>
    <ownerDesignName>Project ERD</ownerDesignName>
-   <identifying>true</identifying>
+   <arc>797799A7-4DCA-D5C2-C66B-D39C6DB472BE</arc>
+   <identifying>false</identifying>
    <optionalSource>true</optionalSource>
-   <optionalTarget>false</optionalTarget>
+   <optionalTarget>true</optionalTarget>
    <sourceCardinality>1</sourceCardinality>
    <sourceEntity>F85187A8-A28C-E52C-E677-52DA1832EBCB</sourceEntity>
    <targetCardinalityString>*</targetCardinalityString>

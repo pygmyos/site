@@ -69,7 +69,7 @@
          <referedAttribute>C689A814-D975-925E-A6FE-ADC42357B9FB</referedAttribute>
          <use>0</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="070EE49E-6A88-0DBA-2868-90E7AA7FECED">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="070EE49E-6A88-0DBA-2868-90E7AA7FECED">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 22:13:41 UTC</createdTime>
          <generatorID>0FE81AA8-E1EF-8107-78B0-5748C49F215A</generatorID>

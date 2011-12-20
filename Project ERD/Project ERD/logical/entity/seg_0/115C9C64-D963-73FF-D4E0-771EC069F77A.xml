@@ -54,7 +54,12 @@
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-13 19:48:59 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="hire_date" id="B0D88EAE-F303-3C81-5A60-5840A73A7BD8">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-16 21:48:31 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
    </attributes>

@@ -1,9 +1,9 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="C0AC5A4E-F526-868C-A77E-52388A1B448E" directorySegmentName="seg_0" name="PART_ORDER">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="FF9C4BAC-A7BB-49B0-4B81-27A4B6A498DF" directorySegmentName="seg_0" name="PRODUCT_RELATION">
    <createdBy>Evan</createdBy>
-   <createdTime>2011-12-11 22:46:23 UTC</createdTime>
+   <createdTime>2011-12-17 11:32:27 UTC</createdTime>
    <ownerDesignName>Project ERD</ownerDesignName>
-   <pkName>PK_PART_ORDER</pkName>
+   <pkName>PK_PRODUCT_RELATION</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
    <expectedVolumes>0</expectedVolumes>
    <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
@@ -48,38 +48,38 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="3293FC46-31E3-B685-D210-C0394E98C3D7">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="visible" id="359FFFA1-FC34-C986-061C-9776BB11CA94">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 22:57:42 UTC</createdTime>
-         <generatorID>9F63D85D-C992-865D-13F6-ABF0AE51BCA4</generatorID>
+         <createdTime>2011-12-17 11:32:39 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="32744D5F-758A-6EB0-8EA0-7D34E4FD4CFA">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="E18E54DB-29E8-F82F-EAF8-3D75C3047A8D">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 22:57:58 UTC</createdTime>
-         <generatorID>122AF6F5-017B-7100-213C-13E808730594</generatorID>
+         <createdTime>2011-12-18 03:10:00 UTC</createdTime>
+         <generatorID>FAC5D773-A989-C1F0-C34F-92D7B1736F32</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <referedAttribute>D9242550-18B2-0460-7B50-36FF6C23BE5C</referedAttribute>
+         <referedAttribute>FE544300-2270-0EEF-EA93-466D3FA80F95</referedAttribute>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="quantity" id="F0B32EE3-5BDB-4417-B054-3378D10B4E12">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="945288B8-7606-9026-5CA2-351104FB745E">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 22:58:37 UTC</createdTime>
+         <createdTime>2011-12-18 03:10:05 UTC</createdTime>
+         <generatorID>D5D4D6B3-C2F0-55A6-3FD7-7C11CF090B01</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <use>0</use>
+         <referedAttribute>FE544300-2270-0EEF-EA93-466D3FA80F95</referedAttribute>
+         <use>1</use>
       </Attribute>
    </attributes>
    <identifiers>
-      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="283CEB00-EA07-6B9C-FDC6-D60B1B651EE5" name="PK_PART_ORDER">
+      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="40F1CDEB-B545-60D8-29B1-D89CC476FF35" name="PK_PRODUCT_RELATION">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 22:57:42 UTC</createdTime>
+         <createdTime>2011-12-18 03:10:00 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>
-            <attributeRef>3293FC46-31E3-B685-D210-C0394E98C3D7</attributeRef>
-            <attributeRef>32744D5F-758A-6EB0-8EA0-7D34E4FD4CFA</attributeRef>
+            <attributeRef>E18E54DB-29E8-F82F-EAF8-3D75C3047A8D</attributeRef>
+            <attributeRef>945288B8-7606-9026-5CA2-351104FB745E</attributeRef>
          </usedAttributes>
       </identifier>
    </identifiers>

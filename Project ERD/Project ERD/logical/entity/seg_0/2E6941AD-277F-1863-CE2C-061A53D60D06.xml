@@ -61,7 +61,7 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="43315139-5015-80CC-8E47-7EEDE57495D0">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="43315139-5015-80CC-8E47-7EEDE57495D0">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 21:32:14 UTC</createdTime>
          <generatorID>DC24A8E7-01F3-DF50-B2C9-5976102EDBAD</generatorID>

@@ -1,9 +1,9 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="C0AC5A4E-F526-868C-A77E-52388A1B448E" directorySegmentName="seg_0" name="PART_ORDER">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="E398C840-A0F6-73A6-F6E7-17B2EF5FF842" directorySegmentName="seg_0" name="TUTORIAL">
    <createdBy>Evan</createdBy>
-   <createdTime>2011-12-11 22:46:23 UTC</createdTime>
+   <createdTime>2011-12-17 11:34:06 UTC</createdTime>
    <ownerDesignName>Project ERD</ownerDesignName>
-   <pkName>PK_PART_ORDER</pkName>
+   <pkName>TUTORIAL PK</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
    <expectedVolumes>0</expectedVolumes>
    <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
@@ -48,38 +48,41 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="3293FC46-31E3-B685-D210-C0394E98C3D7">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="A3E32FAB-2111-619B-20CD-5FFD481585D1">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 22:57:42 UTC</createdTime>
-         <generatorID>9F63D85D-C992-865D-13F6-ABF0AE51BCA4</generatorID>
+         <createdTime>2011-12-17 11:52:47 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="32744D5F-758A-6EB0-8EA0-7D34E4FD4CFA">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="title" id="E925B59B-9B6F-F60B-B1FB-5E6E4017C127">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 22:57:58 UTC</createdTime>
-         <generatorID>122AF6F5-017B-7100-213C-13E808730594</generatorID>
+         <createdTime>2011-12-17 11:57:29 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <referedAttribute>D9242550-18B2-0460-7B50-36FF6C23BE5C</referedAttribute>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="quantity" id="F0B32EE3-5BDB-4417-B054-3378D10B4E12">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="archived" id="F722E59A-9627-573F-D5AE-375118F442DC">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 22:58:37 UTC</createdTime>
+         <createdTime>2011-12-17 11:54:35 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <use>0</use>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="A15D8117-03BF-C8A4-9012-756BDFD77B56">
+         <createdBy>Evan</createdBy>
+         <createdTime>2011-12-17 11:54:07 UTC</createdTime>
+         <generatorID>DC2C6A9D-F88C-68B2-2B17-77DDC99A2C00</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <referedAttribute>EE7DC397-AB63-69E8-27B6-6F23B06DD122</referedAttribute>
+         <use>1</use>
       </Attribute>
    </attributes>
    <identifiers>
-      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="283CEB00-EA07-6B9C-FDC6-D60B1B651EE5" name="PK_PART_ORDER">
+      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="77DB4AB8-C939-203D-560B-E749A4D431FE" name="TUTORIAL PK">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 22:57:42 UTC</createdTime>
+         <createdTime>2011-12-17 11:52:50 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>
-            <attributeRef>3293FC46-31E3-B685-D210-C0394E98C3D7</attributeRef>
-            <attributeRef>32744D5F-758A-6EB0-8EA0-7D34E4FD4CFA</attributeRef>
+            <attributeRef>A3E32FAB-2111-619B-20CD-5FFD481585D1</attributeRef>
          </usedAttributes>
       </identifier>
    </identifiers>
