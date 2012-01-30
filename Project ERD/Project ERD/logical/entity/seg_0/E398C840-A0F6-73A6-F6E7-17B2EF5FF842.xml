@@ -66,14 +66,6 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="A15D8117-03BF-C8A4-9012-756BDFD77B56">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-17 11:54:07 UTC</createdTime>
-         <generatorID>DC2C6A9D-F88C-68B2-2B17-77DDC99A2C00</generatorID>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <referedAttribute>EE7DC397-AB63-69E8-27B6-6F23B06DD122</referedAttribute>
-         <use>1</use>
-      </Attribute>
    </attributes>
    <identifiers>
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="77DB4AB8-C939-203D-560B-E749A4D431FE" name="TUTORIAL PK">

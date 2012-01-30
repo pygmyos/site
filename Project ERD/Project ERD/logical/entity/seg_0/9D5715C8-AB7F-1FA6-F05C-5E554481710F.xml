@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="9D5715C8-AB7F-1FA6-F05C-5E554481710F" directorySegmentName="seg_0" name="SESSION">
+   <createdBy>Evan</createdBy>
+   <createdTime>2012-01-22 20:00:02 UTC</createdTime>
+   <ownerDesignName>Project ERD</ownerDesignName>
+   <adequatelyNormalized>NO</adequatelyNormalized>
+   <expectedVolumes>0</expectedVolumes>
+   <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+   <growthPercent>0</growthPercent>
+   <growthType>Year</growthType>
+   <maxVolumes>9999999</maxVolumes>
+   <minVolumes>0</minVolumes>
+   <normalForm>Third</normalForm>
+   <fonts>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Title</foType>
+         <fontStyle>1</fontStyle>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Attribute</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Datatype</foType>
+         <colorRGB>-16744448</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>PK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>FK Element</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>UK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Not Null</foType>
+         <colorRGB>-65536</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Key</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+   </fonts>
+   <attributes>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="BB7F5A23-8C97-8D23-5141-5495FF763DC6">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-01-22 20:00:50 UTC</createdTime>
+         <generatorID>62411C6D-1DE0-870A-F669-20F6495D0186</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <referedAttribute>AEDD815C-732A-C1EB-9B6C-5702647575B2</referedAttribute>
+         <use>1</use>
+      </Attribute>
+   </attributes>
+</Entity>

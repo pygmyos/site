@@ -69,14 +69,6 @@
          <referedAttribute>FB79C84D-6D6D-C7EC-D017-0CD428F36233</referedAttribute>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="D000B781-1874-F466-497A-C5797752601B">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-17 11:56:00 UTC</createdTime>
-         <generatorID>7AD47FB9-8D0F-291B-0886-B0A3A05A4B27</generatorID>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <referedAttribute>EE7DC397-AB63-69E8-27B6-6F23B06DD122</referedAttribute>
-         <use>1</use>
-      </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id5" id="451A465A-2087-E7DD-D77F-7E26BEFC66C2">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-17 12:01:44 UTC</createdTime>
@@ -84,24 +76,6 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <referedAttribute>B3A3CA22-E3D3-960D-0CDA-D1026816DD4D</referedAttribute>
-         <use>1</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="6F275F7B-8BC8-C20F-9096-4679C75F6F7E">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-17 12:01:47 UTC</createdTime>
-         <generatorID>A39D7159-ACF2-0A3C-C5D7-CEC5DA053154</generatorID>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
-         <referedAttribute>A3E32FAB-2111-619B-20CD-5FFD481585D1</referedAttribute>
-         <use>1</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="05A17953-3C95-633F-17DC-CAC301346224">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-17 12:01:51 UTC</createdTime>
-         <generatorID>64291C52-A885-E38A-3000-1BFBCDC7F096</generatorID>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
-         <referedAttribute>FE544300-2270-0EEF-EA93-466D3FA80F95</referedAttribute>
          <use>1</use>
       </Attribute>
    </attributes>

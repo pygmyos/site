@@ -145,6 +145,20 @@
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="username" id="F1DE37A5-02AB-CF77-9F99-7481459FC172">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-01-22 19:36:18 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="companies" id="D3654AF0-B4CD-912B-B7C1-84907059DDC0">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-01-22 19:36:48 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
    </attributes>
    <identifiers>
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="952762F0-DB17-BB55-3107-917E2CA123D9" name="PERSON PK">
