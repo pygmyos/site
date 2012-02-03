@@ -1,84 +1,15 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<?php require("components.php"); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>PygmyOS | Home</title>
-    <link rel="Stylesheet" type="text/css" href="styles/style.css" />
-    <style type="text/css">
-        #header
-        {
-            background-color: #FFFFFF;
-            height: auto;
-            margin: 0;
-        }
-        #head_title
-        {
-            display: inline;
-            position: relative;
-            top: -45px;
-            margin-left: 10px;
-            font-size: 4em;
-            color: #599bdc;
-            font-family: Arial;
-            text-shadow: 0 0 1px #999;
-        }
-        #logo
-        {
-            margin: 20px auto 15px 20px;
-        }
-    </style>
+    <?php loadHead("Home"); ?>
 </head>
 <body id="home">
     <div id="container">
-        <div id="header">
-            <a href="index.html">
-                <img src="images/Icon2BlueGlow.png" alt="Logo" width="110px" height="110px" id="logo" />
-            </a>
-            <h1 id="head_title">
-                PygmyOS</h1>
-        </div>
-        <div id="navbar">
-            <div id="site-bar">
-                <ul>
-                    <li class="firstlink"><a href="index.html" id="nav-home">Home</a></li>
-                    <li><a href="features.html" id="nav-code">▼ Code</a></li>
-                    <li><a href="" id="nav-boards">Boards</a></li>
-                    <li><a href="" id="nav-projects">Projects</a></li>
-                    <li class="lastlink"><a href="contact.html" id="nav-contact">Contact</a></li>
-                </ul>
-            </div>
-            <div id="social-bar">
-                <ul>
-                    <!--<li class="youtube"><a href="http://www.youtube.com/sparkfun" target="_blank" class="hidetext">
-                        <span>YouTube</span></a></li>-->
-                    <!--<li class="vimeo"><a href="http://www.vimeo.com/sparkfun" target="_blank" class="hidetext">
-                        <span>Vimeo</span></a></li>-->
-                    <li class="gplus"><a href="https://plus.google.com/106638354592939322299" class="hidetext">
-                        <span>Google Plus</span></a></li>
-                    <li class="facebook"><a href="http://www.facebook.com/PygmyOS" class="hidetext"><span>
-                        Facebook</span></a></li>
-                    <li class="flickr"><a href="http://www.flickr.com/photos/58435130@N08/sets/72157627768508212/"
-                        target="_blank" class="hidetext"><span>Flickr</span></a></li>
-                    <li class="twitter"><a href="https://twitter.com/#!/PygmyOS" class="hidetext"><span>
-                        Twitter</span></a></li>
-                    <li class="rss"><a href="http://pygmyos.wordpress.com/feed/" class="hidetext"><span>
-                        RSS</span></a></li>
-                </ul>
-            </div>
-        </div>
-        <div id="carousel">
-            <div class="slides">
-                <div class="home_text" style="position: absolute; top: 0px; left: 0px; visibility: visible;
-                    zoom: 1; z-index: 1; opacity: 1;">
-                    <!--position: absolute; top: 0px; left: 0px; visibility: hidden;
-                    display: none; zoom: 1; z-index: 1; opacity: 0;-->
-                    <img src="images/boards/Nebula1.jpg" alt="Pygmy Nebula" />
-                    <a href="index.html" class="button" style="z-index: 10; margin-top: 347px; margin-left: 25px;">
-                        Learn More </a>
-                </div>
-            </div>
-        </div>
+        <?php   displayHeader();
+                displayNavbar(); 
+                displayCarousel(); ?>
         <div id="content" style="display:inline-block; background-color: #FFFFFF; padding: 20px 20px 20px 20px;">
             <h4>
                 Current status</h4>
