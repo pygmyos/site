@@ -24,7 +24,7 @@ function displayHeader($title = "PygmyOS", $icon = "images/Icon2BlueGlow.png")
 }
 
 //Displays the page navigation bar
-function displayNavbar( $links = array('index.html', 'features.html', '', '', 'contact.html'), 
+function displayNavbar( $links = array('index.php', 'code.php', 'boards.php', 'projects.php', 'contact.php'), 
                         $linkNames = array('Home', 'Code', 'Boards', 'Projects', 'Contact'), 
                         $linkPageIDs = array('nav-home', 'nav-code', 'nav-boards', 'nav-projects', 'nav-contact'))
 {

@@ -41,6 +41,10 @@ a
 {
     line-height: inherit;
 }
+p
+{
+    margin-bottom: 18px;
+}
 q:before, q:after, blockquote:before, blockquote:after
 {
     content: "";
@@ -978,6 +982,7 @@ http://github.com/necolas/css3-github-buttons
 {
     background-color: #FFFFFF;
     height: 36px;
+    border-bottom: 3px solid #3072b3;
 }
 #site-bar
 {
@@ -1086,7 +1091,7 @@ body#home a#nav-home, body#code a#nav-code, body#boards a#nav-boards, body#proje
     moz-box-shadow: 0 5px 5px -1px #888;
     box-shadow: 0 5px 5px -1px #888;*/
     background-color: #FFFFFF;
-    border-top: 3px solid #3072b3;
+/*    border-top: 3px solid #3072b3;*/
     border-bottom: 2px solid #3072b3;
 }
 

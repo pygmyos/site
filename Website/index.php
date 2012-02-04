@@ -19,7 +19,6 @@
                 soon. Until then, you can download our current source from one of our <a href="http://code.google.com/p/pygmyos/wiki/Source?tm=4">
                     repositories</a>.
             </p>
-            <br />
             <h4>
                 About</h4>
             <p>
@@ -28,7 +27,6 @@
                 and other similar CortexM3 core MCUs. It is quick, flexible, and user friendly.
                 Pygmy is built from the ground up with code that is both user and MCU friendly.
             </p>
-            <br />
             <h4>
             Features</h4>
             <p>
@@ -47,37 +45,7 @@
                     <li>Simple enough for a beginner to use</li>
                 </ul>
             </p>
-            <br />
-            <h4>
-            Nebula Features</h4>
-            <p>
-                <ul>
-                    <li>2” round board outline</li>
-                    <li>Straight headers with 25 general purpose IO pins
-                        <ul class="nomargin"">
-                            <li>Master clock out, timer pin</li>
-                            <li>2 USART TX/RX pairs, digital pins</li>
-                            <li>4 Timer pins</li>
-                            <li>2 Time/Analog pins</li>
-                            <li>8 Analog pins</li>
-                            <li>2 DAC ( Digital to Analog Converter ) pins</li>
-                            <li>3.3V Power</li>
-                            <li>5V Input</li>
-                            <li>Battery</li>
-                            <li>GND</li>
-                        </ul>
-                    </li>
-                    <li>STM32F100 24MHz, STM32F103 72MHz</li>
-                    <li>Cutting edge ARM Cortex M3</li>
-                    <li>2.4GHz RF</li>
-                    <li>LiPo battery charge and management</li>
-                    <li>On-board power regulation</li>
-                    <li>Support for PygmyOS</li>
-                    <li>Integrated bootloader</li>
-                    <li>4MB Flash with filesystem</li>
-                    <li>Precision temperature sensor</li>
-                </ul>
-            </p>
+            
         </div>
         <?php displayFooter(); ?>
     </div>
