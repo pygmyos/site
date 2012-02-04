@@ -9,13 +9,13 @@
     background: #699ccf; /* Firefox */
     color: #ffffff;
 }
-   
+
 /* Basic styles */
 html
 {
     overflow-y: scroll;
 }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td
 {
     margin: 0;
     padding: 0;
@@ -314,12 +314,13 @@ dl dd code
 }
 ul
 {
-    color: #333;
+/*    color: #333;*/
     margin-bottom: 1.5em;
 }
 ul.nomargin
 {
     margin-bottom: 0;
+    margin-top: 0;
 }
 ul.nomargin li
 {
@@ -434,25 +435,25 @@ hr.three
 
 /* ------------------------------------------
 CSS3 GITHUB BUTTONS (Nicolas Gallagher)
-Licensed under Unlicense 
+Licensed under Unlicense
 http://github.com/necolas/css3-github-buttons
 ------------------------------------------ */
 
 .button
-{ 
-    position: relative; 
+{
+    position: relative;
     overflow: visible;
-    display: inline-block; 
-    padding: 0.5em 1em; 
-    border: 1px solid #ddd!important; 
+    display: inline-block;
+    padding: 0.5em 1em;
+    border: 1px solid #ddd!important;
     margin: 0;
-    text-decoration: none; 
-    text-shadow: 1px 1px 0 #fff; 
-    font:11px/normal sans-serif; 
-    color: #333; 
-    white-space: nowrap; 
-    cursor: pointer; 
-    outline: none; 
+    text-decoration: none;
+    text-shadow: 1px 1px 0 #fff;
+    font:11px/normal sans-serif;
+    color: #333;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
     background-color: #ececec;
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
     background-image: -moz-linear-gradient(#f4f4f4, #ececec);
@@ -460,14 +461,14 @@ http://github.com/necolas/css3-github-buttons
     background-image: linear-gradient(#f4f4f4, #ececec);
     -webkit-background-clip: padding;
     -moz-background-clip: padding;
-    -o-background-clip: padding-box; 
+    -o-background-clip: padding-box;
     /*background-clip: padding-box;*/ /* commented out due to Opera 11.10 bug */
-    -webkit-border-radius: 0.2em; 
-    -moz-border-radius: 0.2em; 
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
     border-radius: 0.2em;
     /* IE hacks */
-    zoom: 1; 
-    *display: inline; 
+    zoom: 1;
+    *display: inline;
 }
 
 .button:hover,
@@ -476,7 +477,7 @@ http://github.com/necolas/css3-github-buttons
 .button.active {
     border-color: #3072b3;
     border-bottom-color: #2a65a0;
-    text-decoration: none; 
+    text-decoration: none;
     text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
     color: #FFF;
     background-color: #599bdc;
@@ -502,17 +503,17 @@ http://github.com/necolas/css3-github-buttons
     padding: 0;
     border: 0;
 }
-    
+
 /* ............................................................................................................. Icons */
 
 .button.icon:before {
     content: "";
-    position: relative; 
-    top: 1px; 
+    position: relative;
+    top: 1px;
     float:left;
-    width: 12px; 
-    height: 12px; 
-    margin: 0 0.75em 0 -0.25em; 
+    width: 12px;
+    height: 12px;
+    margin: 0 0.75em 0 -0.25em;
     background: url("../images/gh-icons.png") 0 99px no-repeat;
 }
 
@@ -688,10 +689,10 @@ http://github.com/necolas/css3-github-buttons
 
 .button.danger:hover,
 .button.danger:focus,
-.button.danger:active {     
+.button.danger:active {
     border-color: #b53f3a;
     border-bottom-color: #a0302a;
-    color: #fff; 
+    color: #fff;
     background-color: #dc5f59;
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#dc5f59), to(#b33630));
     background-image: -moz-linear-gradient(#dc5f59, #b33630);
@@ -700,7 +701,7 @@ http://github.com/necolas/css3-github-buttons
 }
 
 .button.danger:active,
-.button.danger.active {   
+.button.danger.active {
     border-color: #a0302a;
     border-bottom-color: #bf4843;
     background-color: #b33630;
@@ -713,9 +714,9 @@ http://github.com/necolas/css3-github-buttons
 /* ............................................................................................................. Pill */
 
 .button.pill {
-    -webkit-border-radius: 50em; 
-    -moz-border-radius: 50em; 
-    border-radius: 50em; 
+    -webkit-border-radius: 50em;
+    -moz-border-radius: 50em;
+    border-radius: 50em;
 }
 
 /* ............................................................................................................. Disable */
@@ -727,7 +728,7 @@ http://github.com/necolas/css3-github-buttons
 /* ............................................................................................................. Big */
 
 .button.big {
-    font-size: 14px; 
+    font-size: 14px;
 }
 
 .button.big.icon:before { top: 0; }
@@ -743,8 +744,8 @@ http://github.com/necolas/css3-github-buttons
     padding: 0;
     margin: 0;
     /* IE hacks */
-    zoom: 1; 
-    *display: inline; 
+    zoom: 1;
+    *display: inline;
 }
 
 .button + .button,
@@ -762,41 +763,41 @@ http://github.com/necolas/css3-github-buttons
 
 .button-group .button {
     float: left;
-    margin-left: -1px; 
+    margin-left: -1px;
 }
 
 .button-group > .button:not(:first-child):not(:last-child),
-.button-group li:not(:first-child):not(:last-child) .button { 
-    -webkit-border-radius: 0; 
-    -moz-border-radius: 0; 
-    border-radius: 0; 
+.button-group li:not(:first-child):not(:last-child) .button {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
 }
 
 .button-group > .button:first-child,
-.button-group li:first-child .button { 
-    margin-left: 0; 
-    -webkit-border-top-right-radius: 0; 
-    -webkit-border-bottom-right-radius: 0; 
-    -moz-border-radius-topright: 0; 
-    -moz-border-radius-bottomright: 0; 
-    border-top-right-radius: 0; 
-    border-bottom-right-radius: 0; 
+.button-group li:first-child .button {
+    margin-left: 0;
+    -webkit-border-top-right-radius: 0;
+    -webkit-border-bottom-right-radius: 0;
+    -moz-border-radius-topright: 0;
+    -moz-border-radius-bottomright: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .button-group > .button:last-child,
-.button-group li:last-child > .button { 
-    -webkit-border-top-left-radius: 0; 
-    -webkit-border-bottom-left-radius: 0; 
-    -moz-border-radius-topleft: 0; 
-    -moz-border-radius-bottomleft: 0; 
-    border-top-left-radius: 0; 
-    border-bottom-left-radius: 0; 
+.button-group li:last-child > .button {
+    -webkit-border-top-left-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+    -moz-border-radius-topleft: 0;
+    -moz-border-radius-bottomleft: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 /* ............................................................................................................. Minor */
 
 .button-group.minor-group .button {
-    border: 1px solid #d4d4d4; 
+    border: 1px solid #d4d4d4;
     text-shadow: none;
     background-image: none;
     background-color: #fff;
@@ -820,7 +821,7 @@ http://github.com/necolas/css3-github-buttons
 /* For mixing buttons and button groups, e.g., in a navigation bar */
 
 .button-container .button,
-.button-container .button-group 
+.button-container .button-group
 {
     vertical-align: top;
 }
@@ -828,19 +829,19 @@ http://github.com/necolas/css3-github-buttons
 /* The buttons for the social bar are from sparkfun.com */
 #social-bar .icon
 {
-    position: relative; 
+    position: relative;
     overflow: visible;
-    display: inline-block; 
-    padding: 0.5em 1em; 
-    border: 1px solid #599bdc !important; 
+    display: inline-block;
+    padding: 0.5em 1em;
+    border: 1px solid #599bdc !important;
     margin: 0;
-    text-decoration: none; 
-    text-shadow: 1px 1px 0 #fff; 
-    font:11px/normal sans-serif; 
-    color: #333; 
-    white-space: nowrap; 
-    cursor: pointer; 
-    outline: none; 
+    text-decoration: none;
+    text-shadow: 1px 1px 0 #fff;
+    font:11px/normal sans-serif;
+    color: #333;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
     background-color: #ececec;
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
     background-image: -moz-linear-gradient(#f4f4f4, #ececec);
@@ -848,17 +849,17 @@ http://github.com/necolas/css3-github-buttons
     background-image: linear-gradient(#f4f4f4, #ececec);
     -webkit-background-clip: padding;
     -moz-background-clip: padding;
-    -o-background-clip: padding-box; 
+    -o-background-clip: padding-box;
     /*background-clip: padding-box;*/ /* commented out due to Opera 11.10 bug */
-    -webkit-border-radius: 0.2em; 
-    -moz-border-radius: 0.2em; 
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
     border-radius: 0.2em;
     height: 20px;
     width: 20px;
     margin: 0 0px 0 0;
     /* IE hacks */
-    zoom: 1; 
-    *display: inline; 
+    zoom: 1;
+    *display: inline;
 }
 
 #social-bar .icon:hover,
@@ -867,7 +868,7 @@ http://github.com/necolas/css3-github-buttons
 #social-bar .icon.active {
     border-color: #3072b3;
     border-bottom-color: #2a65a0;
-    text-decoration: none; 
+    text-decoration: none;
     text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
     color: #FFF;
     background-color: #599bdc;
@@ -964,7 +965,7 @@ http://github.com/necolas/css3-github-buttons
 {
     background-position: -266px 0;
 }
-        
+
 .hidetext span
 {
     display: inline-block;
@@ -994,7 +995,7 @@ http://github.com/necolas/css3-github-buttons
     float: left;
     height: 35px;
     padding: 0 0 0 0;
-    border-top: 1px solid #599bdc !important;
+    border-top: 1px solid #3072b3 !important;
     border-right: 1px solid #3072b3;
 }
 #site-bar ul li a
@@ -1045,10 +1046,16 @@ body#home a#nav-home, body#code a#nav-code, body#boards a#nav-boards, body#proje
     /*-moz-border-radius-topleft: 10px;
     border-top-left-radius: 10px;*/
 }
-#site-bar ul li.lastlink, #site-bar ul li.lastlink a
+#site-bar ul li.lastlink
 {
     -moz-border-radius-topright: 7px;
     border-top-right-radius: 7px;
+    /*border-right: 1px solid #599bdc !important;*/
+}
+#site-bar ul li.lastlink a
+{
+    -moz-border-radius-topright: 5px;
+    border-top-right-radius: 5px;
     /*border-right: 1px solid #599bdc !important;*/
 }
 
@@ -1061,7 +1068,7 @@ body#home a#nav-home, body#code a#nav-code, body#boards a#nav-boards, body#proje
     width: 750px;
     margin: 0 auto 30px auto;
     height:auto;
-}      
+}
 #footer, #container
 {
     -moz-border-radius-bottomright: 10px;
@@ -1081,7 +1088,7 @@ body#home a#nav-home, body#code a#nav-code, body#boards a#nav-boards, body#proje
     background-color: #FFFFFF;
     border-top: 3px solid #3072b3;
     border-bottom: 2px solid #3072b3;
-}d
+}
 
 #carousel .previous,
 #carousel .next {
@@ -1132,7 +1139,7 @@ body#home a#nav-home, body#code a#nav-code, body#boards a#nav-boards, body#proje
 	float: 					left;
 	background: 			url("/images/carousel-ui.png") no-repeat -2px -33px;
 	margin-right: 			4px;
-} 
+}
 
 .not-ready .slides {
 	display: 				none;
@@ -1180,4 +1187,32 @@ body#home a#nav-home, body#code a#nav-code, body#boards a#nav-boards, body#proje
 #logo
 {
     margin: 30px auto 20px 28px;
+}
+
+#content
+{
+    display:inline-block;
+    background-color: #FFFFFF;
+    padding: 20px 20px 20px 20px;
+}
+
+#footer
+{
+    background-color: #f2f2ee;
+    height: auto;
+    border-top: 1px solid #93948c;
+    color: #93948c;
+    padding: 3px 3px 3px 3px;
+    text-align: center;
+}
+
+#footer a
+{
+    color: #a4a59d;
+/*    text-decoration: underline;*/
+}
+
+#footer a:hover
+{
+    color: #599bdc;
 }
