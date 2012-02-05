@@ -1,0 +1,46 @@
+// $Id: CHANGELOG.txt,v 1.16.2.3 2011/01/17 14:10:07 rehos Exp $
+
+jskitcomments 6.x-3.0, 2011-01-17:
+#1010058 by rehos: Fixed Admin menu unusable in D6 version
+by rehos: Fixed problem that the views field renders JS-Kit Echo Comments 
+  Widget for each node type
+#715420 by rehos: Added new views field that renders JS-Kit Echo Comments 
+  Widget for node
+
+jskitcomments 6.x-2.5, 2010-01-19
+#689028 by rehos: Fixed Inconsistent default external profile binding setting
+  for user id format
+#689022 by rehos: Fixed undefined variable $base_url
+
+jskitcomments 6.x-2.4, 2010-01-12
+by rehos: Changed test for authenticated user to test for uid != 0
+#560988 by elgreg: Registered users support (External Profile Binding)
+by rehos: Fixed link in help text
+
+jskitcomments 6.x-2.3, 2009-08-11
+by rehos: Renamed JS-Kit Comments to JS-Kit Echo in info file
+
+jskitcomments 6.x-2.2, 2009-08-11
+#545726 by rehos: Fixed The label setting is ignored by the module
+#544664 by rehos: Reflect upgrade by JS-Kit of JS-Kit Comments to JS-Kit Echo
+
+jskitcomments 6.x-2.1, 2009-07-25
+#530756 by rehos: Fixed javascript that causes IE7 to fail displaying 
+  comment counts
+
+jskitcomments 6.x-2.0, 2009-07-24
+by rehos: Updated texts referencing skins that will be deprecated when
+  echo is released by JS-Kit
+by rehos: Fixed improper use of path_to_theme(). Now using drupal_get_path()
+  to retrieve the path to the active theme
+#464410 by rehos: Added feature to display the number of comments for nodes
+  displayed in views and fixed multilanguage issue with comment count
+#519152 by Rob Loach, rehos: Added feature to display comment counts. And now
+  using Drupal behaviors instead of hook_footer (see README.txt)
+#493944 by rehos: Renamed path attribute to uniq for compliance with JS-Kit API
+by rehos: Added the correct documentation link in README.txt
+#519044 by Rob Loach: Fixed, now using drupal_attributes() to correctly 
+  initialize variables
+
+jskitcomments 6.x-1.0, 2009-05-11
+Initial release

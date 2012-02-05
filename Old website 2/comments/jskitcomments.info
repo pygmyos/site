@@ -1,0 +1,12 @@
+; $Id: jskitcomments.info,v 1.3 2009/08/11 08:21:05 rehos Exp $
+name = JS Kit Echo
+description = Integrate the JS-Kit Echo system with your Drupal website.
+core = 6.x
+package = JS Kit
+
+; Information added by drupal.org packaging script on January 1, 1970 - 00:00
+version = "6.x-3.0"
+core = "6.x"
+project = "jskitcomments"
+datestamp = "1295273814"
+

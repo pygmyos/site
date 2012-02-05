@@ -1,0 +1,369 @@
+<?php
+// $Id: jskitcomments.module,v 1.11.2.2 2011/01/17 14:10:07 rehos Exp $
+
+/**
+ * Enable views API version 2
+ */
+function jskitcomments_views_api() {
+  return Array(
+    'api' => 2,
+  );
+}
+
+/**
+ * Implementation of hook_help().
+ */
+function jskitcomments_help($path, $arg) {
+  switch ($path) {
+  case 'admin/help#jskitcomments':
+    $output = '<p>'. t('Uses the <a href="@jskitcomments">JS-Kit Echo</a> system to enhance comments.', array('@jskitcomments' => 'http://js-kit.com/echo')) .'</p>';
+    $output.= '<h3>'. t('Installation') .'</h3>';
+    $output.= '<ol><li>'. t('In the <a href="@configuration">JS-Kit Echo configuration</a>, set the domain to what you registered with JS-Kit Echo, and what node types you would like to have comments', array('@configuration' => url('admin/settings/jskitcomments'))) .'</li>';
+    $output.= '<li>'. t('Visit the <a href="@permissions">permissions</a>, and set which users you would like to have the ability to view JS-Kit Echo threads (recommended for role)', array('@permissions' => url('admin/user/permissions', array('fragment' => 'module-jskitcomments')))) .'</li></ol>';
+    return $output;
+  case 'admin/settings/jskitcomments':
+    return '<p>'. t('The following provides the configuration options for the <a href="@jskitcomments">JS-Kit Echo</a> web service.', array('@jskitcomments' => 'http://js-kit.com/echo')) .'</p>';
+  }
+}
+
+/**
+ * Implementation of hook_perm().
+ */
+function jskitcomments_perm() {
+  return array(
+    'administer jskitcomments',
+    'view jskitcomments',
+  );
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function jskitcomments_menu() {
+  $items = array();
+  $items['admin/settings/jskitcomments'] = array(
+    'title' => 'JS-Kit Echo',
+    'description' => 'Provides configuration options for the JS-Kit Echo system.',
+    'access arguments' => array('administer jskitcomments'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('jskitcomments_admin_settings'),
+    'file' => 'jskitcomments.admin.inc'
+  );
+  $items['jskitcomments/epb'] = array(
+    'title' => 'epb',
+    'page callback' => 'jskitcomments_generate_epb',
+    'access arguments' => array('access content'),
+    'file' => 'jskitcomments.epb.inc',
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Implementation of hook_nodeapi().
+ */
+function jskitcomments_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
+  switch ($op) {
+    case 'view':
+      // Only show comments on the full non-teasered page
+      if (!$a3 && $a4 && user_access('view jskitcomments')) {
+        $content_enabled = variable_get('jskitcomments_content_area', 1);
+        if ($content_enabled) {
+          $types = variable_get('jskitcomments_nodetypes', array());
+          if (!empty($types[$node->type])) {
+            $script = jskitcomments_script($node, 'jskitcomments_content_area');
+            $weight = variable_get('jskitcomments_content_weight', 50);
+            $node->content['jskitcomments'] = array('#value' => $script, '#weight' => $weight);      
+          }
+        }
+      }
+    break;
+  }
+}
+
+/**
+ * Implementation of hook_link.
+ */
+function jskitcomments_link($type, $object, $teaser = FALSE) {
+  $links = array();
+  if ($type == 'node' && $teaser && variable_get('jskitcomments_link', 1)) {
+    $count = jskitcomments_count_helper($object);
+    // Only display the link for nodes that have comments.
+    if (!empty($count)) {
+        // Create the link itself, featuring the new span tag.
+        $links['jskitcomments_count'] = array(
+          'title' => $count,
+          'href' => 'node/'. $object->nid,
+          'attributes' => array(
+            'title' => t('View comments regarding this topic.'),
+          ),
+          'html' => TRUE,
+        );      
+    }
+  }
+  return $links;
+}
+
+/**
+ * Implementation of hook_block().
+ */
+function jskitcomments_block($op = 'list', $delta = 0) {
+  if ($op == 'list') {
+    $blocks[0]['info'] = t('JS-Kit Echo');
+    return $blocks;
+  }
+  else if ($op == 'view' && user_access('view jskitcomments')) {
+    $node = menu_get_object();
+    $types = variable_get('jskitcomments_nodetypes', array());
+    if (!empty($types[$node->type])) {
+      // Inject the script
+      $node->jskitcomments = TRUE;
+      $block['subject'] = t('JS-Kit Echo');
+      $block['content'] = jskitcomments_script($node, 'jskitcomments_block');
+      return $block;
+    }
+  }
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function jskitcomments_theme() {
+  return array(
+    'jskitcomments_content_area' => array(
+      'arguments' => array(
+        'uniq' => NULL,
+        'permalink' => NULL,
+        'attributes' => NULL
+      ),
+    ),
+    'jskitcomments_views_field_widget' => array(
+      'arguments' => array(
+        'uniq' => NULL,
+        'permalink' => NULL,
+        'attributes' => NULL
+      ),
+    ),
+    'jskitcomments_block' => array(
+      'arguments' => array(
+        'uniq' => NULL,
+        'permalink' => NULL,
+        'attributes' => NULL
+      ),
+    ),
+  );
+}
+
+/**
+ * Renders the JavaScript to display the JS-Kit Echo thread for the current node in the
+ * content area of the node. Themes can override this function to provide a fully customized 
+ * JS-Kit Echo template.
+ *
+ * @param $uniq
+ *   The unique path for the current page.
+ * @param $permalink
+ *   The permalink for the current page.
+ * @param $attributes
+ *   The attributes that control the JS-Kit Echo widget.
+ */
+function theme_jskitcomments_content_area($uniq, $permalink, $attributes = Array()) {
+  $attribs = drupal_attributes($attributes);
+  $title = t('Comments');
+  $jskitcomments = <<<EOT
+<h2 class="title">$title</h2>
+<div class="js-kit-comments" uniq="$uniq" permalink="$permalink" $attribs></div>
+EOT;
+  return $jskitcomments;
+}
+
+/**
+ * Renders the JavaScript to display the JS-Kit Echo thread for the current node in the
+ * view. Themes can override this function to provide a fully customized 
+ * JS-Kit Echo template.
+ *
+ * @param $uniq
+ *   The unique path for the current page.
+ * @param $permalink
+ *   The permalink for the current page.
+ * @param $attributes
+ *   The attributes that control the JS-Kit Echo widget.
+ */
+function theme_jskitcomments_views_field_widget($uniq, $permalink, $attributes = Array()) {
+  $attribs = drupal_attributes($attributes);
+  $title = t('Comments');
+  $jskitcomments = <<<EOT
+<div class="js-kit-comments" uniq="$uniq" permalink="$permalink" $attribs></div>
+EOT;
+  return $jskitcomments;
+}
+
+/**
+ * Renders the JavaScript to display the JS-Kit Echo thread for the current node in a block.
+ * Themes can override this function to provide a fully customized JS-Kit Echo template.
+ *
+ * @param $uniq
+ *   The unique path for the current page.
+ * @param $permalink
+ *   The permalink for the current page.
+ * @param $attributes
+ *   The attributes that control the JS-Kit Echo widget.
+ */
+function theme_jskitcomments_block($uniq, $permalink, $attributes = Array()) {
+  $attribs = drupal_attributes($attributes);
+  $jskitcomments = <<<EOT
+<div class="js-kit-comments" uniq="$uniq" permalink="$permalink" $attribs></div>
+EOT;
+  return $jskitcomments;
+}
+
+/**
+ * Generate the JS-Kit Echo script tag for the node with the specified theme hook.
+ * 
+ * @param $node
+ *   The node for which to generate JS-Kit Echo Widget.
+ * @param $hook
+ *   The theme hook.
+ * @param $add_feed
+ *   If TRUE adds the comment rss feed for this node.
+ */
+function jskitcomments_script($node, $hook, $add_feed = TRUE, $override_paginate = NULL) {
+  $languageneutral = variable_get('jskitcomments_languageneutral', 1);
+  $uniq = "node/$node->nid";
+  if ($languageneutral) {
+    if ($node->tnid > 0) {
+      $uniq = "node/$node->tnid";
+    }
+  }
+  $permalink = url($uniq, array('absolute' => TRUE, 'alias' => FALSE));
+  $uniq = '/'.$uniq;
+  $domain = trim(variable_get('jskitcomments_domain', ''));
+  $rss = trim(variable_get('jskitcomments_rss', ''));
+  $rsstitle = trim(variable_get('jskitcomments_rsstitle', t('JS-Kit Comments RSS')));
+  $label = trim(variable_get('jskitcomments_label', ''));
+  if (!isset($override_paginate)) {
+    $paginate = trim(variable_get('jskitcomments_paginate', ''));
+  } else {
+    $paginate = trim($override_paginate);
+  }
+  $backwards = variable_get('jskitcomments_backwards', 0);
+  $thread = variable_get('jskitcomments_thread', 1);
+  $avatars = variable_get('jskitcomments_avatars', 0);
+  $skin = trim(variable_get('jskitcomments_skin', ''));
+  $adminbgcolor = variable_get('jskitcomments_adminbgcolor', '');
+  $flashcolor = variable_get('jskitcomments_flashcolor', '');
+  $attributes = Array();
+  if (!empty($domain)) {
+    $attributes['domain'] = check_plain($domain);
+  }
+  if ($add_feed && !empty($rss)) {
+    drupal_add_feed(check_url($rss.$uniq), check_plain($rsstitle));
+  }
+  if (!empty($paginate) && is_numeric($paginate)) {
+    $attributes['paginate'] = check_plain($paginate);
+  }
+  if ($backwards) {
+    $attributes['backwards'] = 'yes';
+  }
+  if (!$thread) {
+    $attributes['thread'] = 'no';
+  }
+  if (!$avatars) {
+    $attributes['avatars'] = 'no';
+  }
+  if (!empty($label)) {
+    $attributes['label'] = check_plain($label);
+  }
+  if (!empty($skin)) {
+    $attributes['skin'] = check_plain($skin);
+  }
+  if (!empty($adminbgcolor)) {
+    $attributes['adminBgColor'] = check_plain('#'.$adminbgcolor);
+  }
+  if (!empty($flashcolor)) {
+    $attributes['flashColor'] = check_plain('#'.$flashcolor);
+  }
+
+  // Load the JS-Kit comments API.
+  jskitcomments_add('comments');
+
+  return theme($hook, $uniq, $permalink, $attributes);
+}
+
+/**
+ * Returns the required html to display the number of comments comment for a node.
+ * An empty string is returned if comments are disabled for the node type or if
+ * the current user has no access to comments.
+ * 
+ * @param $node
+ *   The node for which to display the number of comments
+ */
+function jskitcomments_count_helper($node) {
+  // Only display the link for nodes that have comments.
+  if (in_array($node->type, variable_get('jskitcomments_nodetypes', array()), TRUE)) {
+    // Make sure the user has access to view the comments.
+    if (user_access('view jskitcomments')) {
+      // Load the JS-Kit comment count API.
+      jskitcomments_add('comments-count');
+
+      $languageneutral = variable_get('jskitcomments_languageneutral', 1);
+      $uniq = "node/$node->nid";
+      if ($languageneutral) {
+         if ($node->tnid > 0) {
+           $uniq = "node/$node->tnid";
+         }
+      }
+      // Create the span tag that will load in the number of comments.
+      return '<span'. drupal_attributes(array(
+        'class' => 'js-kit-comments-count',
+        'permalink' => url($uniq, array('absolute' => TRUE, 'alias' => FALSE)),
+        'uniq' => '/'.$uniq,
+        'domain' => check_plain(trim(variable_get('jskitcomments_domain', ''))),
+      )) .'></span>';
+    }
+  }
+  
+  return '';
+}
+
+/**
+ * Adds the required Drupal JavaScript behaviors to the page.
+ *
+ * @param $type
+ *   (optional) If given, will processes the given JS-Kit API to load. Available
+ *   values are "comments" to display the full comments list on the page, or
+ *   "comments-count" to display the number of comments in the links.
+ */
+function jskitcomments_add($type = NULL) {
+  // Make sure to only add JavaScript types once.
+  static $added = NULL;
+  if (!isset($added)) {
+    // Add the Drupal JavaScript behavior.
+    drupal_add_js(drupal_get_path('module', 'jskitcomments') .'/jskitcomments.js');
+    // State that the JavaScript has been added so that it's not added twice.
+    $added = array();
+  }
+  // Process the type of JavaScript from JS-Kit to load.
+  if (isset($type) && !isset($added[$type])) {
+    
+    //Allow External Profile Binding
+    $epb = variable_get('jskitcomments_epb_on',0);
+    if($epb){
+      $epburl = variable_get('jskitcomments_epb_url','/jskitcommnts/epb');
+      drupal_add_js(array('jskitcommentsEPBurl' => array($epburl)), 'setting');
+    } 
+        
+    drupal_add_js(array('jskitcomments' => array($type)), 'setting');
+    // Allow themes to add their own CSS to change the styling of the comments.
+    if ($type == 'comments') {
+      // Let javascript load CSS from the active theme folder
+      global $theme;
+      init_theme();
+      $css = drupal_get_path('theme', $theme).'/jskitcomments.css';
+      if (file_exists($css)) {
+        drupal_add_js(array('jskitcommentscss' => '/'.$css), 'setting');
+      }
+    }
+    $added[$type] = TRUE;
+  }
+}

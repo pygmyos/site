@@ -1,0 +1,83 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="basic.css" />
+</head>
+<body>
+    <p>
+        <pre>
+    Progress report! The first PygmyWEB prototypes have been assembled and tested!
+    Tested functions include:
+        JTAG
+        USB
+        Bootloader
+        2.4GHz RF
+        8MB FLASH
+        32KB SRAM
+        Boost Converter ( charge, run from solar cell )
+        LiPO charger
+    </pre>
+        <img src="pygmyweb_board_001.jpg" border="1">
+        <br>
+        <pre>
+        I will begin the mesh networking code in ernest now. Other code that needs to
+    be completed is the memory allocation functions to take advantage of the external
+    SRAM. First release of basic libraries and bootloader coming soon.
+    </pre>
+    </p>
+    <hr>
+    <pre>
+What is Pygmy?
+    The condensed version is: Pymgy is an Operating System for MCUs.
+    
+Why another Operating System?
+    The answer is apparent if you simply look at the options.
+
+    Pygmy was originally intended for the MSP430 series. It has since outgrown
+the MSP430 and is now primarilly intended for ARM, specifically STM32 and other
+similar CortexM3 core MCUs. It is quick, flexible and user friendly. 
+    Pygmy is built from the ground up with MCU friendly code, including the
+following:
+
+    Bootloader:
+        The Pygmy Bootloader provides a simple yet powerful interface to accomplish
+        a variety of goals. It has an integrated X-Modem driver, a PygmyFAT file
+        system interface ( list files, rename, remove, receive, send ), re-flashing,
+        as well as a simple memory debugging interface( peek and poke with memory
+        dump ).
+    PygmyFAT and FAT12/FAT16: 
+        PygmyFAT is ideally suited to embedded FLASH memory.
+        Unlike FAT12/FAT16, it's specificaly designed to minimize repeated write
+        cycles to any given location in memory, helping increase reliabilty.
+    PygmyResource: 
+        A multimedia resource file format that supports audio, video,
+        images, fonts and image strips. 
+    String Manipulation: 
+        Pygmy includes a library with such functionality as 
+        Base64 and hex encoded translation functions. 
+    Commandline Framework: 
+        Pygmy includes a command line framework, making it a
+        breeze to interface via scripting or IO streams. 
+    Video Interface: 
+        Pygmy includes a graphics interface framework, all high level
+        code is separated, only a board-level patch needs to be provided. 
+    PFTP: 
+        FTP over HTTP for a small footprint file transfer method on web enabled
+        devices. PFTP is highly tolerant of degraded connections.
+    PDIA: 
+        Pygmy Data Integrity Algorithm provides a seamless way to generate high
+        strength sums on data streams to protect data transfers from corruption.
+    Multithreading: 
+        Load up the threads! Tasks are driven my millisec timer and have fully
+        configurable use of resources, time slots, max tasks, etc.
+    Messaging:
+        Inter-process communications system that is easy to use and thread safe
+    Clock:
+        Real Time Clock with calender functions as well as a millisec timer for
+        threads and general timing.
+    
+    </pre>
+    <p>
+        Contact admin@pymgy-os.com for site issues<br>
+        Contact support@pygmy-os.com with questions</p>
+</body>
+</html>

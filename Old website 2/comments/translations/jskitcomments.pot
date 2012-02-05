@@ -1,0 +1,295 @@
+# $Id: jskitcomments.pot,v 1.4.2.1 2010/02/19 13:50:35 rehos Exp $
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  jskitcomments.admin.inc,v 1.7 2010/01/19 08:33:33 rehos
+#  views_handler_field_jskitcomments_widget.inc: n/a
+#  jskitcomments.views.inc,v 1.1 2009/07/17 21:20:02 rehos
+#  jskitcomments.module,v 1.11 2010/01/06 10:12:28 rehos
+#  jskitcomments.info,v 1.3 2009/08/11 08:21:05 rehos
+#  jskitcomments.js,v 1.4 2010/01/06 10:12:28 rehos
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2010-02-19 14:45+0100\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: jskitcomments.admin.inc:13
+msgid "Node settings"
+msgstr ""
+
+#: jskitcomments.admin.inc:19
+msgid "Language neutral"
+msgstr ""
+
+#: jskitcomments.admin.inc:20
+msgid "Check this box if you want comments to apply for the source node and translated nodes. Uncheck if you want comments per languange"
+msgstr ""
+
+#: jskitcomments.admin.inc:25
+msgid "Node Types"
+msgstr ""
+
+#: jskitcomments.admin.inc:26
+msgid "Apply comments only to the selected node types."
+msgstr ""
+
+#: jskitcomments.admin.inc:32
+msgid "Display in content area"
+msgstr ""
+
+#: jskitcomments.admin.inc:33
+msgid "Check this box if you want to display the comments within the content area"
+msgstr ""
+
+#: jskitcomments.admin.inc:38
+msgid "Content weight"
+msgstr ""
+
+#: jskitcomments.admin.inc:41
+msgid "The content weight controls the position of the JS-Kit Echo widget within the content area"
+msgstr ""
+
+#: jskitcomments.admin.inc:46
+msgid "Display comment count links"
+msgstr ""
+
+#: jskitcomments.admin.inc:47
+msgid "Check this box if you want to display the comment count links with teasers"
+msgstr ""
+
+#: jskitcomments.admin.inc:52
+msgid "Domain settings"
+msgstr ""
+
+#: jskitcomments.admin.inc:58
+msgid "Domain"
+msgstr ""
+
+#: jskitcomments.admin.inc:59
+msgid "Enter your domain if you want to target a different domain than your website. Otherwise leave it blank."
+msgstr ""
+
+#: jskitcomments.admin.inc:64
+msgid "RSS"
+msgstr ""
+
+#: jskitcomments.admin.inc:65
+msgid "Enter the url of your JS-Kit Echo RSS feed."
+msgstr ""
+
+#: jskitcomments.admin.inc:70
+msgid "RSS Title"
+msgstr ""
+
+#: jskitcomments.admin.inc:71
+msgid "Enter the title of your JS-Kit Echo RSS feed."
+msgstr ""
+
+#: jskitcomments.admin.inc:72
+msgid "JS-Kit Echo RSS"
+msgstr ""
+
+#: jskitcomments.admin.inc:76
+msgid "Customization settings"
+msgstr ""
+
+#: jskitcomments.admin.inc:82
+msgid "Label"
+msgstr ""
+
+#: jskitcomments.admin.inc:83
+msgid "You can override the default \"Leave a comment\" message by using entering a label. Otherwise leave it blank."
+msgstr ""
+
+#: jskitcomments.admin.inc:88 views_handler_field_jskitcomments_widget.inc:44
+msgid "Paginate"
+msgstr ""
+
+#: jskitcomments.admin.inc:91 views_handler_field_jskitcomments_widget.inc:47
+msgid "You can break long lists of comments into multiple pages by specifying the number of comments per page. Otherwise leave it blank."
+msgstr ""
+
+#: jskitcomments.admin.inc:96
+msgid "Backwards"
+msgstr ""
+
+#: jskitcomments.admin.inc:97
+msgid "You can check this box to make the comments on a page appear in reverse chronological order. This attribute also places the comments controls at the top of the comments box."
+msgstr ""
+
+#: jskitcomments.admin.inc:102
+msgid "Thread"
+msgstr ""
+
+#: jskitcomments.admin.inc:103
+msgid "Use this checkbox to turn threading on/off"
+msgstr ""
+
+#: jskitcomments.admin.inc:108
+msgid "Admin background color"
+msgstr ""
+
+#: jskitcomments.admin.inc:112
+msgid "Use this attribute to change the background color of post made by site admin. Allows users to easily recognize site admin."
+msgstr ""
+
+#: jskitcomments.admin.inc:116
+msgid "Flash color"
+msgstr ""
+
+#: jskitcomments.admin.inc:120
+msgid "Use this attribute to override the default flashing background color used to highlight a post that has just been submitted. Default color is yellow."
+msgstr ""
+
+#: jskitcomments.admin.inc:124
+msgid "Not supported by JS-Kit Echo"
+msgstr ""
+
+#: jskitcomments.admin.inc:130
+msgid "Skin"
+msgstr ""
+
+#: jskitcomments.admin.inc:131
+msgid "You can override the default skin by entering the name of the desired skin. Otherwise leave it blank."
+msgstr ""
+
+#: jskitcomments.admin.inc:136
+msgid "Avatars"
+msgstr ""
+
+#: jskitcomments.admin.inc:137
+msgid "Use this checkbox to turn avatars on/off"
+msgstr ""
+
+#: jskitcomments.admin.inc:143
+msgid "External Profile Binding (EPB)"
+msgstr ""
+
+#: jskitcomments.admin.inc:149
+msgid "Use External Profile Binding (EPB)"
+msgstr ""
+
+#: jskitcomments.admin.inc:150
+msgid "See the JS-Kit Echo Wiki for more information: "
+msgstr ""
+
+#: jskitcomments.admin.inc:156
+msgid "Secret Key"
+msgstr ""
+
+#: jskitcomments.admin.inc:157
+msgid "In order to set up EPB for a site, the publisher and\n\t\t\t\t\t\tJS-Kit need to agree on a secret key (used by JS-Kit to\n\t\t\t\t\t\tensure EPB-related data was not altered by a third\n\t\t\t\t\t\tparty) and the format of the host system user id."
+msgstr ""
+
+#: jskitcomments.admin.inc:166
+msgid "User ID Format"
+msgstr ""
+
+#: jskitcomments.admin.inc:167
+msgid "<p>The user id is a key which identifies the host system's user within JS-Kit system (@id will be replaced with unique user identifier - from Drupal or, if defined below, third party cookie.). The id has a form of a URL (as per RFC3986) with the following additional constraints:</p>\n\t<ul>\n    <li>The only allowed schema is \"http\".</li>\n    <li>No upper case letters allowed.</li>\n    <li>The URL should end with \"/\".</li>\n\t</ul>\n\t\n<p>JS-Kit places user ids of different publishers into the same namespace, so to avoid collisions the user ids are normally derived from the publisher's domain name. Here are the examples of valid user ids:</p>\n\n    <ul><li>http://joe.smith.domain.com/</li>\n    <li>http://domain.com/user/joe.smith/</li>\n  </ul>\n<p>JS-Kit needs to know which part of the user id is constant and which may vary\nfor different users (the latter is joe.smith in the above examples).</p>"
+msgstr ""
+
+#: jskitcomments.admin.inc:186
+msgid "Non-drupal authentication EPB path (advanced and not common)"
+msgstr ""
+
+#: jskitcomments.admin.inc:187
+msgid "Use this option if you would like to define a custom\n\t\t\t\t\t\tphp function (a menu hook) to define the values of the user\n\t\t\t\t\t\tprofile id and information. Enter the path below. The path\n\t\t\t\t\t\tshould be defined by a menu hook in your own custom module\n\t\t\t\t\t\tthat sets various properties and returns an EPB json object.\n\t\t\t\t\t\tSee the jskitcomments.epb.inc file for an example."
+msgstr ""
+
+#: jskitcomments.views.inc:6
+msgid "JS-Kit Echo Comments Count"
+msgstr ""
+
+#: jskitcomments.views.inc:7
+msgid "The number of JS-Kit Echo Comments for the node."
+msgstr ""
+
+#: jskitcomments.views.inc:13
+msgid "JS-Kit Echo Comments Widget"
+msgstr ""
+
+#: jskitcomments.views.inc:14
+msgid "JS-Kit Echo Comments Widget for the node."
+msgstr ""
+
+#: jskitcomments.module:19
+msgid "Uses the <a href=\"@jskitcomments\">JS-Kit Echo</a> system to enhance comments."
+msgstr ""
+
+#: jskitcomments.module:20
+msgid "Installation"
+msgstr ""
+
+#: jskitcomments.module:21
+msgid "In the <a href=\"@configuration\">JS-Kit Echo configuration</a>, set the domain to what you registered with JS-Kit Echo, and what node types you would like to have comments"
+msgstr ""
+
+#: jskitcomments.module:22
+msgid "Visit the <a href=\"@permissions\">permissions</a>, and set which users you would like to have the ability to view JS-Kit Echo threads (recommended for role)"
+msgstr ""
+
+#: jskitcomments.module:25
+msgid "The following provides the configuration options for the <a href=\"@jskitcomments\">JS-Kit Echo</a> web service."
+msgstr ""
+
+#: jskitcomments.module:99
+msgid "View comments regarding this topic."
+msgstr ""
+
+#: jskitcomments.module:113;122;45
+msgid "JS-Kit Echo"
+msgstr ""
+
+#: jskitcomments.module:172;194
+msgid "Comments"
+msgstr ""
+
+#: jskitcomments.module:242
+msgid "JS-Kit Comments RSS"
+msgstr ""
+
+#: jskitcomments.module:34
+msgid "administer jskitcomments"
+msgstr ""
+
+#: jskitcomments.module:35
+msgid "view jskitcomments"
+msgstr ""
+
+#: jskitcomments.module:46
+msgid "Provides configuration options for the JS-Kit Echo system."
+msgstr ""
+
+#: jskitcomments.module:53
+msgid "epb"
+msgstr ""
+
+#: jskitcomments.info:0
+msgid "JS Kit Echo"
+msgstr ""
+
+#: jskitcomments.info:0
+msgid "Integrate the JS-Kit Echo system with your Drupal website."
+msgstr ""
+
+#: jskitcomments.info:0
+msgid "JS Kit"
+msgstr ""
+
+#: jskitcomments.js:0
+msgid "1 Comment"
+msgid_plural "@count Comments"
+msgstr[0] ""
+msgstr[1] ""
+

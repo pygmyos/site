@@ -1,1 +1,1 @@
-Contains code and diagrams for the new PygmyOS site.
+Contains code and diagrams for the PygmyOS site.

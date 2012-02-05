@@ -1,0 +1,2 @@
+addhandler x-httpd-python23 .py
+

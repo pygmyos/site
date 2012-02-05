@@ -1,0 +1,91 @@
+<meta http-equiv="refresh" content="0;url=http://www.pygmy-os.com" />
+<!--Redirect-->
+<!--Location: driver.js/topNavigationLink()-->
+<div id="page">
+    <div class="topNaviagationLink">
+        <a href="index">Home</a></div>
+    <div class="topNaviagationLink">
+        <a href="features">Features</a></div>
+    <div class="topNaviagationLink">
+        <a href="files/packages">Downloads</a></div>
+    <div class="topNaviagationLink">
+        <a href="contact">Contact Us</a></div>
+</div>
+<!--Location: driver.js/structureGallery()-->
+<div id="galleryFrame">
+    <div class="content">
+        <div id="myGallery">
+            <div class="imageElement">
+                <h3>
+                    Web Board</h3>
+                <p>
+                    Photo View (Blue)</p>
+                <a href="#" title="open image" class="open"></a>
+                <img alt="Web Board" src="images/pics/Main1.jpg" class="full" />
+                <img src="images/pics/Main1Mini.jpg" class="thumbnail" alt="Web Board" />
+            </div>
+            <div class="imageElement">
+                <h3>
+                    Web Board</h3>
+                <p>
+                    Photo View (Normal)</p>
+                <a href="#" title="open image" class="open"></a>
+                <img src="images/pics/Main2.jpg" class="full" alt="Web Board" />
+                <img src="images/pics/Main2Mini.jpg" class="thumbnail" alt="Web Board" />
+            </div>
+            <div class="imageElement">
+                <h3>
+                    Web Board</h3>
+                <p>
+                    Front View</p>
+                <a href="#" title="open image" class="open"></a>
+                <img src="images/pics/Main3.jpg" class="full" alt="Web Board" />
+                <img src="images/pics/Main3Mini.jpg" class="thumbnail" alt="Web Board" />
+            </div>
+            <div class="imageElement">
+                <h3>
+                    Web Board</h3>
+                <p>
+                    Back View</p>
+                <a href="#" title="open image" class="open"></a>
+                <img src="images/pics/Main4.jpg" class="full" alt="Web Board" />
+                <img src="images/pics/Main4Mini.jpg" class="thumbnail" alt="Web Board" />
+            </div>
+        </div>
+    </div>
+</div>
+<!--Location: driver.js/footer()-->
+<div id="footer">
+    <a href="http://www.pygmy-os.com">PygmyOs</a> Website Design and Copyright (C) 2011
+    Evan Teitelman &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PygmyOs Logo and Trademark Copyright
+    (C) 2011 Warren D Greenway
+</div>
+<!------Transfer Code Below------>
+<!--Location: driver.js/embedGallery()-->
+<!--Split This-->
+<script type="text/javascript">
+
+
+    function startGallery() {
+        var myGallery = new gallery($('myGallery'), {
+            timed: false,
+            showArrows: false,
+            showCarousel: true,
+            showInfopane: false,
+            embedLinks: false
+        });
+    }
+    window.addEvent('domready', startGallery);
+
+
+</script>
+<!------Old Code Below------>
+<!--Old Static Picture-->
+<div id="mainPicture">
+    <div class="picture">
+        <div id="headerTitle">
+            Pygmy OS</div>
+        <div id="headerSubtext">
+            An Operating System for MCUs</div>
+    </div>
+</div>

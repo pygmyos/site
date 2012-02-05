@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /todo
+Disallow: /dev
+Disallow: /developer
+Disallow: /chat
