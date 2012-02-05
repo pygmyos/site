@@ -152,7 +152,7 @@
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="companies" id="D3654AF0-B4CD-912B-B7C1-84907059DDC0">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="company" id="D3654AF0-B4CD-912B-B7C1-84907059DDC0">
          <createdBy>Evan</createdBy>
          <createdTime>2012-01-22 19:36:48 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>

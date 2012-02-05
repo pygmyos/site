@@ -3,6 +3,7 @@
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-13 20:26:24 UTC</createdTime>
    <ownerDesignName>Project ERD</ownerDesignName>
+   <pkName>PK_PART_USAGE</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
    <expectedVolumes>0</expectedVolumes>
    <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
@@ -70,4 +71,16 @@
          <use>1</use>
       </Attribute>
    </attributes>
+   <identifiers>
+      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="A66653A5-4CA7-B37F-31ED-1C6A4703FE36" name="PK_PART_USAGE">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-05 15:31:15 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <pk>true</pk>
+         <usedAttributes>
+            <attributeRef>9B297EB6-3D92-3862-FBCC-D42351105E8C</attributeRef>
+            <attributeRef>E626257B-206D-FBC0-3AF1-D5895C1B2A8B</attributeRef>
+         </usedAttributes>
+      </identifier>
+   </identifiers>
 </Entity>

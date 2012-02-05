@@ -6,6 +6,19 @@ function loadHead($title)
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><?php echo "PygmyOS | " . $title ?></title>
     <link rel="Stylesheet" type="text/css" href="styles/style.css" />
+
+    <!-- Google analytics -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-24284578-3']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
 <?php
 }
 
@@ -14,8 +27,8 @@ function displayHeader($title = "PygmyOS", $icon = "images/Icon2BlueGlow.png")
 {
 ?>
     <div id="header">
-        <a href="index.html">
-            <img src=<?php echo $icon ?> alt="Logo" width="100px" height="100px" id="logo" />
+        <a href="index.php">
+            <img src=<?php echo $icon ?> alt="Logo" width="90px" height="90px" id="logo" />
         </a>
         <h1 id="head_title">
         <?php echo $title ?> </h1>
@@ -24,8 +37,8 @@ function displayHeader($title = "PygmyOS", $icon = "images/Icon2BlueGlow.png")
 }
 
 //Displays the page navigation bar
-function displayNavbar( $links = array('index.php', 'code.php', 'boards.php', 'projects.php', 'contact.php'), 
-                        $linkNames = array('Home', 'Code', 'Boards', 'Projects', 'Contact'), 
+function displayNavbar( $links = array('index.php', 'code.php', 'boards.php', 'projects.php', 'contact.php'),
+                        $linkNames = array('Home', 'Code', 'Boards', 'Projects', 'Contact'),
                         $linkPageIDs = array('nav-home', 'nav-code', 'nav-boards', 'nav-projects', 'nav-contact'))
 {
 ?>
@@ -51,7 +64,7 @@ function displayNavbar( $links = array('index.php', 'code.php', 'boards.php', 'p
                             {
                                 echo '<li>';
                             }
-                            
+
                             echo '<a href="' . $links[$i] . '" id="' . $linkPageIDs[$i] . '">' . $linkNames[$i] . '</a></li>';
                         }
                         /*<li class="firstlink"><a href="index.html" id="nav-home">Home</a></li>

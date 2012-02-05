@@ -69,15 +69,6 @@
          <referedAttribute>FB79C84D-6D6D-C7EC-D017-0CD428F36233</referedAttribute>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id5" id="451A465A-2087-E7DD-D77F-7E26BEFC66C2">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-17 12:01:44 UTC</createdTime>
-         <generatorID>CB0DBCA4-911E-E7FF-01DF-75951500E819</generatorID>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
-         <referedAttribute>B3A3CA22-E3D3-960D-0CDA-D1026816DD4D</referedAttribute>
-         <use>1</use>
-      </Attribute>
    </attributes>
    <identifiers>
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="CEB630B8-D570-D032-24C7-02576950A28A" name="PK_COMMENT">

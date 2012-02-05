@@ -1183,11 +1183,11 @@ body#home a#nav-home, body#code a#nav-code, body#boards a#nav-boards, body#proje
     display: inline;
     position: relative;
     top: -45px;
-    margin-left: 20px;
-    font-size: 4em;
+    margin-left: 13px;
+    font-size: 3.5em;
     color: #599bdc;
     font-family: Arial;
-    text-shadow: 0 0 1px #999;
+    text-shadow: 0 0 1px #DDD;
 }
 #logo
 {

@@ -1,18 +1,17 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="AA26A085-8AC6-8F30-808A-050A976ADF6F" directorySegmentName="seg_0" name="PART_OWNERSHIP">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="0EA3435D-85B5-D622-764C-146830ACBAFB" directorySegmentName="seg_0" name="CUST_ORDER">
    <createdBy>Evan</createdBy>
-   <createdTime>2011-12-11 22:59:23 UTC</createdTime>
+   <createdTime>2012-02-05 15:48:36 UTC</createdTime>
    <ownerDesignName>Project ERD</ownerDesignName>
-   <pkName>PK_PART_OWNERSHIP</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
    <expectedVolumes>0</expectedVolumes>
    <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
    <growthPercent>0</growthPercent>
    <growthType>Year</growthType>
+   <hierarchicalParent>428520A1-7A17-4C3F-2A94-142AD315B1D5</hierarchicalParent>
    <maxVolumes>9999999</maxVolumes>
    <minVolumes>0</minVolumes>
    <normalForm>Third</normalForm>
-   <preferredAbbreviation>PON</preferredAbbreviation>
    <fonts>
       <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
          <foType>Title</foType>
@@ -49,46 +48,21 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="34CD0AF6-9D11-771D-51EE-456B891D698C">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="43F997AB-AE50-2019-726E-0061035B7A29">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 23:00:15 UTC</createdTime>
-         <generatorID>97CFF346-B758-3776-5FD4-2DE6C34A11B2</generatorID>
+         <createdTime>2012-02-05 15:52:31 UTC</createdTime>
+         <generatorID>D0D12F7F-6F7D-88FB-3883-F0D7B842F6DD</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
+         <referedAttribute>AEDD815C-732A-C1EB-9B6C-5702647575B2</referedAttribute>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="quantity" id="8B8A077C-EF80-A1C7-024D-7FDCCFA772F6">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="1F4E4671-72E3-9F8C-BDE3-A72A74328BC3">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 23:00:39 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <use>0</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="quantity_needed" id="5C9A486E-0B5C-3AA8-8086-228D310B1E22">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 23:16:55 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
-         <use>0</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="6A266813-3157-7748-BCBF-8695713702B8">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-15 02:54:07 UTC</createdTime>
-         <generatorID>EB64CC01-5635-EDDF-FFB1-6507FDE05359</generatorID>
+         <createdTime>2012-02-05 15:52:48 UTC</createdTime>
+         <generatorID>089645BB-4273-809D-72F8-687392646AAA</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <referedAttribute>AEDD815C-732A-C1EB-9B6C-5702647575B2</referedAttribute>
          <use>1</use>
       </Attribute>
    </attributes>
-   <identifiers>
-      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="5989BC90-4342-F275-4807-2F7E9EBF4AA4" name="PK_PART_OWNERSHIP">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 23:00:21 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <pk>true</pk>
-         <usedAttributes>
-            <attributeRef>34CD0AF6-9D11-771D-51EE-456B891D698C</attributeRef>
-            <attributeRef>6A266813-3157-7748-BCBF-8695713702B8</attributeRef>
-         </usedAttributes>
-      </identifier>
-   </identifiers>
 </Entity>

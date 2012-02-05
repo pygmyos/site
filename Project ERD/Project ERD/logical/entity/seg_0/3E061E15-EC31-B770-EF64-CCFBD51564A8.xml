@@ -73,7 +73,7 @@
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="format" id="0E09DF24-F9F9-332A-F6F8-6E4EB38B0039">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="strip_danger" id="0E09DF24-F9F9-332A-F6F8-6E4EB38B0039">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-17 23:21:38 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
@@ -87,15 +87,6 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <referedAttribute>FB79C84D-6D6D-C7EC-D017-0CD428F36233</referedAttribute>
-         <use>1</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="4340C276-5925-CCB3-6089-AF426B881A61">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-16 22:04:45 UTC</createdTime>
-         <generatorID>A28DB470-AA41-05B4-757A-35C7505B3C2E</generatorID>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
-         <referedAttribute>B3A3CA22-E3D3-960D-0CDA-D1026816DD4D</referedAttribute>
          <use>1</use>
       </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id4" id="2E7B3BC2-0351-973B-E227-3A2792B1DBB0">

@@ -54,22 +54,6 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="E18E54DB-29E8-F82F-EAF8-3D75C3047A8D">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-18 03:10:00 UTC</createdTime>
-         <generatorID>FAC5D773-A989-C1F0-C34F-92D7B1736F32</generatorID>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <referedAttribute>FE544300-2270-0EEF-EA93-466D3FA80F95</referedAttribute>
-         <use>1</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="945288B8-7606-9026-5CA2-351104FB745E">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-18 03:10:05 UTC</createdTime>
-         <generatorID>D5D4D6B3-C2F0-55A6-3FD7-7C11CF090B01</generatorID>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <referedAttribute>FE544300-2270-0EEF-EA93-466D3FA80F95</referedAttribute>
-         <use>1</use>
-      </Attribute>
    </attributes>
    <identifiers>
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="40F1CDEB-B545-60D8-29B1-D89CC476FF35" name="PK_PRODUCT_RELATION">
@@ -77,10 +61,6 @@
          <createdTime>2011-12-18 03:10:00 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
-         <usedAttributes>
-            <attributeRef>E18E54DB-29E8-F82F-EAF8-3D75C3047A8D</attributeRef>
-            <attributeRef>945288B8-7606-9026-5CA2-351104FB745E</attributeRef>
-         </usedAttributes>
       </identifier>
    </identifiers>
 </Entity>

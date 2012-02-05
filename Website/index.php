@@ -13,19 +13,19 @@
                 displayCarousel(array("images/boards/Nebula1.jpg")); ?>
         <div id="content">
             <h4>
-                Current status</h4>
-            <p>
-                PygmyOS is still a young project. We will have a full official release sometime
-                soon. Until then, you can download our current source from one of our <a href="http://code.google.com/p/pygmyos/wiki/Source?tm=4">
-                    repositories</a>.
-            </p>
-            <h4>
                 About</h4>
             <p>
                 PygmyOS is an operating system originally intended for the MSP430 series. It has
                 since outgrown the MSP430 and is now primarily intended for ARM, specifically STM32
                 and other similar CortexM3 core MCUs. It is quick, flexible, and user friendly.
                 Pygmy is built from the ground up with code that is both user and MCU friendly.
+            </p>
+            <h4>
+                Current status</h4>
+            <p>
+                PygmyOS is still a young project. We will have a full official release sometime
+                soon. Until then, you can download our current source from one of our <a href="http://code.google.com/p/pygmyos/wiki/Source?tm=4">
+                    repositories</a>.
             </p>
             <h4>
             Features</h4>
@@ -45,7 +45,7 @@
                     <li>Simple enough for a beginner to use</li>
                 </ul>
             </p>
-            
+
         </div>
         <?php displayFooter(); ?>
     </div>
