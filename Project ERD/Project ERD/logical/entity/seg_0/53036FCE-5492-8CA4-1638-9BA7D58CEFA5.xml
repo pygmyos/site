@@ -63,13 +63,6 @@
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="library" id="16C0AA07-6683-843E-4EAF-794623D3631C">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-14 00:17:26 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
-         <use>1</use>
-      </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="tolerance" id="BD99EC81-0ADB-B19A-B06D-975F2324D743">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 19:49:22 UTC</createdTime>

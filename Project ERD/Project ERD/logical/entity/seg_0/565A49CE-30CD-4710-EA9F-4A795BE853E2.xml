@@ -55,6 +55,13 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="description" id="25523FC0-1D0C-E9DA-D395-BA80C29F95E0">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-05 20:10:39 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
    </attributes>
    <identifiers>
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="283E09EB-06D2-17CC-6332-6182F1A401EA" name="PART PK">

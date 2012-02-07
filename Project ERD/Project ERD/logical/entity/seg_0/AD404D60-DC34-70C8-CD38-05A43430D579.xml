@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="9D5715C8-AB7F-1FA6-F05C-5E554481710F" directorySegmentName="seg_0" name="SESSION">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="AD404D60-DC34-70C8-CD38-05A43430D579" directorySegmentName="seg_0" name="library">
    <createdBy>Evan</createdBy>
-   <createdTime>2012-01-22 20:00:02 UTC</createdTime>
+   <createdTime>2012-02-05 19:42:17 UTC</createdTime>
    <ownerDesignName>Project ERD</ownerDesignName>
    <adequatelyNormalized>NO</adequatelyNormalized>
    <expectedVolumes>0</expectedVolumes>
@@ -47,13 +47,17 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="BB7F5A23-8C97-8D23-5141-5495FF763DC6">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="69D2E29E-EA6E-D6F7-E5CA-9DFDA5C6B82D">
          <createdBy>Evan</createdBy>
-         <createdTime>2012-01-22 20:00:50 UTC</createdTime>
-         <generatorID>62411C6D-1DE0-870A-F669-20F6495D0186</generatorID>
+         <createdTime>2012-02-05 19:42:24 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="description" id="5143FF9C-CE28-7A92-58A2-3D98E93CC91E">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-05 19:42:27 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
-         <referedAttribute>AEDD815C-732A-C1EB-9B6C-5702647575B2</referedAttribute>
          <use>1</use>
       </Attribute>
    </attributes>

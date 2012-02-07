@@ -74,7 +74,7 @@
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id3" id="A334D994-0DEB-AE1E-15BB-05172092A127">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="A334D994-0DEB-AE1E-15BB-05172092A127">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 19:32:28 UTC</createdTime>
          <generatorID>4FC6230E-2CB6-8817-3AEA-3FCF8D17D811</generatorID>

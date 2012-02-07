@@ -67,6 +67,15 @@
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
       </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="BFE73712-80C1-F6A8-0992-7EC962EE4941">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-05 20:08:07 UTC</createdTime>
+         <generatorID>8B12A5F1-DAE7-F287-B8E9-15BB54867ACD</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <referedAttribute>B3A563C7-D443-9F15-D8CF-21FA01C55EEB</referedAttribute>
+         <use>1</use>
+      </Attribute>
    </attributes>
    <identifiers>
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="4452DB8F-4B98-E21B-4D7E-E3A32606E4E2" name="PICTURE PK">

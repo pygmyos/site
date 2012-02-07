@@ -1,9 +1,9 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="805A0066-7509-43E1-AADF-50B4080D203C" directorySegmentName="seg_0" name="MANUFACTURER_PART">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="EBA8022E-B735-138E-BCF6-DB794298FDF1" directorySegmentName="seg_0" name="CUST_NAV_LINK">
    <createdBy>Evan</createdBy>
-   <createdTime>2011-12-11 21:52:04 UTC</createdTime>
+   <createdTime>2012-02-05 20:00:01 UTC</createdTime>
    <ownerDesignName>Project ERD</ownerDesignName>
-   <pkName>MANUFACTURER_PART PK</pkName>
+   <pkName>PK_CUST_NAV_LINK</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
    <expectedVolumes>0</expectedVolumes>
    <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
@@ -48,46 +48,39 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="number" id="ADCEDB50-F4C9-B4E2-9A0C-DE1996FC497F">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="text" id="761181CE-3516-F2FA-379D-3102DC84F395">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 21:52:32 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <use>0</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="url" id="40D87BE3-CA46-6AFB-32DB-A817EB176E76">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-15 05:12:20 UTC</createdTime>
+         <createdTime>2012-02-05 20:02:21 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="A0AA1C5E-E692-8BDA-F21A-E1EDD12DFED6">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="B0A3F375-34EA-F4C4-4062-68CF726E7607">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 21:56:41 UTC</createdTime>
-         <generatorID>0643D02A-05B2-DF00-3405-863DD6B7D0DC</generatorID>
+         <createdTime>2012-02-05 20:04:44 UTC</createdTime>
+         <generatorID>9B89D850-1DB8-1922-101B-7D302E30F49D</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <referedAttribute>C689A814-D975-925E-A6FE-ADC42357B9FB</referedAttribute>
-         <use>0</use>
+         <referedAttribute>B3A563C7-D443-9F15-D8CF-21FA01C55EEB</referedAttribute>
+         <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="070EE49E-6A88-0DBA-2868-90E7AA7FECED">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="E10F666D-2FBB-5FBE-5F8B-B987CA2FD2B5">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 22:13:41 UTC</createdTime>
-         <generatorID>0FE81AA8-E1EF-8107-78B0-5748C49F215A</generatorID>
+         <createdTime>2012-02-05 20:48:05 UTC</createdTime>
+         <generatorID>4C20162B-A926-52F7-51FF-023D087B2F0A</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
+         <referedAttribute>B3A563C7-D443-9F15-D8CF-21FA01C55EEB</referedAttribute>
          <use>1</use>
       </Attribute>
    </attributes>
    <identifiers>
-      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="0418E983-B1B8-4A84-E4EA-8188DA565E45" name="MANUFACTURER_PART PK">
+      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="FBE6E3AC-FFE2-3121-5889-A955E6DC005E" name="PK_CUST_NAV_LINK">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-11 21:52:37 UTC</createdTime>
+         <createdTime>2012-02-05 20:48:33 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>
-            <attributeRef>ADCEDB50-F4C9-B4E2-9A0C-DE1996FC497F</attributeRef>
-            <attributeRef>A0AA1C5E-E692-8BDA-F21A-E1EDD12DFED6</attributeRef>
-            <attributeRef>070EE49E-6A88-0DBA-2868-90E7AA7FECED</attributeRef>
+            <attributeRef>E10F666D-2FBB-5FBE-5F8B-B987CA2FD2B5</attributeRef>
+            <attributeRef>B0A3F375-34EA-F4C4-4062-68CF726E7607</attributeRef>
          </usedAttributes>
       </identifier>
    </identifiers>

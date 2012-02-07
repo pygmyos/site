@@ -54,6 +54,22 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="EADAAE9A-1F54-EAFB-9886-379B4446F1C2">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-05 20:04:44 UTC</createdTime>
+         <generatorID>ECC0BB4B-4469-29E0-E1E4-7177AE591723</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <referedAttribute>B3A563C7-D443-9F15-D8CF-21FA01C55EEB</referedAttribute>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="F5B7B894-4BA9-2C9A-5045-767A72487D53">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-05 20:04:44 UTC</createdTime>
+         <generatorID>B821CBF9-8624-E7C8-C412-617043E0CE6A</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <referedAttribute>B3A563C7-D443-9F15-D8CF-21FA01C55EEB</referedAttribute>
+         <use>1</use>
+      </Attribute>
    </attributes>
    <identifiers>
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="40F1CDEB-B545-60D8-29B1-D89CC476FF35" name="PK_PRODUCT_RELATION">

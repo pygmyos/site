@@ -66,12 +66,12 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="E57B3A9C-B2D6-74BE-D65D-3E2714C17D8D">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="1D987026-28FB-F944-BB92-46C8E6E8711D">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-17 23:28:36 UTC</createdTime>
-         <generatorID>7825544E-F8A6-E4AA-32EB-27949E401EAF</generatorID>
+         <createdTime>2012-02-05 20:09:39 UTC</createdTime>
+         <generatorID>D1835DC4-BA9F-F077-D2CB-5F0713199CF1</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <referedAttribute>FE544300-2270-0EEF-EA93-466D3FA80F95</referedAttribute>
+         <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
          <use>1</use>
       </Attribute>
    </attributes>
@@ -83,7 +83,6 @@
          <pk>true</pk>
          <usedAttributes>
             <attributeRef>D7CE1DA1-211F-909F-6A16-6A06F407E665</attributeRef>
-            <attributeRef>E57B3A9C-B2D6-74BE-D65D-3E2714C17D8D</attributeRef>
          </usedAttributes>
       </identifier>
    </identifiers>

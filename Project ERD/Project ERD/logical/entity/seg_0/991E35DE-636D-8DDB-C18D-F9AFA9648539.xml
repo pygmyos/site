@@ -54,12 +54,5 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>0</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="description" id="7613E08F-65EE-3AB0-0053-BCF78D6C993F">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-13 01:29:58 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
-         <use>0</use>
-      </Attribute>
    </attributes>
 </Entity>

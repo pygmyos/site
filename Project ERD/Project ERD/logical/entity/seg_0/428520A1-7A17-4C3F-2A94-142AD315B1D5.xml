@@ -86,20 +86,13 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>0</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="date_received" id="847DC9DF-BD34-96B1-2DED-DBA1532B6D4E">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-12 21:46:26 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
-         <use>0</use>
-      </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="shipping_cost" id="ACD5E831-FC1B-A9DF-8646-4BB9D3DDF2A5">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-13 02:22:11 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>0</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="total_cost" id="D2D611D4-11DF-6E4A-8BFA-214873F36527">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="tax" id="D2D611D4-11DF-6E4A-8BFA-214873F36527">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-13 02:23:37 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
@@ -121,6 +114,14 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <referedAttribute>AEDD815C-732A-C1EB-9B6C-5702647575B2</referedAttribute>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id3" id="A6013424-3AE2-27DD-AF12-F0D6900F6065">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-05 19:46:50 UTC</createdTime>
+         <generatorID>97C39503-437A-72E8-ACE9-82AA1A837047</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <referedAttribute>94EF3CEE-E32B-EE2B-BA4F-ADE3365A19FF</referedAttribute>
          <use>1</use>
       </Attribute>
    </attributes>

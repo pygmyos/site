@@ -49,13 +49,7 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="FE544300-2270-0EEF-EA93-466D3FA80F95">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-17 02:58:09 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <use>1</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="C7266F80-D57E-B6CA-D49B-F84872EBD61A">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="C7266F80-D57E-B6CA-D49B-F84872EBD61A">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-17 02:59:14 UTC</createdTime>
          <generatorID>439BDA87-01D4-1BDF-3A10-369739669113</generatorID>
@@ -63,22 +57,5 @@
          <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="has_page" id="3226135D-3C34-4B4D-D52B-F32D5B6E9FF5">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-17 12:10:16 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <use>1</use>
-      </Attribute>
    </attributes>
-   <identifiers>
-      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="57FE94DC-CC86-7738-5F74-1A018AC020A0" name="PRODUCT PK">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-17 02:59:01 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <pk>true</pk>
-         <usedAttributes>
-            <attributeRef>FE544300-2270-0EEF-EA93-466D3FA80F95</attributeRef>
-         </usedAttributes>
-      </identifier>
-   </identifiers>
 </Entity>
