@@ -48,7 +48,7 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="url" id="EF8C1EE7-F1D3-B7EB-FFBF-F081675B0764">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="doc_url" id="EF8C1EE7-F1D3-B7EB-FFBF-F081675B0764">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-17 23:31:18 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>

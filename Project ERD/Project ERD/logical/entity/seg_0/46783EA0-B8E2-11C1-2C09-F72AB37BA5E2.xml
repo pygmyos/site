@@ -48,7 +48,7 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="nbr" id="D7CE1DA1-211F-909F-6A16-6A06F407E665">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="feature_id" id="D7CE1DA1-211F-909F-6A16-6A06F407E665">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-17 23:25:04 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
@@ -66,7 +66,7 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="1D987026-28FB-F944-BB92-46C8E6E8711D">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="part_id" id="1D987026-28FB-F944-BB92-46C8E6E8711D">
          <createdBy>Evan</createdBy>
          <createdTime>2012-02-05 20:09:39 UTC</createdTime>
          <generatorID>D1835DC4-BA9F-F077-D2CB-5F0713199CF1</generatorID>

@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="B02096D7-DBAB-07BD-621B-71AB78BE74E3" directorySegmentName="seg_0" name="PRICE">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="B02096D7-DBAB-07BD-621B-71AB78BE74E3" directorySegmentName="seg_0" name="COMPONENT_PRICE">
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-03 05:45:36 UTC</createdTime>
    <ownerDesignName>Project ERD</ownerDesignName>
@@ -49,7 +49,7 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="0249CA1D-5511-F7D1-D6A0-940129C15740">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="price_id" id="0249CA1D-5511-F7D1-D6A0-940129C15740">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-03 05:45:53 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
@@ -66,6 +66,7 @@
          <createdTime>2011-12-03 05:46:11 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
+         <logicalDatatype>LOGDT008</logicalDatatype>
       </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="end date" id="DCF6DAFC-7697-E9FF-6A36-A9FFAEB7C4BA">
          <createdBy>Evan</createdBy>
@@ -73,23 +74,14 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>
+         <logicalDatatype>LOGDT008</logicalDatatype>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="A334D994-0DEB-AE1E-15BB-05172092A127">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="part_id" id="A334D994-0DEB-AE1E-15BB-05172092A127">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 19:32:28 UTC</createdTime>
          <generatorID>4FC6230E-2CB6-8817-3AEA-3FCF8D17D811</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
          <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
-         <use>1</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="90A51F7A-9EC7-726B-8546-8964201CE977">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-17 23:51:44 UTC</createdTime>
-         <generatorID>E0591C8B-6B34-5D0E-1CB2-F7C8852FA6B1</generatorID>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
-         <referedAttribute>FE544300-2270-0EEF-EA93-466D3FA80F95</referedAttribute>
          <use>1</use>
       </Attribute>
    </attributes>
@@ -101,6 +93,7 @@
          <pk>true</pk>
          <usedAttributes>
             <attributeRef>0249CA1D-5511-F7D1-D6A0-940129C15740</attributeRef>
+            <attributeRef>A334D994-0DEB-AE1E-15BB-05172092A127</attributeRef>
          </usedAttributes>
       </identifier>
    </identifiers>

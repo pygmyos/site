@@ -49,7 +49,7 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="DAD0F47A-66AA-D081-619A-EED6B26114A1">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="vendor_id" id="DAD0F47A-66AA-D081-619A-EED6B26114A1">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-03 05:37:35 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>

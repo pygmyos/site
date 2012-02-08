@@ -1,9 +1,9 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="C427A40E-1A8C-64BC-1AF7-F110762B8B76" directorySegmentName="seg_0" name="CATEGORY">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="B119D200-3DD5-162C-3181-D19D7D96832A" directorySegmentName="seg_0" name="CARRIER">
    <createdBy>Evan</createdBy>
-   <createdTime>2011-12-17 23:22:50 UTC</createdTime>
+   <createdTime>2012-02-07 20:06:29 UTC</createdTime>
    <ownerDesignName>Project ERD</ownerDesignName>
-   <pkName>CATEGORY PK</pkName>
+   <pkName>CARRIER PK</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
    <expectedVolumes>0</expectedVolumes>
    <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
@@ -48,42 +48,34 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="abrv" id="62499A99-DDB2-ADAB-C2AB-6D5D7FD707B4">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="carrier_id" id="E4D5CCC6-4667-1FFB-224D-A8F1D00ADBE6">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-17 23:22:56 UTC</createdTime>
+         <createdTime>2012-02-07 20:06:36 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="DA2ECF42-37A8-3AA6-583A-E59E9327FC17">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="8E8A347B-0894-D29D-186A-0F0CC2FBF952">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-17 23:23:04 UTC</createdTime>
+         <createdTime>2012-02-07 20:07:06 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="visible" id="970A1F9E-A221-2AFC-B2AD-91F84B36A431">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="short_name" id="B0554F62-01EC-3611-936D-957F8AE19B7B">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-17 23:23:54 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <use>1</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="89A52CF0-1C67-BB78-5B08-C17029B38377">
-         <createdBy>Evan</createdBy>
-         <createdTime>2012-02-05 20:58:37 UTC</createdTime>
-         <generatorID>922BCCE6-8198-8BA6-7F98-D4669E471DFB</generatorID>
+         <createdTime>2012-02-07 22:11:21 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
-         <referedAttribute>B3A563C7-D443-9F15-D8CF-21FA01C55EEB</referedAttribute>
          <use>1</use>
       </Attribute>
    </attributes>
    <identifiers>
-      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="0756CFEC-FB85-D892-062D-0BCDD97C8F9B" name="CATEGORY PK">
+      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="A7A75805-AAF2-462F-8DD2-5D3D279C8C14" name="CARRIER PK">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-17 23:23:02 UTC</createdTime>
+         <createdTime>2012-02-07 20:06:50 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>
-            <attributeRef>62499A99-DDB2-ADAB-C2AB-6D5D7FD707B4</attributeRef>
+            <attributeRef>E4D5CCC6-4667-1FFB-224D-A8F1D00ADBE6</attributeRef>
          </usedAttributes>
       </identifier>
    </identifiers>

@@ -48,7 +48,7 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="AEDD815C-732A-C1EB-9B6C-5702647575B2">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="person_id" id="AEDD815C-732A-C1EB-9B6C-5702647575B2">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-15 02:50:22 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
@@ -106,7 +106,7 @@
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="23529A91-6A80-74F8-9658-AD0A8F3FC7C9">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="manufacturer_id" id="23529A91-6A80-74F8-9658-AD0A8F3FC7C9">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-15 02:52:47 UTC</createdTime>
          <generatorID>D8BE1265-3376-2CAA-70CF-B92EF291375F</generatorID>
@@ -122,7 +122,7 @@
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="862AEEDB-2308-D147-76BF-3C9F1A676A9D">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="vendor_id" id="862AEEDB-2308-D147-76BF-3C9F1A676A9D">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-15 02:56:16 UTC</createdTime>
          <generatorID>759C7BD0-DC80-A8C0-B906-FDA70D3C2FBE</generatorID>

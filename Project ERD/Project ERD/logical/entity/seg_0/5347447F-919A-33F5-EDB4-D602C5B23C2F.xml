@@ -48,7 +48,7 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="E2DFE983-FCC3-DB0A-0521-50F117BF81DA">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="part_id" id="E2DFE983-FCC3-DB0A-0521-50F117BF81DA">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-17 23:34:21 UTC</createdTime>
          <generatorID>DF31F58A-ECA7-A459-40F7-62A701C3A0D6</generatorID>
@@ -56,7 +56,7 @@
          <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="url" id="72F6DE45-F934-80CC-1794-FC513B997EF1">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="doc_url" id="72F6DE45-F934-80CC-1794-FC513B997EF1">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-17 23:35:42 UTC</createdTime>
          <generatorID>A99C9638-EFC9-5620-DA8B-014C2F402E8A</generatorID>

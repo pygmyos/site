@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="3E061E15-EC31-B770-EF64-CCFBD51564A8" directorySegmentName="seg_0" name="TEXT">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="3E061E15-EC31-B770-EF64-CCFBD51564A8" directorySegmentName="seg_0" name="COM_TEXT">
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-16 21:54:15 UTC</createdTime>
    <ownerDesignName>Project ERD</ownerDesignName>
@@ -48,7 +48,7 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="txt_id" id="D904C19D-6DE4-778A-83C5-B8090127B767">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="com_text_id" id="D904C19D-6DE4-778A-83C5-B8090127B767">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-17 02:17:11 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
@@ -73,29 +73,18 @@
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="strip_danger" id="0E09DF24-F9F9-332A-F6F8-6E4EB38B0039">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="filter_hacks" id="0E09DF24-F9F9-332A-F6F8-6E4EB38B0039">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-17 23:21:38 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="7AD6CD24-BE9B-42A9-A38C-D567BC72D39E">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="comment_id" id="7AD6CD24-BE9B-42A9-A38C-D567BC72D39E">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-16 21:57:23 UTC</createdTime>
          <generatorID>F60FA786-B1C2-7989-349F-CDCCC9D1073B</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
          <referedAttribute>FB79C84D-6D6D-C7EC-D017-0CD428F36233</referedAttribute>
-         <use>1</use>
-      </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="30EEAF8E-8215-C82B-88A7-B262D5504850">
-         <createdBy>Evan</createdBy>
-         <createdTime>2012-02-05 20:04:44 UTC</createdTime>
-         <generatorID>BC81F3A8-A974-5342-2AF9-814470AD0B41</generatorID>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
-         <referedAttribute>B3A563C7-D443-9F15-D8CF-21FA01C55EEB</referedAttribute>
          <use>1</use>
       </Attribute>
    </attributes>
@@ -107,6 +96,7 @@
          <pk>true</pk>
          <usedAttributes>
             <attributeRef>D904C19D-6DE4-778A-83C5-B8090127B767</attributeRef>
+            <attributeRef>7AD6CD24-BE9B-42A9-A38C-D567BC72D39E</attributeRef>
          </usedAttributes>
       </identifier>
    </identifiers>

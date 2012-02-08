@@ -112,5 +112,14 @@
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
       </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="library_name" id="7E8FCE22-7115-02D0-BA17-F511F5BEA4BE">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-07 13:18:32 UTC</createdTime>
+         <generatorID>A44C3FF7-3803-7DFB-5F1E-0B9D762D1BC2</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <referedAttribute>69D2E29E-EA6E-D6F7-E5CA-9DFDA5C6B82D</referedAttribute>
+         <use>1</use>
+      </Attribute>
    </attributes>
 </Entity>

@@ -55,18 +55,18 @@
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="B0A3F375-34EA-F4C4-4062-68CF726E7607">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="page_id" id="0FBAB284-05AD-D234-4BEF-F66905D2D6E1">
          <createdBy>Evan</createdBy>
-         <createdTime>2012-02-05 20:04:44 UTC</createdTime>
-         <generatorID>9B89D850-1DB8-1922-101B-7D302E30F49D</generatorID>
+         <createdTime>2012-02-07 13:21:28 UTC</createdTime>
+         <generatorID>4C20162B-A926-52F7-51FF-023D087B2F0A</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <referedAttribute>B3A563C7-D443-9F15-D8CF-21FA01C55EEB</referedAttribute>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="E10F666D-2FBB-5FBE-5F8B-B987CA2FD2B5">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="page_id2" id="474A6C28-1BDE-51C0-9741-F5AD6BA7CEEB">
          <createdBy>Evan</createdBy>
-         <createdTime>2012-02-05 20:48:05 UTC</createdTime>
-         <generatorID>4C20162B-A926-52F7-51FF-023D087B2F0A</generatorID>
+         <createdTime>2012-02-07 13:21:28 UTC</createdTime>
+         <generatorID>9B89D850-1DB8-1922-101B-7D302E30F49D</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <referedAttribute>B3A563C7-D443-9F15-D8CF-21FA01C55EEB</referedAttribute>
          <use>1</use>
@@ -79,8 +79,8 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>
-            <attributeRef>E10F666D-2FBB-5FBE-5F8B-B987CA2FD2B5</attributeRef>
-            <attributeRef>B0A3F375-34EA-F4C4-4062-68CF726E7607</attributeRef>
+            <attributeRef>0FBAB284-05AD-D234-4BEF-F66905D2D6E1</attributeRef>
+            <attributeRef>474A6C28-1BDE-51C0-9741-F5AD6BA7CEEB</attributeRef>
          </usedAttributes>
       </identifier>
    </identifiers>

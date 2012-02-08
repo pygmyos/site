@@ -49,12 +49,6 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="A3E32FAB-2111-619B-20CD-5FFD481585D1">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-17 11:52:47 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <use>1</use>
-      </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="title" id="E925B59B-9B6F-F60B-B1FB-5E6E4017C127">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-17 11:57:29 UTC</createdTime>
@@ -74,9 +68,6 @@
          <createdTime>2011-12-17 11:52:50 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
-         <usedAttributes>
-            <attributeRef>A3E32FAB-2111-619B-20CD-5FFD481585D1</attributeRef>
-         </usedAttributes>
       </identifier>
    </identifiers>
 </Entity>

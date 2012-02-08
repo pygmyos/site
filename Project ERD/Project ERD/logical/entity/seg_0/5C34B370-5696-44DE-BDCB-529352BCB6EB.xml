@@ -54,12 +54,6 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="visible" id="6D2C272A-804B-36C2-4E19-488460D246CC">
-         <createdBy>Evan</createdBy>
-         <createdTime>2011-12-15 02:34:12 UTC</createdTime>
-         <ownerDesignName>Project ERD</ownerDesignName>
-         <use>1</use>
-      </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="left_corner_x" id="E41084F2-F437-1D9F-2407-C99E8FE87CB9">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-15 02:34:04 UTC</createdTime>
@@ -88,7 +82,7 @@
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="idpic" id="C64BE762-E12C-0E68-FBFD-FC212E12B9CD">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="picture_id" id="C64BE762-E12C-0E68-FBFD-FC212E12B9CD">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-15 02:36:55 UTC</createdTime>
          <generatorID>1F7AEFCD-C2CF-EC9E-4A38-7CCEA8C7825D</generatorID>
@@ -96,7 +90,7 @@
          <referedAttribute>0A7F77FA-5653-4F69-D2C3-C6A77BADFAB2</referedAttribute>
          <use>0</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="16A856F4-974F-6D23-44EF-7F782C8F506B">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="part_id1" id="16A856F4-974F-6D23-44EF-7F782C8F506B">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-15 02:37:17 UTC</createdTime>
          <generatorID>ECE8EA6A-A28D-56A7-9231-4C3FFA58A165</generatorID>
@@ -105,7 +99,7 @@
          <referedAttribute>D842A798-4EF2-B0F5-54D8-56C80B2B2A46</referedAttribute>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="5BF214D1-7D76-73F7-2A39-27D3A4432478">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="package_name" id="5BF214D1-7D76-73F7-2A39-27D3A4432478">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-15 02:37:17 UTC</createdTime>
          <generatorID>ECE8EA6A-A28D-56A7-9231-4C3FFA58A165</generatorID>
@@ -114,7 +108,7 @@
          <referedAttribute>CC093362-A882-4471-A781-DED81A300811</referedAttribute>
          <use>0</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name1" id="5F5E3BAC-BB79-307E-1E94-4321FEAB45D4">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="package_name2" id="5F5E3BAC-BB79-307E-1E94-4321FEAB45D4">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-15 02:37:22 UTC</createdTime>
          <generatorID>8C397C18-B1BE-60FC-3B44-26BAABC20835</generatorID>
@@ -123,7 +117,7 @@
          <referedAttribute>7311BCE1-AB1E-6555-B86A-5FF1D4FA2A3B</referedAttribute>
          <use>0</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="D2B17CCF-0275-98D2-7932-435FD34A8B0F">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="part_id" id="D2B17CCF-0275-98D2-7932-435FD34A8B0F">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-15 02:41:11 UTC</createdTime>
          <generatorID>E6FD96E2-1E78-9903-2423-7531C850A19D</generatorID>

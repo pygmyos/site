@@ -48,10 +48,17 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="B3A563C7-D443-9F15-D8CF-21FA01C55EEB">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="page_id" id="B3A563C7-D443-9F15-D8CF-21FA01C55EEB">
          <createdBy>Evan</createdBy>
          <createdTime>2012-02-05 20:04:21 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="url_stub" id="725A6279-6EC5-3FE8-E882-89BD6F842497">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-07 13:20:23 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="title" id="CEEB99B4-F948-3357-74D3-99C18ECB214C">

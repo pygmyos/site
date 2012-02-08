@@ -54,17 +54,17 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="EADAAE9A-1F54-EAFB-9886-379B4446F1C2">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="page_id" id="FAF73ECB-8425-8A60-CC84-1F308501A120">
          <createdBy>Evan</createdBy>
-         <createdTime>2012-02-05 20:04:44 UTC</createdTime>
+         <createdTime>2012-02-07 13:21:28 UTC</createdTime>
          <generatorID>ECC0BB4B-4469-29E0-E1E4-7177AE591723</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <referedAttribute>B3A563C7-D443-9F15-D8CF-21FA01C55EEB</referedAttribute>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id2" id="F5B7B894-4BA9-2C9A-5045-767A72487D53">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="page_id2" id="44161C14-0697-F0D1-9289-2A95D9F2CBBC">
          <createdBy>Evan</createdBy>
-         <createdTime>2012-02-05 20:04:44 UTC</createdTime>
+         <createdTime>2012-02-07 13:21:28 UTC</createdTime>
          <generatorID>B821CBF9-8624-E7C8-C412-617043E0CE6A</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <referedAttribute>B3A563C7-D443-9F15-D8CF-21FA01C55EEB</referedAttribute>
@@ -77,6 +77,10 @@
          <createdTime>2011-12-18 03:10:00 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
+         <usedAttributes>
+            <attributeRef>FAF73ECB-8425-8A60-CC84-1F308501A120</attributeRef>
+            <attributeRef>44161C14-0697-F0D1-9289-2A95D9F2CBBC</attributeRef>
+         </usedAttributes>
       </identifier>
    </identifiers>
 </Entity>

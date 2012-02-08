@@ -1,10 +1,12 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.logical.LogicalDesign>
    <object objectType="Entity" objectID="7028D00D-7DED-9B59-8AE7-25A3391A0E6C" name="BOARD" seqName="seg_0"/>
-   <object objectType="Entity" objectID="337ECD82-FDE9-A7E2-605C-D7F9B3A9FBA1" name="CARRIER" seqName="seg_0"/>
-   <object objectType="Entity" objectID="C427A40E-1A8C-64BC-1AF7-F110762B8B76" name="CATEGORY" seqName="seg_0"/>
+   <object objectType="Entity" objectID="B119D200-3DD5-162C-3181-D19D7D96832A" name="CARRIER" seqName="seg_0"/>
+   <object objectType="Entity" objectID="337ECD82-FDE9-A7E2-605C-D7F9B3A9FBA1" name="CARRIER_RATE" seqName="seg_0"/>
    <object objectType="Entity" objectID="DB30128F-945B-75C1-88F5-3121A4A33C9F" name="COMMENT" seqName="seg_0"/>
    <object objectType="Entity" objectID="53036FCE-5492-8CA4-1638-9BA7D58CEFA5" name="COMPONENT" seqName="seg_0"/>
+   <object objectType="Entity" objectID="B02096D7-DBAB-07BD-621B-71AB78BE74E3" name="COMPONENT_PRICE" seqName="seg_0"/>
+   <object objectType="Entity" objectID="3E061E15-EC31-B770-EF64-CCFBD51564A8" name="COM_TEXT" seqName="seg_0"/>
    <object objectType="Entity" objectID="60BE0146-5E0A-8DA0-690C-12F56E844B8B" name="CUSTOMER" seqName="seg_0"/>
    <object objectType="Entity" objectID="EBA8022E-B735-138E-BCF6-DB794298FDF1" name="CUST_NAV_LINK" seqName="seg_0"/>
    <object objectType="Entity" objectID="0EA3435D-85B5-D622-764C-146830ACBAFB" name="CUST_ORDER" seqName="seg_0"/>
@@ -28,13 +30,11 @@
    <object objectType="Entity" objectID="0037A1C9-CDB2-EB1C-ED6D-2F1A624D7409" name="PERSON" seqName="seg_0"/>
    <object objectType="Entity" objectID="528ACFEA-EB4D-50AD-5278-614E5C381B87" name="PICTURE" seqName="seg_0"/>
    <object objectType="Entity" objectID="5C34B370-5696-44DE-BDCB-529352BCB6EB" name="PIC_TAG" seqName="seg_0"/>
-   <object objectType="Entity" objectID="B02096D7-DBAB-07BD-621B-71AB78BE74E3" name="PRICE" seqName="seg_0"/>
    <object objectType="Entity" objectID="E5AE328B-7E25-E09B-B25F-26EA119B0271" name="PRODUCT_PAGE" seqName="seg_0"/>
    <object objectType="Entity" objectID="6671E898-40DE-1F7A-0D8A-D11BC5DF7A74" name="PROJECT_PAGE" seqName="seg_0"/>
    <object objectType="Entity" objectID="FF9C4BAC-A7BB-49B0-4B81-27A4B6A498DF" name="RELATION" seqName="seg_0"/>
    <object objectType="Entity" objectID="482BCA70-5335-8DA6-5CE7-9D83BB7EFF7D" name="STATIC_PAGE" seqName="seg_0"/>
    <object objectType="Entity" objectID="C420691D-797F-B92A-6A64-F5C6A0154A16" name="STENCIL" seqName="seg_0"/>
-   <object objectType="Entity" objectID="3E061E15-EC31-B770-EF64-CCFBD51564A8" name="TEXT" seqName="seg_0"/>
    <object objectType="Entity" objectID="E398C840-A0F6-73A6-F6E7-17B2EF5FF842" name="TUTORIAL" seqName="seg_0"/>
    <object objectType="Entity" objectID="ADA2897A-4D26-4055-86A7-B67D0DDC51C3" name="VARIANT" seqName="seg_0"/>
    <object objectType="Entity" objectID="C48BA620-5E56-0043-441A-8C5D2CB00B8E" name="VENDOR" seqName="seg_0"/>
@@ -54,12 +54,12 @@
    <object objectType="Relation" objectID="C35839D3-C319-C8C8-0ED9-A5E38FB79032" name="Relation_35" seqName="seg_0"/>
    <object objectType="Relation" objectID="759C7BD0-DC80-A8C0-B906-FDA70D3C2FBE" name="Relation_35" seqName="seg_0"/>
    <object objectType="Relation" objectID="865192C3-0F2C-9F02-C8C0-BAA1729D74E6" name="Relation_36" seqName="seg_0"/>
-   <object objectType="Relation" objectID="BC81F3A8-A974-5342-2AF9-814470AD0B41" name="Relation_36" seqName="seg_0"/>
    <object objectType="Relation" objectID="08FB0AB8-CA43-AF97-86B0-36F28CD3D981" name="Relation_37" seqName="seg_0"/>
    <object objectType="Relation" objectID="0FD50B49-88DB-B294-65C9-DCC194EC0EF6" name="Relation_38" seqName="seg_0"/>
    <object objectType="Relation" objectID="96CCF27E-3C9F-6450-EBDE-F52951D5C8FF" name="Relation_38" seqName="seg_0"/>
    <object objectType="Relation" objectID="76870CBD-04FF-942F-DD86-7FA87D1A65D6" name="Relation_40" seqName="seg_0"/>
    <object objectType="Relation" objectID="9F63D85D-C992-865D-13F6-ABF0AE51BCA4" name="Relation_42" seqName="seg_0"/>
+   <object objectType="Relation" objectID="DABEF296-3F69-8600-07B1-9C322B8E4D1D" name="Relation_42" seqName="seg_0"/>
    <object objectType="Relation" objectID="122AF6F5-017B-7100-213C-13E808730594" name="Relation_43" seqName="seg_0"/>
    <object objectType="Relation" objectID="D0D12F7F-6F7D-88FB-3883-F0D7B842F6DD" name="Relation_43" seqName="seg_0"/>
    <object objectType="Relation" objectID="97CFF346-B758-3776-5FD4-2DE6C34A11B2" name="Relation_44" seqName="seg_0"/>
@@ -75,7 +75,6 @@
    <object objectType="Relation" objectID="9B89D850-1DB8-1922-101B-7D302E30F49D" name="Relation_51" seqName="seg_0"/>
    <object objectType="Relation" objectID="A99C9638-EFC9-5620-DA8B-014C2F402E8A" name="Relation_52" seqName="seg_0"/>
    <object objectType="Relation" objectID="8B12A5F1-DAE7-F287-B8E9-15BB54867ACD" name="Relation_52" seqName="seg_0"/>
-   <object objectType="Relation" objectID="922BCCE6-8198-8BA6-7F98-D4669E471DFB" name="Relation_54" seqName="seg_0"/>
    <object objectType="Relation" objectID="4C20162B-A926-52F7-51FF-023D087B2F0A" name="Relation_54" seqName="seg_0"/>
    <object objectType="Relation" objectID="ECC0BB4B-4469-29E0-E1E4-7177AE591723" name="Relation_56" seqName="seg_0"/>
    <object objectType="Relation" objectID="B821CBF9-8624-E7C8-C412-617043E0CE6A" name="Relation_57" seqName="seg_0"/>

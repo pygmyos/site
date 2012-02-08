@@ -48,7 +48,7 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="C689A814-D975-925E-A6FE-ADC42357B9FB">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="manufacturer_id" id="C689A814-D975-925E-A6FE-ADC42357B9FB">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 19:40:18 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>

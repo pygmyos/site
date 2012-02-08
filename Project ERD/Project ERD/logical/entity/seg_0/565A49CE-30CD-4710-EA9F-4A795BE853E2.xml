@@ -49,7 +49,7 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id" id="F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="part_id" id="F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-03 05:23:14 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
@@ -58,6 +58,13 @@
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="description" id="25523FC0-1D0C-E9DA-D395-BA80C29F95E0">
          <createdBy>Evan</createdBy>
          <createdTime>2012-02-05 20:10:39 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="weight" id="43F1C24B-B40B-5B26-A152-9D70FA76E126">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-07 21:49:22 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>

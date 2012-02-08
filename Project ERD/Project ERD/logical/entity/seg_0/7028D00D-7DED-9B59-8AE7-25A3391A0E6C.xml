@@ -81,13 +81,20 @@
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id1" id="E341232C-160D-DF54-3729-45CABFAFB0F3">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="part_id" id="02879914-868F-FF94-1EB8-5CF0625D8F1C">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-13 20:47:35 UTC</createdTime>
+         <createdTime>2012-02-07 12:42:03 UTC</createdTime>
          <generatorID>0FD50B49-88DB-B294-65C9-DCC194EC0EF6</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
-         <referedAttribute>51185F41-07AA-05FD-A206-703DCA01D819</referedAttribute>
+         <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="source_location" id="1E9F64A6-CA65-CB44-2A13-D2271B27C72D">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-07 19:34:14 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
    </attributes>
