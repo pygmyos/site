@@ -47,4 +47,34 @@
          <colorRGB>-16777216</colorRGB>
       </FontObject>
    </fonts>
+   <attributes>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="billl_address" id="B1C6C981-2089-60A0-1784-413A4FE5E525">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-08 19:04:55 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="bill_city" id="29788F1D-36A6-768A-52C5-BACB8C186377">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-08 19:05:20 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="bill_state" id="FB1ABB4C-C580-222C-C478-D78A1D92629D">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-08 19:05:28 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="bill_zipcode" id="7215EB23-B40E-FA39-83E8-CF71BB46F04C">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-08 19:05:32 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+   </attributes>
 </Entity>

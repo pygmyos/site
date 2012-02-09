@@ -61,9 +61,15 @@
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="title" id="CEEB99B4-F948-3357-74D3-99C18ECB214C">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="CEEB99B4-F948-3357-74D3-99C18ECB214C">
          <createdBy>Evan</createdBy>
          <createdTime>2012-02-05 20:04:15 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="title" id="27B8A416-F17C-43DA-9CD2-8E56C8E6EA3F">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-09 00:01:55 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
@@ -79,10 +85,35 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="has_socbar" id="430D5E8D-F545-3E5D-75E8-038D430F738D">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-09 00:06:58 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <use>1</use>
+      </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="has_footer" id="F8EECDE7-C73E-167A-ADCB-1A527F117E6F">
          <createdBy>Evan</createdBy>
          <createdTime>2012-02-05 20:06:04 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="archived" id="87ADF265-0890-F4D9-2BE0-1FA3649B2F16">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-08 23:48:33 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="content" id="A471487B-6772-A613-69B2-579D78F4A2C0">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-09 00:02:04 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="page_type" id="654DA0A2-65D5-91A3-A014-29A2C4192B1F">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-09 00:13:57 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
    </attributes>

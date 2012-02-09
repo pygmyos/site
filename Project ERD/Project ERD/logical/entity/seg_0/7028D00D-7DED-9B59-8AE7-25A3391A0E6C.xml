@@ -90,9 +90,35 @@
          <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="source_location" id="1E9F64A6-CA65-CB44-2A13-D2271B27C72D">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="source_url" id="1E9F64A6-CA65-CB44-2A13-D2271B27C72D">
          <createdBy>Evan</createdBy>
          <createdTime>2012-02-07 19:34:14 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="min_trace_width" id="56532B63-E995-F415-F560-4452E7842230">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-09 02:18:10 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="min_via_diam" id="88E15F87-46BB-5CF7-A285-AA861DE90828">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-09 02:18:24 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="copper_thickness" id="D1ADB8C9-EE72-73ED-8A18-123FA6F0A34C">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-09 02:18:28 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="color" id="312E3B2D-701B-516B-4164-B1930877CD42">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-09 02:18:33 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>

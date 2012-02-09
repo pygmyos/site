@@ -83,6 +83,12 @@
          <referedAttribute>E4D5CCC6-4667-1FFB-224D-A8F1D00ADBE6</referedAttribute>
          <use>1</use>
       </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="visible" id="71FF56FF-AF5B-971F-008B-6522784081B6">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-08 19:07:10 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <use>1</use>
+      </Attribute>
    </attributes>
    <identifiers>
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="B67AC484-0608-3371-6B47-A5F4759A62B7" name="CARRIER PK">

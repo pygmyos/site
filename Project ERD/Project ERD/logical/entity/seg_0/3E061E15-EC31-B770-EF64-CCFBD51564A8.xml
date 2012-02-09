@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="3E061E15-EC31-B770-EF64-CCFBD51564A8" directorySegmentName="seg_0" name="COM_TEXT">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="3E061E15-EC31-B770-EF64-CCFBD51564A8" directorySegmentName="seg_0" name="COMMENT_TEXT">
    <createdBy>Evan</createdBy>
    <createdTime>2011-12-16 21:54:15 UTC</createdTime>
    <ownerDesignName>Project ERD</ownerDesignName>
@@ -87,6 +87,14 @@
          <referedAttribute>FB79C84D-6D6D-C7EC-D017-0CD428F36233</referedAttribute>
          <use>1</use>
       </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="page_id" id="D93F6FAF-F98A-0D0B-C7CC-3D1A23AA42EF">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-09 00:12:13 UTC</createdTime>
+         <generatorID>F60FA786-B1C2-7989-349F-CDCCC9D1073B</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <referedAttribute>541CE784-C01A-3AD3-3D9C-3355D941F999</referedAttribute>
+         <use>1</use>
+      </Attribute>
    </attributes>
    <identifiers>
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="B43B2F62-A04C-389D-6BBE-128FE33B540A" name="COMMENT_TEXT PK">
@@ -97,6 +105,7 @@
          <usedAttributes>
             <attributeRef>D904C19D-6DE4-778A-83C5-B8090127B767</attributeRef>
             <attributeRef>7AD6CD24-BE9B-42A9-A38C-D567BC72D39E</attributeRef>
+            <attributeRef>D93F6FAF-F98A-0D0B-C7CC-3D1A23AA42EF</attributeRef>
          </usedAttributes>
       </identifier>
    </identifiers>
