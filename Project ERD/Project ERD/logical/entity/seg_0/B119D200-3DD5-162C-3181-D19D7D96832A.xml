@@ -60,7 +60,7 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="short_name" id="B0554F62-01EC-3611-936D-957F8AE19B7B">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="Abbreviation" id="B0554F62-01EC-3611-936D-957F8AE19B7B">
          <createdBy>Evan</createdBy>
          <createdTime>2012-02-07 22:11:21 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>

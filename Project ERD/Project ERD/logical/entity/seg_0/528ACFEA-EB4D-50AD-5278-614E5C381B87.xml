@@ -54,11 +54,18 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>0</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="img" id="18EDC37B-FAAE-F674-CDC0-72F20033F1EA">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="url" id="18EDC37B-FAAE-F674-CDC0-72F20033F1EA">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-11 22:36:24 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>0</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="flickr_url" id="6F834173-7C41-0539-B699-5FAFCB3E388A">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-09 12:53:36 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
       </Attribute>
       <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="caption" id="A371B851-2322-11B4-A0DA-D13FE7B12A26">
          <createdBy>Evan</createdBy>
