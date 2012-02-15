@@ -1,10 +1,45 @@
 -- People
 CREATE TABLE employees
 (
+Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
+first_name tinytext NOT NULL,
+last_name tinytext NOT NULL,
+email tinytext NOT NULL,
+gender enum('male', 'female') NOT NULL,
+position tinytext NOT NULL,
+hire_date date NOT NULL,
+username tinytext,
+site tinytext,
+phone_number tinytext,
+fax_number tinytext,
+address tinytext,
+city tinytext,
+state tinytext,
+zipcode tinytext,
+PRIMARY KEY (Id)
 );
 
 CREATE TABLE customers
 (
+Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
+email tinytext NOT NULL,
+first_name tinytext,
+last_name tinytext,
+gender enum('male', 'female'),
+username tinytext,
+company tinytext,
+site tinytext,
+phone_number tinytext,
+fax_number tinytext,
+shipping_address tinytext,
+shipping_city tinytext,
+shipping_state tinytext,
+shipping_zipcode tinytext,
+billing_address tinytext,
+billing_city tinytext,
+billing_state tinytext,
+billing_zipcode tinytext,
+PRIMARY KEY (Id)
 );
 
 -- Orders
