@@ -118,22 +118,38 @@ PRIMARY KEY (Id)
 -- Part subtypes
 CREATE TABLE components
 (
+Type enum('Connector', 'Cable', 'Switch', 'Resistor', 'Protective', 'Capacitor', 'Inductive', 'Network', 'Piezoelectric', 'Power source', 'Sensor', 'Diode', 'Transistor', 'Integrated circuit', 'Optoelectronic', 'Display', 'Valve', 'Discharge', 'Antenna', 'Module', 'Other') NOT NULL,
+Value int UNSIGNED,
+Tolerance tinyint UNSIGNED,
+Current int UNSIGNED,
+Volt_Max tinyint,
+Volt_Min tinyint,
+Heat_Max smallint,
+Heat_Min smallint,
+Reflow_Max small_int UNSIGNED,
+Library_Name tinytext,
+FOREIGN KEY (Library_Name) REFERENCES Libraries(Name)
 );
 
 CREATE TABLE boards
 (
-);
-
-CREATE TABLE pcbs
-(
+Name tinytext NOT NULL,
+Type enum('Main lineup', 'Test', 'Other') NOT NULL,
+Repo_Subdir tinytext,
+Min_Trace tinyint UNSIGNED NOT NULL,
+Min_Via tinyint UNSIGNED NOT NULL,
+Copper_Thickness UNSIGNED,
+Color tinytext,
+Master_Id tinyint,
+Pcb_Id tinyint,
+FOREIGN KEY (Master_Id) REFERENCES Boards(Id)
+FOREIGN KEY (Pcb_Id) REFERENCES Pcb(Id)
 );
 
 CREATE TABLE stencils
 (
-);
-
-CREATE TABLE other_parts
-(
+Material enum('Kapton', 'Mylar'),
+Margin tinyint UNSIGNED
 );
 
 -- Part related
@@ -184,37 +200,80 @@ PRIMARY KEY (LibraryName)
 
 CREATE TABLE part_ownerships
 (
-Quantity mediumint UNSIGNED NO NULL,
-Part_Id smallint NO NULL,
-Employee_Id mediumint NO NULL,
+Quantity mediumint UNSIGNED NOT NULL,
+Part_Id smallint NOT NULL,
+Employee_Id mediumint NOT NULL,
 FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
 FOREIGN KEY (Person_Id) REFERENCES Employees(Id),
 PRIMARY KEY (Part_Id, Person_Id)
 );
 
-CREATE TABLE manufacturer_parts
+CREATE TABLE manufacturer_components
 (
+Number tinytext NOT NULL,
+Url tinytext,
+Component_Id smallint NOT NULL,
+Manufacturer_Id smallint NOT NULL,
+FOREIGN KEY (Component_Id) REFERENCES Components(Id),
+FOREIGN KEY (Manufacturer_Id) REFERENCES Manufacturers(Id),
+PRIMARY KEY (Component_Id, Manufacturer_Id)
 );
 
 CREATE TABLE manufacturers
 (
+Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
+Name tinytext NOT NULL,
+Email tinytext,
+Url tinytext,
+PRIMARY KEY (Id)
 );
 
 CREATE TABLE part_listings
 (
+Direction enum('Import', 'Export') NOT NULL DEFAULT 'Import',
+Url tinytext,
+Part_Id smallint UNSIGNED NOT NULL,
+Vendor_Id tinyint UNSIGNED NOT NULL,
+FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
+FOREIGN KEY (Vendor_Id) REFERENCES Vendors(Id),
+PRIMARY KEY (Part_Id, Vendor_Id)
 );
 
 CREATE TABLE vendors
 (
+Id tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
+Name tinytext NOT NULL,
+Url tinytext,
+Email tinytext,
+Address tinytext,
+City tinytext,
+State tinytext,
+Zipcode tinytext,
+PRIMARY KEY (Id)
 );
 
 -- Board (subtype) related
 CREATE TABLE part_usages
 (
+Quantity smallint UNSIGNED NOT NULL,
+Part_Id smallint UNSIGNED NOT NULL,
+Board_Id smallint UNSIGNED NOT NULL,
+FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
+FOREIGN KEY (Board_Id) REFERENCES Boards(Id),
+PRIMARY KEY (Board_Id, Part_Id)
 );
 
 CREATE TABLE pins
 (
+Number tinyint UNSIGNED NOT NULL,
+Name tinytext NOT NULL,
+Type enum('In', 'Out', 'IO', 'Power', 'Passive', 'NC', 'Other') DEFAULT 'IO',
+Max_Voltage tinyint,
+Min_Voltage tinyint,
+Current smallint UNSIGNED,
+Board_Id smallint UNSIGNED NOT NULL,
+FOREIGN KEY (Board_Id) REFERENCES Boards(Id),
+PRIMARY KEY (Board_Id, Number)
 );
 
 -- Component (subtype) related
@@ -231,7 +290,7 @@ CREATE TABLE packages
 (
 Package_Name tinytext NOT NULL,
 Mount_Type enum('surface mount', 'through hole', 'connector', 'other'),
-Number_Pins tinyint,
+Number_Pins smallint,
 Description text,
 Url tinytext,
 PRIMARY KEY (Package_Name)

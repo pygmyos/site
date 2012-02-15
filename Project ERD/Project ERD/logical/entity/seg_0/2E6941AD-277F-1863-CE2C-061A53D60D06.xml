@@ -55,7 +55,7 @@
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="isSell" id="04E58F64-495C-BC74-7FF0-0F02AEFACFA6">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="direction" id="04E58F64-495C-BC74-7FF0-0F02AEFACFA6">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-13 20:49:45 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
