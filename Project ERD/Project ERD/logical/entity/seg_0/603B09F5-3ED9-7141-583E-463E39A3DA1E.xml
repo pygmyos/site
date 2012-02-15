@@ -1,9 +1,9 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="5347447F-919A-33F5-EDB4-D602C5B23C2F" directorySegmentName="seg_0" name="DOC_USAGE">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="603B09F5-3ED9-7141-583E-463E39A3DA1E" directorySegmentName="seg_0" name="PIN">
    <createdBy>Evan</createdBy>
-   <createdTime>2011-12-17 23:33:53 UTC</createdTime>
+   <createdTime>2012-02-14 13:01:28 UTC</createdTime>
    <ownerDesignName>Project ERD</ownerDesignName>
-   <pkName>PK_DOC_USAGE</pkName>
+   <pkName>PK_PIN</pkName>
    <adequatelyNormalized>NO</adequatelyNormalized>
    <expectedVolumes>0</expectedVolumes>
    <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
@@ -48,38 +48,58 @@
       </FontObject>
    </fonts>
    <attributes>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="part_id" id="E2DFE983-FCC3-DB0A-0521-50F117BF81DA">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="5C36CCE3-B527-5076-E2E0-0B736FA372B5">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-17 23:34:21 UTC</createdTime>
-         <generatorID>DF31F58A-ECA7-A459-40F7-62A701C3A0D6</generatorID>
+         <createdTime>2012-02-14 18:30:24 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="part_id" id="6DA60AD6-06E8-8DD5-D0CA-680865DAC086">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-14 13:01:50 UTC</createdTime>
+         <generatorID>432FEB23-C926-84BA-67E1-66FE0EBD613E</generatorID>
          <ownerDesignName>Project ERD</ownerDesignName>
          <referedAttribute>F6EC9C5F-D23B-E1A2-47F4-EAA37B193FFB</referedAttribute>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="on_page" id="5D6EFD7E-2FD3-F79A-A05F-2DB5A7551DA8">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="type" id="3A53B637-7949-3183-87E0-070621CB31A4">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-17 23:36:30 UTC</createdTime>
+         <createdTime>2012-02-14 13:02:30 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="doc_id" id="695D6BF8-6682-6698-6A28-4CB624A82720">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="min_voltage" id="1C0B7585-D1AF-DFEF-5B1C-5E449C8278B9">
          <createdBy>Evan</createdBy>
-         <createdTime>2012-02-15 00:16:43 UTC</createdTime>
-         <generatorID>A99C9638-EFC9-5620-DA8B-014C2F402E8A</generatorID>
+         <createdTime>2012-02-14 18:34:29 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
-         <referedAttribute>388BF1F0-AC2E-68F3-087F-FF418CA681C0</referedAttribute>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="max_voltage" id="201F2BFC-3AA0-9E8D-99A8-5E21731675B4">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-14 18:34:35 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>1</use>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="current_draw" id="36773913-3D8A-AB88-F70C-65FEBFEC4EE4">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-14 18:34:38 UTC</createdTime>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
    </attributes>
    <identifiers>
-      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="0EB0B629-6FDA-2541-6D7F-C5911ABA7C81" name="PK_DOC_USAGE">
+      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="49D2D97E-6351-F0E7-2B52-F94E0656E604" name="PK_PIN">
          <createdBy>Evan</createdBy>
-         <createdTime>2011-12-17 23:34:18 UTC</createdTime>
+         <createdTime>2012-02-14 18:30:25 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>
          <pk>true</pk>
          <usedAttributes>
-            <attributeRef>E2DFE983-FCC3-DB0A-0521-50F117BF81DA</attributeRef>
-            <attributeRef>695D6BF8-6682-6698-6A28-4CB624A82720</attributeRef>
+            <attributeRef>6DA60AD6-06E8-8DD5-D0CA-680865DAC086</attributeRef>
+            <attributeRef>5C36CCE3-B527-5076-E2E0-0B736FA372B5</attributeRef>
          </usedAttributes>
       </identifier>
    </identifiers>

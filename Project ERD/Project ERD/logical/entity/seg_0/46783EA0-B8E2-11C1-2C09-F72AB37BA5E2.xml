@@ -54,7 +54,7 @@
          <ownerDesignName>Project ERD</ownerDesignName>
          <use>1</use>
       </Attribute>
-      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="visible" id="373D8C99-2D01-8281-4AF6-08B602B93F23">
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="on_page" id="373D8C99-2D01-8281-4AF6-08B602B93F23">
          <createdBy>Evan</createdBy>
          <createdTime>2011-12-17 23:25:54 UTC</createdTime>
          <ownerDesignName>Project ERD</ownerDesignName>

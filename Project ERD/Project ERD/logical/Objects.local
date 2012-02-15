@@ -6,7 +6,6 @@
    <object objectType="Entity" objectID="DB30128F-945B-75C1-88F5-3121A4A33C9F" name="COMMENT" seqName="seg_0"/>
    <object objectType="Entity" objectID="3E061E15-EC31-B770-EF64-CCFBD51564A8" name="COMMENT_TEXT" seqName="seg_0"/>
    <object objectType="Entity" objectID="53036FCE-5492-8CA4-1638-9BA7D58CEFA5" name="COMPONENT" seqName="seg_0"/>
-   <object objectType="Entity" objectID="B02096D7-DBAB-07BD-621B-71AB78BE74E3" name="COMPONENT_PRICE" seqName="seg_0"/>
    <object objectType="Entity" objectID="0F0CEC61-CB5F-3C86-17E5-BF7007732CF5" name="COMP_ORDER" seqName="seg_0"/>
    <object objectType="Entity" objectID="60BE0146-5E0A-8DA0-690C-12F56E844B8B" name="CUSTOMER" seqName="seg_0"/>
    <object objectType="Entity" objectID="EBA8022E-B735-138E-BCF6-DB794298FDF1" name="CUST_NAV_LINK" seqName="seg_0"/>
@@ -26,11 +25,13 @@
    <object objectType="Entity" objectID="565A49CE-30CD-4710-EA9F-4A795BE853E2" name="PART" seqName="seg_0"/>
    <object objectType="Entity" objectID="C0AC5A4E-F526-868C-A77E-52388A1B448E" name="PART_ORDER" seqName="seg_0"/>
    <object objectType="Entity" objectID="AA26A085-8AC6-8F30-808A-050A976ADF6F" name="PART_OWNERSHIP" seqName="seg_0"/>
+   <object objectType="Entity" objectID="B02096D7-DBAB-07BD-621B-71AB78BE74E3" name="PART_PRICE" seqName="seg_0"/>
    <object objectType="Entity" objectID="BAB56A1D-9523-F3A2-7A35-9D5F8346C4B8" name="PART_USAGE" seqName="seg_0"/>
    <object objectType="Entity" objectID="B471A8A7-5086-958C-3B2B-8181588F1069" name="PCB" seqName="seg_0"/>
    <object objectType="Entity" objectID="0037A1C9-CDB2-EB1C-ED6D-2F1A624D7409" name="PERSON" seqName="seg_0"/>
    <object objectType="Entity" objectID="528ACFEA-EB4D-50AD-5278-614E5C381B87" name="PICTURE" seqName="seg_0"/>
-   <object objectType="Entity" objectID="5C34B370-5696-44DE-BDCB-529352BCB6EB" name="PIC_TAG" seqName="seg_0"/>
+   <object objectType="Entity" objectID="5C34B370-5696-44DE-BDCB-529352BCB6EB" name="PICTURE_TAG" seqName="seg_0"/>
+   <object objectType="Entity" objectID="603B09F5-3ED9-7141-583E-463E39A3DA1E" name="PIN" seqName="seg_0"/>
    <object objectType="Entity" objectID="C420691D-797F-B92A-6A64-F5C6A0154A16" name="STENCIL" seqName="seg_0"/>
    <object objectType="Entity" objectID="ADA2897A-4D26-4055-86A7-B67D0DDC51C3" name="VARIANT" seqName="seg_0"/>
    <object objectType="Entity" objectID="C48BA620-5E56-0043-441A-8C5D2CB00B8E" name="VENDOR" seqName="seg_0"/>
@@ -55,6 +56,7 @@
    <object objectType="Relation" objectID="96CCF27E-3C9F-6450-EBDE-F52951D5C8FF" name="Relation_38" seqName="seg_0"/>
    <object objectType="Relation" objectID="76870CBD-04FF-942F-DD86-7FA87D1A65D6" name="Relation_40" seqName="seg_0"/>
    <object objectType="Relation" objectID="9AD50BA6-9C1B-A16C-53D6-A3C216AD3112" name="Relation_40" seqName="seg_0"/>
+   <object objectType="Relation" objectID="432FEB23-C926-84BA-67E1-66FE0EBD613E" name="Relation_41" seqName="seg_0"/>
    <object objectType="Relation" objectID="9F63D85D-C992-865D-13F6-ABF0AE51BCA4" name="Relation_42" seqName="seg_0"/>
    <object objectType="Relation" objectID="DABEF296-3F69-8600-07B1-9C322B8E4D1D" name="Relation_42" seqName="seg_0"/>
    <object objectType="Relation" objectID="122AF6F5-017B-7100-213C-13E808730594" name="Relation_43" seqName="seg_0"/>
