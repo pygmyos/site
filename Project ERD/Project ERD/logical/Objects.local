@@ -1,5 +1,6 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="Entity" objectID="EBA8022E-B735-138E-BCF6-DB794298FDF1" name="ALT_NAV_LINK" seqName="seg_0"/>
    <object objectType="Entity" objectID="7028D00D-7DED-9B59-8AE7-25A3391A0E6C" name="BOARD" seqName="seg_0"/>
    <object objectType="Entity" objectID="B119D200-3DD5-162C-3181-D19D7D96832A" name="CARRIER" seqName="seg_0"/>
    <object objectType="Entity" objectID="337ECD82-FDE9-A7E2-605C-D7F9B3A9FBA1" name="CARRIER_RATE" seqName="seg_0"/>
@@ -8,7 +9,6 @@
    <object objectType="Entity" objectID="53036FCE-5492-8CA4-1638-9BA7D58CEFA5" name="COMPONENT" seqName="seg_0"/>
    <object objectType="Entity" objectID="0F0CEC61-CB5F-3C86-17E5-BF7007732CF5" name="COMP_ORDER" seqName="seg_0"/>
    <object objectType="Entity" objectID="60BE0146-5E0A-8DA0-690C-12F56E844B8B" name="CUSTOMER" seqName="seg_0"/>
-   <object objectType="Entity" objectID="EBA8022E-B735-138E-BCF6-DB794298FDF1" name="CUST_NAV_LINK" seqName="seg_0"/>
    <object objectType="Entity" objectID="0EA3435D-85B5-D622-764C-146830ACBAFB" name="CUST_ORDER" seqName="seg_0"/>
    <object objectType="Entity" objectID="D7E1D7A0-CE4C-F8A0-0C52-45641F8DF145" name="DOCUMENT" seqName="seg_0"/>
    <object objectType="Entity" objectID="5347447F-919A-33F5-EDB4-D602C5B23C2F" name="DOC_USAGE" seqName="seg_0"/>
@@ -59,6 +59,7 @@
    <object objectType="Relation" objectID="432FEB23-C926-84BA-67E1-66FE0EBD613E" name="Relation_41" seqName="seg_0"/>
    <object objectType="Relation" objectID="9F63D85D-C992-865D-13F6-ABF0AE51BCA4" name="Relation_42" seqName="seg_0"/>
    <object objectType="Relation" objectID="DABEF296-3F69-8600-07B1-9C322B8E4D1D" name="Relation_42" seqName="seg_0"/>
+   <object objectType="Relation" objectID="C6772321-7525-2F50-500A-B82A5A421ECE" name="Relation_42" seqName="seg_0"/>
    <object objectType="Relation" objectID="122AF6F5-017B-7100-213C-13E808730594" name="Relation_43" seqName="seg_0"/>
    <object objectType="Relation" objectID="D0D12F7F-6F7D-88FB-3883-F0D7B842F6DD" name="Relation_43" seqName="seg_0"/>
    <object objectType="Relation" objectID="97CFF346-B758-3776-5FD4-2DE6C34A11B2" name="Relation_44" seqName="seg_0"/>

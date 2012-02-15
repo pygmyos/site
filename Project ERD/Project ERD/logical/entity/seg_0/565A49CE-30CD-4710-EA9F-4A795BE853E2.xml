@@ -69,6 +69,15 @@
          <nullsAllowed>true</nullsAllowed>
          <use>1</use>
       </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="page_id" id="7273394C-73A9-6C2E-294E-92047940A1F3">
+         <createdBy>Evan</createdBy>
+         <createdTime>2012-02-15 01:51:51 UTC</createdTime>
+         <generatorID>C6772321-7525-2F50-500A-B82A5A421ECE</generatorID>
+         <ownerDesignName>Project ERD</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <referedAttribute>B3A563C7-D443-9F15-D8CF-21FA01C55EEB</referedAttribute>
+         <use>1</use>
+      </Attribute>
    </attributes>
    <identifiers>
       <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="283E09EB-06D2-17CC-6332-6182F1A401EA" name="PART PK">

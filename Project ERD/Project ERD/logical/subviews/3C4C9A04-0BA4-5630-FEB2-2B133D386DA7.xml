@@ -69,7 +69,7 @@
          <bounds x="2143" y="924" width="134" height="172"/>
       </OView>
       <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="77641277-3200-F4BA-51F0-C0CC1254CB55" otype="Entity" vid="72F2643C-C99B-C48B-2A2D-6818B1876B61">
-         <bounds x="1564" y="1526" width="244" height="185"/>
+         <bounds x="1564" y="1536" width="244" height="185"/>
       </OView>
       <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="805A0066-7509-43E1-AADF-50B4080D203C" otype="Entity" vid="D2D58326-C349-1F11-5368-58DDF5220FD2">
          <bounds x="2004" y="690" width="150" height="83"/>
@@ -211,8 +211,8 @@
       <Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="4C20162B-A926-52F7-51FF-023D087B2F0A" otype="Relation" vid_source="ED487243-ED70-0660-BA48-5EEEEA0A3E91" vid_target="72F2643C-C99B-C48B-2A2D-6818B1876B61">
          <lineWidth>1</lineWidth>
          <points>
-            <point x="1765" y="1837"/>
-            <point x="1765" y="1711"/>
+            <point x="1755" y="1837"/>
+            <point x="1755" y="1721"/>
          </points>
       </Connector>
       <Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="4FC6230E-2CB6-8817-3AEA-3FCF8D17D811" otype="Relation" vid_source="94ECC272-CE53-559A-A5C6-F7C6B24C1822" vid_target="E277E035-F3CD-4E58-8374-BC0E3E775DF6">
@@ -299,15 +299,15 @@
       <Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="9AD50BA6-9C1B-A16C-53D6-A3C216AD3112" otype="Relation" vid_source="72F2643C-C99B-C48B-2A2D-6818B1876B61" vid_target="8190BFA2-15FA-6CB9-5B70-4F459E212747">
          <lineWidth>1</lineWidth>
          <points>
-            <point x="1680" y="1526"/>
+            <point x="1680" y="1536"/>
             <point x="1680" y="1349"/>
          </points>
       </Connector>
       <Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="9B89D850-1DB8-1922-101B-7D302E30F49D" otype="Relation" vid_source="72F2643C-C99B-C48B-2A2D-6818B1876B61" vid_target="ED487243-ED70-0660-BA48-5EEEEA0A3E91">
          <lineWidth>1</lineWidth>
          <points>
-            <point x="1755" y="1711"/>
-            <point x="1755" y="1837"/>
+            <point x="1745" y="1721"/>
+            <point x="1745" y="1837"/>
          </points>
       </Connector>
       <Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="9F63D85D-C992-865D-13F6-ABF0AE51BCA4" otype="Relation" vid_source="E277E035-F3CD-4E58-8374-BC0E3E775DF6" vid_target="F2070220-B67E-D3C0-3029-07E8705960AA">
@@ -349,7 +349,7 @@
       <Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="B821CBF9-8624-E7C8-C412-617043E0CE6A" otype="Relation" vid_source="72F2643C-C99B-C48B-2A2D-6818B1876B61" vid_target="AD356967-FA6E-1F30-0FC9-274A2048E91A">
          <lineWidth>1</lineWidth>
          <points>
-            <point x="1618" y="1711"/>
+            <point x="1618" y="1721"/>
             <point x="1618" y="1836"/>
          </points>
       </Connector>
@@ -358,6 +358,14 @@
          <points>
             <point x="2197" y="1096"/>
             <point x="2197" y="1247"/>
+         </points>
+      </Connector>
+      <Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="C6772321-7525-2F50-500A-B82A5A421ECE" otype="Relation" vid_source="72F2643C-C99B-C48B-2A2D-6818B1876B61" vid_target="E277E035-F3CD-4E58-8374-BC0E3E775DF6">
+         <lineWidth>1</lineWidth>
+         <points>
+            <point x="1600" y="1536"/>
+            <point x="1600" y="1130"/>
+            <point x="1839" y="1130"/>
          </points>
       </Connector>
       <Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="D0D12F7F-6F7D-88FB-3883-F0D7B842F6DD" otype="Relation" vid_source="06A04BB1-FB6D-9B8E-FFC9-C5C66E00094C" vid_target="77B3E30C-58CB-8FD6-0E56-51099113A428">
@@ -419,7 +427,7 @@
       <Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="ECC0BB4B-4469-29E0-E1E4-7177AE591723" otype="Relation" vid_source="72F2643C-C99B-C48B-2A2D-6818B1876B61" vid_target="AD356967-FA6E-1F30-0FC9-274A2048E91A">
          <lineWidth>1</lineWidth>
          <points>
-            <point x="1608" y="1711"/>
+            <point x="1608" y="1721"/>
             <point x="1608" y="1836"/>
          </points>
       </Connector>
