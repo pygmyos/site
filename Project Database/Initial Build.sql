@@ -48,18 +48,18 @@ CREATE TABLE incoming_orders
 Id mediumint UNSIGNED NOT NULL AUTO_INCREMENT,
 Status enum('ship error', 'new order', 'shipped', 'received', 'cancelled') NOT NULL,
 Tracking_Nbr tinytext,
-Date_Created datetime NO NULL,
-Delivery_Estimate date NO NULL,
-Tax mediumint NO NULL,
+Date_Created datetime NOT NULL,
+Delivery_Estimate date NOT NULL,
+Tax mediumint NOT NULL,
 Date_Received date,
 PRIMARY KEY (Id)
 );
 
 CREATE TABLE incoming_part_orders
 (
-Quantity mediumint UNSIGNED NO NULL
-Order_Id int NO NULL,
-Part_Id smallint NO NULL,
+Quantity mediumint UNSIGNED NOT NULL
+Order_Id int UNSIGNED NOT NULL,
+Part_Id smallint UNSIGNED NOT NULL,
 FOREIGN KEY (Order_Id) REFERENCES Incoming_Orders(Id),
 FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
 PRIMARY KEY (Order_Id, Part_Id)
@@ -70,17 +70,17 @@ CREATE TABLE outgoing_orders
 Id mediumint UNSIGNED NOT NULL AUTO_INCREMENT,
 Status enum('exception', 'new order', 'packed', 'label printed', 'ready to ship', 'shipped', 'cancelled') NOT NULL,
 Tracking_Nbr tinytext,
-Date_Created datetime NO NULL,
-Delivery_Estimate date NO NULL,
-Tax mediumint NO NULL,
+Date_Created datetime NOT NULL,
+Delivery_Estimate date NOT NULL,
+Tax mediumint NOT NULL,
 PRIMARY KEY (Id)
 );
 
 CREATE TABLE outgoing_part_orders
 (
-Quantity mediumint UNSIGNED NO NULL
-Order_Id int NO NULL,
-Part_Id smallint NO NULL,
+Quantity mediumint UNSIGNED NOT NULL
+Order_Id int UNSIGNED NOT NULL,
+Part_Id smallint UNSIGNED NOT NULL,
 FOREIGN KEY (Order_Id) REFERENCES Outgoing_Orders(Id),
 FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
 PRIMARY KEY (Order_Id, Part_Id)
@@ -101,7 +101,7 @@ Name tinytext,
 Delivery_Days_Min tinyint,
 Delivery_Days_Max tinyint,
 Visible bit NOT NULL,
-Carrier_Id tinyint,
+Carrier_Id tinyint UNSIGNED,
 FOREIGN KEY (Carrier_Id) REFERENCES Carriers(Id),
 PRIMARY KEY (Id, Carrier_Id)
 );
@@ -140,8 +140,8 @@ Min_Trace tinyint UNSIGNED NOT NULL,
 Min_Via tinyint UNSIGNED NOT NULL,
 Copper_Thickness UNSIGNED,
 Color tinytext,
-Master_Id tinyint,
-Pcb_Id tinyint,
+Master_Id tinyint UNSIGNED,
+Pcb_Id tinyint UNSIGNED,
 FOREIGN KEY (Master_Id) REFERENCES Boards(Id)
 FOREIGN KEY (Pcb_Id) REFERENCES Pcb(Id)
 );
@@ -158,7 +158,7 @@ CREATE TABLE part_prices
 Start_Date date NOT NULL,
 End_Date date,
 Value smallint UNSIGNED NOT NULL,
-Part_Id smallint NOT NULL,
+Part_Id smallint UNSIGNED NOT NULL,
 FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
 PRIMARY KEY (Part_Id, Start_Date)
 );
@@ -166,8 +166,8 @@ PRIMARY KEY (Part_Id, Start_Date)
 CREATE TABLE doc_usages
 (
 On_Page bit NOT NULL DEFAULT 1,
-Document_Id smallint,
-Part_Id smallint,
+Document_Id smallint UNSIGNED,
+Part_Id smallint UNSIGNED,
 FOREIGN KEY (Document_Id) REFERENCES Documents(Id),
 FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
 PRIMARY KEY (Document_Id, Part_Id)
@@ -186,7 +186,7 @@ CREATE TABLE features
 Number smallint UNSIGNED NOT NULL AUTO_INCREMENT,
 Text tinytext NOT NULL,
 On_Page bit NOT NULL DEFAULT 1,
-Part_Id smallint NOT NULL,
+Part_Id smallint UNSIGNED NOT NULL,
 FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
 PRIMARY KEY (Part_Id, Number)
 );
@@ -201,8 +201,8 @@ PRIMARY KEY (LibraryName)
 CREATE TABLE part_ownerships
 (
 Quantity mediumint UNSIGNED NOT NULL,
-Part_Id smallint NOT NULL,
-Employee_Id mediumint NOT NULL,
+Part_Id smallint UNSIGNED NOT NULL,
+Employee_Id mediumint UNSIGNED NOT NULL,
 FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
 FOREIGN KEY (Person_Id) REFERENCES Employees(Id),
 PRIMARY KEY (Part_Id, Person_Id)
@@ -212,8 +212,8 @@ CREATE TABLE manufacturer_components
 (
 Number tinytext NOT NULL,
 Url tinytext,
-Component_Id smallint NOT NULL,
-Manufacturer_Id smallint NOT NULL,
+Component_Id smallint UNSIGNED NOT NULL,
+Manufacturer_Id smallint UNSIGNED NOT NULL,
 FOREIGN KEY (Component_Id) REFERENCES Components(Id),
 FOREIGN KEY (Manufacturer_Id) REFERENCES Manufacturers(Id),
 PRIMARY KEY (Component_Id, Manufacturer_Id)
@@ -279,8 +279,8 @@ PRIMARY KEY (Board_Id, Number)
 -- Component (subtype) related
 CREATE TABLE variants
 (
-Part_Id smallint NOT NULL,
-Package_Id smallint NOT NULL,
+Part_Id smallint UNSIGNED NOT NULL,
+Package_Id smallint UNSIGNED NOT NULL,
 FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
 FOREIGN KEY (Package_Id) REFERENCES Packages(Id),
 PRIMARY KEY (Part_Id, Package_Id)
@@ -316,8 +316,8 @@ Left_Corner_Y smallint UNSIGNED,
 Right_Corner_X smallint UNSIGNED,
 Right_Corner_Y smallint UNSIGNED,
 Alternative_Text tinytext,
-Part_Id smallint,
-Picture_Id smallint NOT NULL,
+Part_Id smallint UNSIGNED,
+Picture_Id smallint UNSIGNED NOT NULL,
 FOREIGN KEY (Picture_Id) REFERENCES Pictures(Id)
 FOREIGN KEY (Part_Id) REFERENCES Parts(Id)
 PRIMARY KEY (Picture_Id, Number)
@@ -337,7 +337,7 @@ Content mediumtext NOT NULL DEFAULT 'No content',
 Archived bit NOT NULL DEFAULT 0,
 Custom_Url tinytext,
 Page_Type enum('other', 'part', 'board', 'tutorial'),
-Part_Id smallint,
+Part_Id smallint UNSIGNED,
 FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
 PRIMARY KEY (Id)
 );
@@ -365,7 +365,7 @@ PRIMARY KEY (Page1_Id, Page2_Id)
 CREATE TABLE comments
 (
 Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-Page_Id smallint NOT NULL,
+Page_Id smallint UNSIGNED NOT NULL,
 FOREIGN KEY (Page_Id) REFERENCES Pages(Id)
 PRIMARY ID (Page_Id, Id)
 );
@@ -373,9 +373,7 @@ PRIMARY ID (Page_Id, Id)
 CREATE TABLE comment_texts
 (
 Edit_Number UNSIGNED NOT NULL AUTO_INCREMENT,
-Comment_Id smallint NOT NULL,
+Comment_Id smallint UNSIGNED NOT NULL,
 FOREIGN KEY (Comment_Id) REFERENCES Comments(Id),
 PRIMARY KEY (Comment_Id, Edit_Number)
 );
-
-
