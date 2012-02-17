@@ -333,14 +333,49 @@ Has_Header bit NOT NULL DEFAULT 1,
 Has_Navbar bit NOT NULL DEFAULT 1,
 Has_Socbar bit NOT NULL DEFAULT 1,
 Has_Footer bit NOT NULL DEFAULT 1,
-Content mediumtext NOT NULL DEFAULT 'No content',
+SetContent mediumtext NOT NULL DEFAULT 'No content',
 Archived bit NOT NULL DEFAULT 0,
-Custom_Url tinytext,
-Page_Type enum('other', 'part', 'board', 'tutorial'),
+Url_Part tinytext NOT NULL,
 Part_Id smallint UNSIGNED,
+Code_Ref_Id smallint UNSIGNED,
 FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
+FOREIGN KEY (Code_Ref_Id) REFERENCES Code_Ref(Id),
 PRIMARY KEY (Id)
 );
+
+CREATE TABLE code_refs
+(
+Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
+Name tinytext NOT NULL,
+Description text NOT NULL,
+Syntax tinytext NOT NULL,
+Type enum('Structural'),
+Returns tinytext,
+Usage tinytext NOT NULL,
+PRIMARY KEY (Id)
+)
+
+CREATE TABLE code_ref_examples
+(
+Number tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
+Code text,
+Output text,
+Code_Ref_Id smallint UNSIGNED,
+Picture_Id smallint UNSIGNED,
+FOREIGN KEY (Picture_Id) REFERENCES Pictures(Id),
+FOREIGN KEY (Code_Ref_Id) REFERENCES Code_Refs(Id),
+PRIMARY KEY (Code_Ref_Id, Number)
+)
+
+CREATE TABLE code_ref_parameters
+(
+Number tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
+Name tinytext NOT NULL,
+Type tinytext NOT NULL,
+Description tinytext NOT NULL
+FOREIGN KEY (Code_Ref_Id) REFERENCES Code_Refs(Id),
+PRIMARY KEY (Code_Ref_Id, Number)
+)
 
 CREATE TABLE page_relations
 (
