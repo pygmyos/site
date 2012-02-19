@@ -50,14 +50,15 @@ Status enum('ship error', 'new order', 'shipped', 'received', 'cancelled') NOT N
 Tracking_Nbr tinytext,
 Date_Created datetime NOT NULL,
 Delivery_Estimate date NOT NULL,
-Tax mediumint NOT NULL,
+Tax decimal(19,2) NOT NULL,
+Shipping_Cost decimal(19,2) NOT NULL,
 Date_Received date,
 PRIMARY KEY (Id)
 );
 
 CREATE TABLE incoming_part_orders
 (
-Quantity mediumint UNSIGNED NOT NULL
+Quantity mediumint UNSIGNED NOT NULL,
 Order_Id int UNSIGNED NOT NULL,
 Part_Id smallint UNSIGNED NOT NULL,
 FOREIGN KEY (Order_Id) REFERENCES Incoming_Orders(Id),
@@ -72,13 +73,14 @@ Status enum('exception', 'new order', 'packed', 'label printed', 'ready to ship'
 Tracking_Nbr tinytext,
 Date_Created datetime NOT NULL,
 Delivery_Estimate date NOT NULL,
-Tax mediumint NOT NULL,
+Tax decimal(19,2) NOT NULL,
+Shipping_Cost decimal(19,2) NOT NULL,
 PRIMARY KEY (Id)
 );
 
 CREATE TABLE outgoing_part_orders
 (
-Quantity mediumint UNSIGNED NOT NULL
+Quantity mediumint UNSIGNED NOT NULL,
 Order_Id int UNSIGNED NOT NULL,
 Part_Id smallint UNSIGNED NOT NULL,
 FOREIGN KEY (Order_Id) REFERENCES Outgoing_Orders(Id),
@@ -110,6 +112,8 @@ PRIMARY KEY (Id, Carrier_Id)
 CREATE TABLE parts
 (
 Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
+Part_Type tinytext NOT NULL,
+CHECK(Part_Type IN ('component', 'board', 'stencil')),
 Description text,
 Weight smallint,
 PRIMARY KEY (Id)
@@ -118,7 +122,20 @@ PRIMARY KEY (Id)
 -- Part subtypes
 CREATE TABLE components
 (
-Type enum('Connector', 'Cable', 'Switch', 'Resistor', 'Protective', 'Capacitor', 'Inductive', 'Network', 'Piezoelectric', 'Power source', 'Sensor', 'Diode', 'Transistor', 'Integrated circuit', 'Optoelectronic', 'Display', 'Valve', 'Discharge', 'Antenna', 'Module', 'Other') NOT NULL,
+Id smallint UNSIGNED NOT NULL,
+Part_Type tinytext NOT NULL,
+Description text,
+Weight smallint,
+CHECK(Part_Type='component'),
+FOREIGN KEY (Id, Part_Type(10))
+REFERENCES Parts(Id, Part_Type) ON UPDATE CASCADE ON DELETE CASCADE,
+FOREIGN KEY (Description(900)) REFERENCES Parts (Description) ON UPDATE CASCADE ON DELETE CASCADE,
+FOREIGN KEY (Weight) REFERENCES Parts (Weight) ON UPDATE CASCADE ON DELETE CASCADE,
+PRIMARY KEY (Id),
+Type enum('Connector', 'Cable', 'Switch', 'Resistor', 'Protective', 
+'Capacitor', 'Inductive', 'Network', 'Piezoelectric', 'Power source', 
+'Sensor', 'Diode', 'Transistor', 'Integrated circuit', 'Optoelectronic', 
+'Display', 'Valve', 'Discharge', 'Antenna', 'Module', 'Pcb', 'Other') NOT NULL,
 Value int UNSIGNED,
 Tolerance tinyint UNSIGNED,
 Current int UNSIGNED,
@@ -126,28 +143,48 @@ Volt_Max tinyint,
 Volt_Min tinyint,
 Heat_Max smallint,
 Heat_Min smallint,
-Reflow_Max small_int UNSIGNED,
+Reflow_Max smallint UNSIGNED,
 Library_Name tinytext,
-FOREIGN KEY (Library_Name) REFERENCES Libraries(Name)
+FOREIGN KEY (Library_Name(255)) REFERENCES Libraries(Name)
 );
 
 CREATE TABLE boards
 (
+Id smallint UNSIGNED NOT NULL,
+Part_Type tinytext NOT NULL,
+Description text,
+Weight smallint,
+CHECK(Part_Type='board'),
+FOREIGN KEY (Id, Part_Type(10))
+REFERENCES Parts(Id, Part_Type) ON UPDATE CASCADE ON DELETE CASCADE,
+FOREIGN KEY (Description(900)) REFERENCES Parts (Description) ON UPDATE CASCADE ON DELETE CASCADE,
+FOREIGN KEY (Weight) REFERENCES Parts (Weight) ON UPDATE CASCADE ON DELETE CASCADE,
+PRIMARY KEY (Id),
 Name tinytext NOT NULL,
-Type enum('Main lineup', 'Test', 'Other') NOT NULL,
+Type enum('Selling', 'Dev', 'Bought', 'Test', 'Other') NOT NULL,
 Repo_Subdir tinytext,
 Min_Trace tinyint UNSIGNED NOT NULL,
 Min_Via tinyint UNSIGNED NOT NULL,
-Copper_Thickness UNSIGNED,
+Copper_Thickness tinyint UNSIGNED,
 Color tinytext,
 Master_Id tinyint UNSIGNED,
 Pcb_Id tinyint UNSIGNED,
-FOREIGN KEY (Master_Id) REFERENCES Boards(Id)
-FOREIGN KEY (Pcb_Id) REFERENCES Pcb(Id)
+FOREIGN KEY (Master_Id) REFERENCES Boards(Id),
+FOREIGN KEY (Pcb_Id) REFERENCES Components(Id)
 );
 
 CREATE TABLE stencils
 (
+Id smallint UNSIGNED NOT NULL,
+Part_Type tinytext NOT NULL,
+Description text,
+Weight smallint,
+CHECK(Part_Type='stencil'),
+FOREIGN KEY (Id, Part_Type(10))
+REFERENCES Parts(Id, Part_Type) ON UPDATE CASCADE ON DELETE CASCADE,
+FOREIGN KEY (Description(900)) REFERENCES Parts (Description) ON UPDATE CASCADE ON DELETE CASCADE,
+FOREIGN KEY (Weight) REFERENCES Parts (Weight) ON UPDATE CASCADE ON DELETE CASCADE,
+PRIMARY KEY (Id),
 Material enum('Kapton', 'Mylar'),
 Margin tinyint UNSIGNED
 );
@@ -155,9 +192,10 @@ Margin tinyint UNSIGNED
 -- Part related
 CREATE TABLE part_prices
 (
+
 Start_Date date NOT NULL,
 End_Date date,
-Value smallint UNSIGNED NOT NULL,
+Value decimal(19,2) NOT NULL,
 Part_Id smallint UNSIGNED NOT NULL,
 FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
 PRIMARY KEY (Part_Id, Start_Date)
@@ -195,7 +233,7 @@ CREATE TABLE libraries
 (
 LibraryName tinytext NOT NULL,
 Description text,
-PRIMARY KEY (LibraryName)
+PRIMARY KEY (LibraryName(50))
 );
 
 CREATE TABLE part_ownerships
@@ -204,8 +242,8 @@ Quantity mediumint UNSIGNED NOT NULL,
 Part_Id smallint UNSIGNED NOT NULL,
 Employee_Id mediumint UNSIGNED NOT NULL,
 FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
-FOREIGN KEY (Person_Id) REFERENCES Employees(Id),
-PRIMARY KEY (Part_Id, Person_Id)
+FOREIGN KEY (Employee_Id) REFERENCES Employees(Id),
+PRIMARY KEY (Part_Id, Employee_Id)
 );
 
 CREATE TABLE manufacturer_components
@@ -289,11 +327,11 @@ PRIMARY KEY (Part_Id, Package_Id)
 CREATE TABLE packages
 (
 Package_Name tinytext NOT NULL,
-Mount_Type enum('surface mount', 'through hole', 'connector', 'other'),
+Mount_Type enum('Surface mount', 'Through hole', 'Hybrid', 'Connector', 'Other'),
 Number_Pins smallint,
 Description text,
 Url tinytext,
-PRIMARY KEY (Package_Name)
+PRIMARY KEY (Package_Name(255))
 );
 
 -- Pictures
@@ -304,7 +342,7 @@ Url tinytext NOT NULL,
 Caption tinytext NOT NULL,
 Flickr_Url tinytext,
 Page_Id tinytext,
-FOREIGN KEY (Page_Id) REFERENCES Pages(Id)
+FOREIGN KEY (Page_Id(255)) REFERENCES Pages(Id),
 PRIMARY KEY (Id)
 );
 
@@ -318,8 +356,8 @@ Right_Corner_Y smallint UNSIGNED,
 Alternative_Text tinytext,
 Part_Id smallint UNSIGNED,
 Picture_Id smallint UNSIGNED NOT NULL,
-FOREIGN KEY (Picture_Id) REFERENCES Pictures(Id)
-FOREIGN KEY (Part_Id) REFERENCES Parts(Id)
+FOREIGN KEY (Picture_Id) REFERENCES Pictures(Id),
+FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
 PRIMARY KEY (Picture_Id, Number)
 );
 
@@ -333,14 +371,14 @@ Has_Header bit NOT NULL DEFAULT 1,
 Has_Navbar bit NOT NULL DEFAULT 1,
 Has_Socbar bit NOT NULL DEFAULT 1,
 Has_Footer bit NOT NULL DEFAULT 1,
-SetContent mediumtext NOT NULL DEFAULT 'No content',
+SetContent mediumtext NOT NULL,
 Archived bit NOT NULL DEFAULT 0,
 Url_Part tinytext NOT NULL,
 Part_Id smallint UNSIGNED,
 Code_Ref_Id smallint UNSIGNED,
 FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
 FOREIGN KEY (Code_Ref_Id) REFERENCES Code_Ref(Id),
-PRIMARY KEY (Id)
+PRIMARY KEY (Id(255))
 );
 
 CREATE TABLE code_refs
@@ -351,7 +389,7 @@ Description text NOT NULL,
 Syntax tinytext NOT NULL,
 Type enum('Structural'),
 Returns tinytext,
-Usage tinytext NOT NULL,
+Applications tinytext NOT NULL,
 PRIMARY KEY (Id)
 )
 
@@ -372,7 +410,8 @@ CREATE TABLE code_ref_parameters
 Number tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
 Name tinytext NOT NULL,
 Type tinytext NOT NULL,
-Description tinytext NOT NULL
+Description tinytext NOT NULL,
+Code_Ref_Id smallint,
 FOREIGN KEY (Code_Ref_Id) REFERENCES Code_Refs(Id),
 PRIMARY KEY (Code_Ref_Id, Number)
 )
@@ -381,33 +420,33 @@ CREATE TABLE page_relations
 (
 Visible bit NOT NULL DEFAULT 1,
 Page1_Id tinytext NOT NULL,
-Page1_Id tinytext NOT NULL,
-FOREIGN KEY (Page1_Id) REFERENCES Pages(Id),
-FOREIGN KEY (Page2_Id) REFERENCES Pages(Id),
-PRIMARY KEY (Page1_Id, Page2_Id)
+Page2_Id tinytext NOT NULL,
+FOREIGN KEY (Page1_Id(255)) REFERENCES Pages(Id),
+FOREIGN KEY (Page2_Id(255)) REFERENCES Pages(Id),
+PRIMARY KEY (Page1_Id(100), Page2_Id(100))
 );
 
 CREATE TABLE alternative_nav_links
 (
 Text tinytext,
 Page1_Id tinytext NOT NULL,
-Page1_Id tinytext NOT NULL,
-FOREIGN KEY (Page1_Id) REFERENCES Pages(Id),
-FOREIGN KEY (Page2_Id) REFERENCES Pages(Id),
-PRIMARY KEY (Page1_Id, Page2_Id)
+Page2_Id tinytext NOT NULL,
+FOREIGN KEY (Page1_Id(255)) REFERENCES Pages(Id),
+FOREIGN KEY (Page2_Id(255)) REFERENCES Pages(Id),
+PRIMARY KEY (Page1_Id(100), Page2_Id(100))
 );
 
 CREATE TABLE comments
 (
 Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
 Page_Id smallint UNSIGNED NOT NULL,
-FOREIGN KEY (Page_Id) REFERENCES Pages(Id)
-PRIMARY ID (Page_Id, Id)
+FOREIGN KEY (Page_Id) REFERENCES Pages(Id),
+PRIMARY KEY (Page_Id, Id)
 );
 
 CREATE TABLE comment_texts
 (
-Edit_Number UNSIGNED NOT NULL AUTO_INCREMENT,
+Edit_Number tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
 Comment_Id smallint UNSIGNED NOT NULL,
 FOREIGN KEY (Comment_Id) REFERENCES Comments(Id),
 PRIMARY KEY (Comment_Id, Edit_Number)
