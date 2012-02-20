@@ -48,7 +48,6 @@ require("components.php");
                     <li>Simple enough for a beginner to use</li>
                 </ul>
             </p>
-
         </div>
         <?php displayFooter(); ?>
     </div>

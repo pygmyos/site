@@ -23,15 +23,21 @@ function loadHead($title)
 }
 
 //Displays the page header
-function displayHeader($title = "PygmyOS", $icon = "images/Icon2BlueGlow.png")
+function displayHeader($title = "PygmyOS", $icon = "images/Icon2BlueLight.png")
 {
 ?>
     <div id="header">
         <a href="index.php">
             <img src=<?php echo $icon ?> alt="Logo" width="90px" height="90px" id="logo" />
         </a>
-        <h1 id="head_title">
-        <?php echo $title ?> </h1>
+        <div id="header_text">
+            <h1 id="header_title">
+                <?php echo $title ?>
+            </h1>
+            <h5 id="header_subtitle">
+                An ARM based operating system
+            </h2>
+        </div>
     </div>
 <?php
 }
