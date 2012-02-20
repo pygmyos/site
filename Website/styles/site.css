@@ -1179,12 +1179,12 @@ body#home a#nav-home, body#code a#nav-code, body#boards a#nav-boards, body#proje
 
 #header_text
 {
-    position: absolute;
-    top: 20px;
-    left: 120px;
+    position: relative;
+    top: -80px;
+    left: 95px;
     margin-left: 13px;
-/*    width: auto;*/
-    height: auto;
+    width: auto;
+    height: 10px;
 }
 
 #header_title
@@ -1192,6 +1192,7 @@ body#home a#nav-home, body#code a#nav-code, body#boards a#nav-boards, body#proje
     font-size: 3em;
     color: #4688c9;
     font-family: Arial;
+    margin-bottom: 8px;
 /*    text-shadow: 0 0 1px #DDD;*/
 /*    font-weight: bold;*/
 /*    text-shadow: 1px 1px white, -1px -1px #888;*/
@@ -1200,11 +1201,10 @@ body#home a#nav-home, body#code a#nav-code, body#boards a#nav-boards, body#proje
 
 #header_subtitle
 {
-    postion: absolute;
-    top: 200px;
     font-size: 1em;
     color: #93948c;
     font-family: Arial;
+    margin-bottom: 0px;
 }
 
 #logo

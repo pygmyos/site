@@ -5,7 +5,7 @@ function loadHead($title)
 ?>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><?php echo "PygmyOS | " . $title ?></title>
-    <link rel="Stylesheet" type="text/css" href="styles/style.css" />
+    <link rel="Stylesheet" type="text/css" href="styles/site.css" />
 
     <!-- Google analytics -->
     <script type="text/javascript">
