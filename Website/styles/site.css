@@ -974,6 +974,27 @@ http://github.com/necolas/css3-github-buttons
     overflow: hidden;
 }
 
+.notification
+{
+    color: #3072b3;
+    background-color: #f2f2ee;
+    border-style: solid;
+    border-color: #3072b3;
+    border-width: 1px;
+    margin-bottom: 15px;
+    padding: 3px 8px 2px 8px;
+    width: auto;
+    height: auto;
+    -moz-border-radius-bottomright: 2px;
+    border-bottom-right-radius: 2px;
+    -moz-border-radius-bottomleft: 2px;
+    border-bottom-left-radius: 2px;
+    -moz-border-radius-topright: 2px;
+    border-top-right-radius: 2px;
+    -moz-border-radius-topleft: 2px;
+    border-top-left-radius: 2px;
+}
+
 #navbar
 {
     background-color: #FFFFFF;
@@ -1180,7 +1201,7 @@ body#home a#nav-home, body#code a#nav-code, body#boards a#nav-boards, body#proje
 #header_text
 {
     position: relative;
-    top: -80px;
+    top: -79px;
     left: 94px;
     margin-left: 13px;
     width: auto;
@@ -1190,7 +1211,7 @@ body#home a#nav-home, body#code a#nav-code, body#boards a#nav-boards, body#proje
 #header_title
 {
     font-size: 3em;
-    color: #4688c9;
+    color: #398dd7;
     font-family: Arial;
     margin-bottom: 8px;
     /*    text-shadow: 0 0 1px #DDD;*/
@@ -1202,9 +1223,8 @@ body#home a#nav-home, body#code a#nav-code, body#boards a#nav-boards, body#proje
 #header_subtitle
 {
     font-size: 1em;
-    color: #b5b6ae;
+    color: #b6b7af;
     font-family: Arial;
-    margin-bottom: 0px;
 }
 
 #logo

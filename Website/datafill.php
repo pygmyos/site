@@ -37,29 +37,6 @@
         <?php
             loadHead("Datafill");
         ?>
-
-        <style type="text/css">
-            .notification
-            {
-                color: #3072b3;
-                background-color: #f2f2ee;
-                border-style: solid;
-                border-color: #3072b3;
-                border-width: 1px;
-                margin-bottom: 15px;
-                padding: 3px 8px 2px 8px;
-                width: auto;
-                height: auto;
-                -moz-border-radius-bottomright: 2px;
-                border-bottom-right-radius: 2px;
-                -moz-border-radius-bottomleft: 2px;
-                border-bottom-left-radius: 2px;
-                -moz-border-radius-topright: 2px;
-                border-top-right-radius: 2px;
-                -moz-border-radius-topleft: 2px;
-                border-top-left-radius: 2px;
-            }
-        </style>
     </head>
     <body id=<?php echo $page_id ?>>
         <div id="container">
