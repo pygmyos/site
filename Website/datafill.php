@@ -9,28 +9,36 @@ require("components.php");
 //Database
 require('datacredentials.php');
 mysql_select_db('pygmydata') or die('Could not select database');
+
+//Password validation
+$password = filter_input(INPUT_GET, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
+$isPasswordValidated =  $password == $masterpassword;
+$isCookieValidated = array_key_exists("validation", $_COOKIE) ? $_COOKIE["validation"] == $masterpassword : false;
+if(!$isCookieValidated)
+{
+    setcookie("validation", $password);
+}
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <?php loadHead("Datafill"); ?>
+        <?php 
+            loadHead("Datafill");
+        ?>
     </head>
     <body id=<?php echo $page_id ?>>
         <div id="container">
             <?php
-            displayHeader();
-            displayNavbar();
+                displayHeader();
+                displayNavbar();
             ?>
             <div id="content">
                 <?php
                 //Checks for correct password input or password cookie (not very secure at the moment)
-                if(filter_input(INPUT_GET, 'password', FILTER_SANITIZE_SPECIAL_CHARS) == $masterpassword || 
-                                (array_key_exists($masterpassword, $_COOKIE) ? $_COOKIE[$masterpassword] == $masterpassword : false))
+                if($isPasswordValidated || $isCookieValidated)
                 {
-                    setcookie($masterpassword, $masterpassword);
-                    
                     //Gets the column names from the table passed to the URL
                     $query = "select column_name, is_nullable, data_type, column_type from INFORMATION_SCHEMA.columns WHERE table_name='" . 
                             filter_input(INPUT_GET, 'table', FILTER_SANITIZE_SPECIAL_CHARS) . "'";
