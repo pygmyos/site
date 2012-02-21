@@ -1,4 +1,6 @@
+
 <?php
+/* Page components */
 
 //Loads head (EG analytics, title, document configuration, etc)
 function loadHead($title)
@@ -150,5 +152,44 @@ function displayFooter()
         PygmyOS Logo and Trademark Copyright &copy; 2012 Warren D Greenway
     </div>
     <?php
+}
+?>
+
+<?php
+/* Utility functions */
+
+//Checks string to see if it contains a substring
+//Based on: http://www.thetechrepo.com/main-articles/451-php-check-if-a-string-contains-a-substring
+function strcontains($string, $substring)
+{
+    $pos = strpos($string, $substring);
+
+    if ($pos === false)
+    {
+        //String not found
+        return false;
+    }
+    else
+    {
+        //String found
+        return true;
+    }
+}
+
+//Extracts enum items from SQL column_type
+function getSqlEnumItems($column_type)
+{
+    //Turns the enum column_type into an array declaration
+    $arrayDeclaration = str_replace('enum', 'array', $column_type);
+    //Uses the array declaration to form an array containing the enum items
+    $arbitraryTransfer = "\$items = $arrayDeclaration;";
+    
+    //Security measure: checks to make sure only one semicolon is passed to the eval statement
+    if(substr_count($arbitraryTransfer, ";") == 1)
+    {
+        //Runs the transfer code
+        eval($arbitraryTransfer);
+    }
+    return $items;
 }
 ?>

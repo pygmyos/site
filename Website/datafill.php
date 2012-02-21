@@ -86,7 +86,7 @@ if (!$isCookieValidated && $isPasswordValidated)
                     echo "</select>\n";
 
                     //Gets the column names from the table passed to the URL
-                    $query = "SELECT column_name, is_nullable, data_type, column_type FROM INFORMATION_SCHEMA.columns WHERE table_name='" .
+                    $query = "SELECT column_name, is_nullable, data_type, column_type, extra FROM INFORMATION_SCHEMA.columns WHERE table_name='" .
                             $passed_table . "'";
                     //Sends the query to the sql server and loads the results into $result
                     $result = mysql_query($query) or die('Query failed: ' . mysql_error());
@@ -96,6 +96,13 @@ if (!$isCookieValidated && $isPasswordValidated)
                     //Cycles through SQL table rows and loads each row's column values into the associative array "$line"
                     while ($line = mysql_fetch_array($result, MYSQL_ASSOC))
                     {
+                        $column_type = strToLower($line["column_type"]);
+                        
+                        //Skips column if it auto_increments
+                        if (strcontains($line["extra"], 'auto_increment'))
+                        {
+                            continue;
+                        }
                         //Starts html table row
                         echo "\t<tr>\n";
                         //Start html table column and put the column name in it
@@ -110,11 +117,30 @@ if (!$isCookieValidated && $isPasswordValidated)
 
                         //Starts the next column (for the inputs)
                         echo "\t\t<td>\n";
-                        //Checks the column data type and puts the appropriate input in the column
-                        if (strstr($line["data_type"], "text") || strstr($line["data_type"], "int"))
+                        
+                        //Checks the column data type for enum types
+                        if (strcontains($column_type, "enum"))
+                        {
+                            //Extracts the enum items from the column type
+                            $enumItems = getSqlEnumItems($column_type);
+                            //Enum drop-down list
+                            echo "<select>\n";
+                            //Cycles through the enum items 
+                            foreach($enumItems as $enumItem)
+                            {
+                                echo "<option value=$enumitem>" . ucwords($enumItem) . "</option>";
+                            }
+                            //Removes the $enumItem variable
+                            unset($enumItem);
+                            //Closes enum drop-down list
+                            echo "</select>\n";
+                        }
+                        //Checks the column data type for text/int types
+                        else if (strcontains($column_type, "text") || strcontains($column_type, "int"))
                         {
                             echo "<input type='text' name='" . $line["column_name"] . "' />";
                         }
+                        
                         //Closes the column
                         echo "</td>\n";
                         //Closes the row
@@ -128,7 +154,7 @@ if (!$isCookieValidated && $isPasswordValidated)
                     //Closes the form
                     echo "</form>\n";
                     //A note to let the user know which items are required
-                    echo "<p style='margin-top: 15px;'>Items marked with '*' are required</p>";
+                    echo "<p style='margin-top: 15px;'>Items marked with * are required</p>";
 
                     //Frees up the result set
                     mysql_free_result($result);
