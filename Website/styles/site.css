@@ -1070,7 +1070,7 @@ body#home a#nav-home, body#code a#nav-code, body#boards a#nav-boards, body#proje
     margin: 0 auto 30px auto;
     height:auto;
 }
-#footer, #container
+#footer, #container, #content
 {
     -moz-border-radius-bottomright: 10px;
     border-bottom-right-radius: 10px;

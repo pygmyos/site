@@ -183,9 +183,9 @@ function getSqlEnumItems($column_type)
     $arrayDeclaration = str_replace('enum', 'array', $column_type);
     //Uses the array declaration to form an array containing the enum items
     $arbitraryTransfer = "\$items = $arrayDeclaration;";
-    
+
     //Security measure: checks to make sure only one semicolon is passed to the eval statement
-    if(substr_count($arbitraryTransfer, ";") == 1)
+    if (substr_count($arbitraryTransfer, ";") == 1)
     {
         //Runs the transfer code
         eval($arbitraryTransfer);
