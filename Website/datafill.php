@@ -26,7 +26,7 @@ $isCookieValidated = array_key_exists("validation", $_COOKIE) ? $_COOKIE["valida
 //Sets cookie if the user is not already cookie validated and is password validated
 if (!$isCookieValidated && $isPasswordValidated)
 {
-    setcookie("validation", $password, 0, '', '', false, true);
+    setcookie("validation", $passed_password, 0, '', '', false, true);
 }
 ?>
 
@@ -37,6 +37,29 @@ if (!$isCookieValidated && $isPasswordValidated)
         <?php
         loadHead("Datafill");
         ?>
+
+        <style type="text/css">
+            #input_result
+            {
+                color: #3072b3;
+                background-color: #f2f2ee;
+                border-style: solid;
+                border-color: #3072b3;
+                border-width: 1px;
+                margin-bottom: 15px;
+                padding: 3px 8px 2px 8px;
+                width: auto;
+                height: auto;
+                -moz-border-radius-bottomright: 2px;
+                border-bottom-right-radius: 2px;
+                -moz-border-radius-bottomleft: 2px;
+                border-bottom-left-radius: 2px;
+                -moz-border-radius-topright: 2px;
+                border-top-right-radius: 2px;
+                -moz-border-radius-topleft: 2px;
+                border-top-left-radius: 2px;
+            }
+        </style>
     </head>
     <body id=<?php echo $page_id ?>>
         <div id="container">
@@ -47,9 +70,14 @@ if (!$isCookieValidated && $isPasswordValidated)
             ?>
             <div id="content">
                 <?php
-                //Checks for correct password input or password cookie (not very secure at the moment)
+                //Checks for correct password input or password cookie
                 if ($isPasswordValidated || $isCookieValidated)
                 {
+                    if (filter_input(INPUT_GET, 'submit', FILTER_SANITIZE_SPECIAL_CHARS) == "Submit")
+                    {
+                        echo "<div id='input_result'>\nNew data added to the table '$passed_table' at " . date('h:i:s A') . "</div>\n";
+                    }
+
                     //Begins the input form
                     echo "<form>\n";
 
@@ -58,6 +86,7 @@ if (!$isCookieValidated && $isPasswordValidated)
                     //Sends the query to the sql server and loads the results into $result
                     $result = mysql_query($query) or die('Query failed: ' . mysql_error());
                     ?>
+
                     <script type="text/javascript">
                         //Refreshes the page with the selected table
                         function refreshFromDropdown()
@@ -65,18 +94,19 @@ if (!$isCookieValidated && $isPasswordValidated)
                             //Selects the table drop-down list
                             var e = document.getElementById("table_dropdown");
                             //Gets the selected table name from the drop-down list
-                            var table_name = e.options[e.selectedIndex].text; 
+                            var table_name = e.options[e.selectedIndex].text;
                             //Refreshes the page with the selected table
                             window.location="datafill.php?table=" + table_name;
                         }
                     </script>
+
                     <?php
                     //Starts the table drop-down list
-                    echo "<select onchange='refreshFromDropdown()' id='table_dropdown' style='margin-bottom: 10px;'>";
-                    
+                    echo "<select name='table' onchange='refreshFromDropdown()' id='table_dropdown' style='margin-bottom: 10px;'>";
+
                     //The default blank option if a table is not selected
                     echo "<option value='none'></option>";
-                    
+
                     //Cycles through the rows for each table and loads its name into the drop down list
                     while ($line = mysql_fetch_array($result, MYSQL_ASSOC))
                     {
@@ -84,7 +114,7 @@ if (!$isCookieValidated && $isPasswordValidated)
                         $table_name = strtolower($line["table_name"]);
                         //Starts the option
                         echo "<option value='" . $table_name . "'";
-                        
+
                         //Selects the current table
                         if ($table_name == $passed_table)
                         {
@@ -111,7 +141,9 @@ if (!$isCookieValidated && $isPasswordValidated)
                         //Cycles through SQL table rows and loads each row's column values into the associative array "$line"
                         while ($line = mysql_fetch_array($result, MYSQL_ASSOC))
                         {
+                            //Items used multiple times
                             $column_type = strToLower($line["column_type"]);
+                            $column_name = strToLower($line["column_name"]);
 
                             //Skips column if it auto_increments
                             if (strcontains($line["extra"], 'auto_increment'))
@@ -138,9 +170,9 @@ if (!$isCookieValidated && $isPasswordValidated)
                             {
                                 //Extracts the enum items from the column type
                                 $enumItems = getSqlEnumItems($column_type);
-                                //Enum drop-down list
-                                echo "<select>\n";
-                                //Cycles through the enum items 
+                                //Drop-down list with the enum items
+                                echo "<select name=$columnName>\n";
+                                //Cycles through the enum items
                                 foreach ($enumItems as $enumItem)
                                 {
                                     echo "<option value=$enumitem>" . ucwords($enumItem) . "</option>";
@@ -153,9 +185,15 @@ if (!$isCookieValidated && $isPasswordValidated)
                             //Checks the column data type for text/int types
                             else if (strcontains($column_type, "text") || strcontains($column_type, "int"))
                             {
-                                echo "<input type='text' name='" . $line["column_name"] . "' />";
+                                //Text box
+                                echo "<input type='text' name='$column_name' />";
                             }
-
+                            else if (strcontains($column_type, "bit"))
+                            {
+                                //Radio buttons, Yes or no
+                                echo "<input type='radio' name='$column_name' value='1' /> Yes";
+                                echo "<input type='radio' name='$column_name' value='0'  style='margin-left: 10px;' /> No";
+                            }
                             //Closes the column
                             echo "</td>\n";
                             //Closes the row
@@ -165,17 +203,17 @@ if (!$isCookieValidated && $isPasswordValidated)
                         echo "</table>\n";
 
                         //Submit button
-                        echo "<input type='submit' name='submit' value='Submit'/>";
+                        echo "<input type='submit' name='submit' value='Submit' />\n";
                         //Closes the form
                         echo "</form>\n";
                         //A note to let the user know which items are required
-                        echo "<p style='margin-top: 15px;'>Items marked with * are required</p>";
+                        echo "<p style='margin-top: 15px;'>Items marked with * are required</p>\n";
                     }
                     else
                     {
-                        echo "<p>Please select a table</p>";
+                        echo "<p>Please select a table</p>\n";
                     }
-                    
+
                     //Frees up the result set
                     mysql_free_result($result);
                 }
@@ -189,7 +227,7 @@ if (!$isCookieValidated && $isPasswordValidated)
                 mysql_close($datalink);
                 ?>
             </div>
-                <?php displayFooter(); ?>
+            <?php displayFooter(); ?>
         </div>
     </body>
 </html>
