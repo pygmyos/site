@@ -51,7 +51,7 @@ require("components.php");
                     </ul>
                 </p>
             </div>
-<?php displayFooter(); ?>
+            <?php displayFooter(); ?>
         </div>
     </body>
 </html>

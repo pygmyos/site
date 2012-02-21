@@ -33,7 +33,7 @@ function displayHeader($title = "PygmyOS", $icon = "images/Icon2BlueLight.png")
         </a>
         <div id="header_text">
             <h1 id="header_title">
-    <?php echo $title ?>
+                <?php echo $title ?>
             </h1>
             <h5 id="header_subtitle">
                 An STM32&trade; based operating system

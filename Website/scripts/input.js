@@ -14,11 +14,13 @@ function format(input)
             {
                 alert('You may only enter two decimals!');
                 num[1] = num[1].substring(0,num[1].length-1);
-            } input.value = num[0]+'.'+num[1];
+            }
+            input.value = num[0]+'.'+num[1];
         } 
         else
         {
-            input.value = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g,'$1,').split('').reverse().join('').replace(/^[\,]/,'') };
+            input.value = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g,'$1,').split('').reverse().join('').replace(/^[\,]/,'')
+        };
     } 
     else
     {
