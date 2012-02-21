@@ -1,22 +1,32 @@
 <?php
-//Page accepts 'table' and 'password' as parameters
-//Password is checked against the masterpassword in datacredentials.php
-//Each column name is displayed with an input field next to it, allowing the user to input a new row into the table
+/* Page accepts 'table' and 'password' as parameters
+ * Password is checked against the masterpassword in datacredentials.php
+ * Each column name is displayed with an input field next to it, allowing the user to input a new row into the table */
+
 //Page setup
 $page_id = "datafill";
+//Contains the page components (header, content, footer, etc)
 require("components.php");
 
 //Database
 require('datacredentials.php');
-mysql_select_db('pygmydata') or die('Could not select database');
+//Selects the database specified in datacredentials.php on the mysql link initiated in datacredentials.php
+mysql_select_db($database_name) or die('Could not select database');
+
+//Gets the passed tablename from the page arguments
+$passed_table = strtolower(filter_input(INPUT_GET, 'table', FILTER_SANITIZE_SPECIAL_CHARS));
 
 //Password validation
-$password = filter_input(INPUT_GET, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
-$isPasswordValidated = $password == $masterpassword;
+//Gets the password from the page arguments
+$passed_password = filter_input(INPUT_GET, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
+//Checks for password validation
+$isPasswordValidated = $passed_password == $masterpassword;
+//Checks for cookie validation
 $isCookieValidated = array_key_exists("validation", $_COOKIE) ? $_COOKIE["validation"] == $masterpassword : false;
-if (!$isCookieValidated)
+//Sets cookie if the user is not already cookie validated and is password validated
+if (!$isCookieValidated && $isPasswordValidated)
 {
-    setcookie("validation", $password);
+    setcookie("validation", $password, 0, '', '', false, true);
 }
 ?>
 
@@ -31,6 +41,7 @@ if (!$isCookieValidated)
     <body id=<?php echo $page_id ?>>
         <div id="container">
             <?php
+            //Page components
             displayHeader();
             displayNavbar();
             ?>
@@ -39,14 +50,49 @@ if (!$isCookieValidated)
                 //Checks for correct password input or password cookie (not very secure at the moment)
                 if ($isPasswordValidated || $isCookieValidated)
                 {
-                    //Gets the column names from the table passed to the URL
-                    $query = "select column_name, is_nullable, data_type, column_type from INFORMATION_SCHEMA.columns WHERE table_name='" .
-                            filter_input(INPUT_GET, 'table', FILTER_SANITIZE_SPECIAL_CHARS) . "'";
-                    //Queries the SQL server
+                    //Begins the input form
+                    echo "<form>\n";
+
+                    //Gets all of the table names in the database
+                    $query = "SELECT table_name FROM INFORMATION_SCHEMA.tables WHERE table_schema='$database_name'";
+                    //Sends the query to the sql server and loads the results into $result
                     $result = mysql_query($query) or die('Query failed: ' . mysql_error());
 
-                    //Input form
-                    echo "<form>\n<table style='margin-bottom: 5px;'>\n";
+                    //A script to read the table name from the drop-down list
+                    ?>
+                    <script type="text/javascript">
+                        function refreshFromDropdown()
+                        {
+                            var e = document.getElementById("table_dropdown");
+                            var table_name = e.options[e.selectedIndex].text; 
+                            window.location="datafill.php?table=" + table_name;
+                        }
+                    </script>
+                    <?php
+                    //Starts the table drop-down list
+                    echo "<select onchange='refreshFromDropdown()' id='table_dropdown' style='margin-bottom: 10px;'>";
+                    //Cycles through the rows for each table and loads its name into the drop down list
+                    while ($line = mysql_fetch_array($result, MYSQL_ASSOC))
+                    {
+                        $table_name = strtolower($line["table_name"]);
+                        echo "<option value='" . $table_name . "'";
+                        if ($table_name == $passed_table)
+                        {
+                            echo " selected='selected'";
+                        }
+                        echo ">" . ucwords($table_name) . "</option>\n";
+                    }
+                    //Ends the drop-down list
+                    echo "</select>\n";
+
+                    //Gets the column names from the table passed to the URL
+                    $query = "SELECT column_name, is_nullable, data_type, column_type FROM INFORMATION_SCHEMA.columns WHERE table_name='" .
+                            $passed_table . "'";
+                    //Sends the query to the sql server and loads the results into $result
+                    $result = mysql_query($query) or die('Query failed: ' . mysql_error());
+
+                    //HTML table for inputs and column names
+                    echo "<table style='margin-bottom: 5px;'>\n";
                     //Cycles through SQL table rows and loads each row's column values into the associative array "$line"
                     while ($line = mysql_fetch_array($result, MYSQL_ASSOC))
                     {
@@ -55,7 +101,7 @@ if (!$isCookieValidated)
                         //Start html table column and put the column name in it
                         echo "\t\t<td style='padding-right: 10px; padding-bottom: 5px; text-align: right;'>" . $line["column_name"];
                         //If the column is required, puts an asterix next to it
-                        if ($line["is_nullable"] == 0)
+                        if ($line["is_nullable"] == 'NO')
                         {
                             echo "*";
                         }
@@ -89,6 +135,7 @@ if (!$isCookieValidated)
                 }
                 else
                 {
+                    //If the password is invalid or the user is not cookie validated, display this
                     echo "<p>Invalid password</p>";
                 }
 

@@ -15,7 +15,9 @@ require("components.php");
             displayNavbar();
             ?>
             <div id="content">
-
+                <p>We will have a full official release sometime
+                    soon. Until then, you can download our current source from one of our <a href="http://code.google.com/p/pygmyos/wiki/Source?tm=4">
+                        repositories</a>.</p>
             </div>
             <?php displayFooter(); ?>
         </div>

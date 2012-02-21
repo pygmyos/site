@@ -15,7 +15,8 @@ require("components.php");
             displayNavbar();
             ?>
             <div id="content">
-
+                <p>We are working on documentation for all Pygmy related projects. Until then, you can view the progress of some of our projects on our 
+                    <a href="http://code.google.com/p/pygmyos/source/browse/?repo=projects">project repository</a>.</p>
             </div>
             <?php displayFooter(); ?>
         </div>
