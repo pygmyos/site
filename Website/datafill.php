@@ -165,7 +165,7 @@
                         echo "<select name='table' onchange='refreshFromDropdown()' id='table_dropdown' style='margin-bottom: 10px;'>";
 
                         //The default blank option if a table is not selected
-                        echo "<option value='none'></option>";
+                        echo "<option value=''></option>";
 
                         //Cycles through the rows for each table and loads its name into the drop down list
                         while ($line = mysql_fetch_array($result, MYSQL_ASSOC))
@@ -232,28 +232,37 @@
                                     //Extracts the enum items from the column type
                                     $enumItems = getSqlEnumItems($column_type);
                                     //Drop-down list with the enum items
-                                    echo "<select name=$columnName>\n";
+                                    echo "<select name='$columnName'>\n";
+                                    //Adds the default blank option
+                                    echo "<option value=''></option>";
                                     //Cycles through the enum items
                                     foreach ($enumItems as $enumItem)
                                     {
-                                        echo "<option value=$enumitem>" . ucwords($enumItem) . "</option>";
+                                        echo "<option value='$enumitem'>" . ucwords($enumItem) . "</option>";
                                     }
                                     //Removes the $enumItem variable
                                     unset($enumItem);
                                     //Closes enum drop-down list
                                     echo "</select>\n";
                                 }
-                                //Checks the column data type for text/int types
-                                else if (strcontains($column_type, "text") || strcontains($column_type, "int"))
-                                {
-                                    //Text box
-                                    echo "<input type='text' name='$column_name' />";
-                                }
+                                //Checks the column data type for the bit type
                                 else if (strcontains($column_type, "bit"))
                                 {
                                     //Radio buttons, Yes or no
                                     echo "<input type='radio' name='$column_name' value='1' /> Yes";
                                     echo "<input type='radio' name='$column_name' value='0'  style='margin-left: 10px;' /> No";
+                                }
+                                //Checks the column data type for the date type
+                                else if (strcontains($column_type, "date"))
+                                {
+                                    //Text box with a default value that is the current date
+                                    echo "<input type='text' name='$column_name' value='" . date('Y\-m\-d') . "' />";
+                                }
+                                //Checks the column data type for all other types including int and text data types
+                                else
+                                {
+                                    //Text box
+                                    echo "<input type='text' name='$column_name' />";
                                 }
                                 //Closes the column
                                 echo "</td>\n";
