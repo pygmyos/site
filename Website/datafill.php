@@ -57,105 +57,125 @@ if (!$isCookieValidated && $isPasswordValidated)
                     $query = "SELECT table_name FROM INFORMATION_SCHEMA.tables WHERE table_schema='$database_name'";
                     //Sends the query to the sql server and loads the results into $result
                     $result = mysql_query($query) or die('Query failed: ' . mysql_error());
-
-                    //A script to read the table name from the drop-down list
                     ?>
                     <script type="text/javascript">
+                        //Refreshes the page with the selected table
                         function refreshFromDropdown()
                         {
+                            //Selects the table drop-down list
                             var e = document.getElementById("table_dropdown");
+                            //Gets the selected table name from the drop-down list
                             var table_name = e.options[e.selectedIndex].text; 
+                            //Refreshes the page with the selected table
                             window.location="datafill.php?table=" + table_name;
                         }
                     </script>
                     <?php
                     //Starts the table drop-down list
                     echo "<select onchange='refreshFromDropdown()' id='table_dropdown' style='margin-bottom: 10px;'>";
+                    
+                    //The default blank option if a table is not selected
+                    echo "<option value='none'></option>";
+                    
                     //Cycles through the rows for each table and loads its name into the drop down list
                     while ($line = mysql_fetch_array($result, MYSQL_ASSOC))
                     {
+                        //Gets the table name
                         $table_name = strtolower($line["table_name"]);
+                        //Starts the option
                         echo "<option value='" . $table_name . "'";
+                        
+                        //Selects the current table
                         if ($table_name == $passed_table)
                         {
                             echo " selected='selected'";
                         }
+                        //Puts the option text and closes the option
                         echo ">" . ucwords($table_name) . "</option>\n";
                     }
                     //Ends the drop-down list
                     echo "</select>\n";
 
-                    //Gets the column names from the table passed to the URL
-                    $query = "SELECT column_name, is_nullable, data_type, column_type, extra FROM INFORMATION_SCHEMA.columns WHERE table_name='" .
+                    //Gets the column names from the current table
+                    $query = "SELECT column_name, is_nullable, column_type, extra FROM INFORMATION_SCHEMA.columns WHERE table_name='" .
                             $passed_table . "'";
                     //Sends the query to the sql server and loads the results into $result
                     $result = mysql_query($query) or die('Query failed: ' . mysql_error());
+                    //Gets the total number of rows returned
+                    $numRows = mysql_num_rows($result);
 
-                    //HTML table for inputs and column names
-                    echo "<table style='margin-bottom: 5px;'>\n";
-                    //Cycles through SQL table rows and loads each row's column values into the associative array "$line"
-                    while ($line = mysql_fetch_array($result, MYSQL_ASSOC))
+                    if ($numRows > 0)
                     {
-                        $column_type = strToLower($line["column_type"]);
-                        
-                        //Skips column if it auto_increments
-                        if (strcontains($line["extra"], 'auto_increment'))
+                        //HTML table for inputs and column names
+                        echo "<table style='margin-bottom: 5px;'>\n";
+                        //Cycles through SQL table rows and loads each row's column values into the associative array "$line"
+                        while ($line = mysql_fetch_array($result, MYSQL_ASSOC))
                         {
-                            continue;
-                        }
-                        //Starts html table row
-                        echo "\t<tr>\n";
-                        //Start html table column and put the column name in it
-                        echo "\t\t<td style='padding-right: 10px; padding-bottom: 5px; text-align: right;'>" . $line["column_name"];
-                        //If the column is required, puts an asterix next to it
-                        if ($line["is_nullable"] == 'NO')
-                        {
-                            echo "*";
-                        }
-                        //Puts a colon at the end and closes the html table column
-                        echo ":\n</td>\n";
+                            $column_type = strToLower($line["column_type"]);
 
-                        //Starts the next column (for the inputs)
-                        echo "\t\t<td>\n";
-                        
-                        //Checks the column data type for enum types
-                        if (strcontains($column_type, "enum"))
-                        {
-                            //Extracts the enum items from the column type
-                            $enumItems = getSqlEnumItems($column_type);
-                            //Enum drop-down list
-                            echo "<select>\n";
-                            //Cycles through the enum items 
-                            foreach($enumItems as $enumItem)
+                            //Skips column if it auto_increments
+                            if (strcontains($line["extra"], 'auto_increment'))
                             {
-                                echo "<option value=$enumitem>" . ucwords($enumItem) . "</option>";
+                                continue;
                             }
-                            //Removes the $enumItem variable
-                            unset($enumItem);
-                            //Closes enum drop-down list
-                            echo "</select>\n";
+                            //Starts html table row
+                            echo "\t<tr>\n";
+                            //Start html table column and put the column name in it
+                            echo "\t\t<td style='padding-right: 10px; padding-bottom: 5px; text-align: right;'>" . $line["column_name"];
+                            //If the column is required, puts an asterix next to it
+                            if ($line["is_nullable"] == 'NO')
+                            {
+                                echo "*";
+                            }
+                            //Puts a colon at the end and closes the html table column
+                            echo ":\n</td>\n";
+
+                            //Starts the next column (for the inputs)
+                            echo "\t\t<td>\n";
+
+                            //Checks the column data type for enum types
+                            if (strcontains($column_type, "enum"))
+                            {
+                                //Extracts the enum items from the column type
+                                $enumItems = getSqlEnumItems($column_type);
+                                //Enum drop-down list
+                                echo "<select>\n";
+                                //Cycles through the enum items 
+                                foreach ($enumItems as $enumItem)
+                                {
+                                    echo "<option value=$enumitem>" . ucwords($enumItem) . "</option>";
+                                }
+                                //Removes the $enumItem variable
+                                unset($enumItem);
+                                //Closes enum drop-down list
+                                echo "</select>\n";
+                            }
+                            //Checks the column data type for text/int types
+                            else if (strcontains($column_type, "text") || strcontains($column_type, "int"))
+                            {
+                                echo "<input type='text' name='" . $line["column_name"] . "' />";
+                            }
+
+                            //Closes the column
+                            echo "</td>\n";
+                            //Closes the row
+                            echo "\t</tr>\n";
                         }
-                        //Checks the column data type for text/int types
-                        else if (strcontains($column_type, "text") || strcontains($column_type, "int"))
-                        {
-                            echo "<input type='text' name='" . $line["column_name"] . "' />";
-                        }
-                        
-                        //Closes the column
-                        echo "</td>\n";
-                        //Closes the row
-                        echo "\t</tr>\n";
+                        //Closes the table
+                        echo "</table>\n";
+
+                        //Submit button
+                        echo "<input type='submit' name='submit' value='Submit'/>";
+                        //Closes the form
+                        echo "</form>\n";
+                        //A note to let the user know which items are required
+                        echo "<p style='margin-top: 15px;'>Items marked with * are required</p>";
                     }
-                    //Closes the table
-                    echo "</table>\n";
-
-                    //Submit button
-                    echo "<input type='submit' name='submit' value='Submit'/>";
-                    //Closes the form
-                    echo "</form>\n";
-                    //A note to let the user know which items are required
-                    echo "<p style='margin-top: 15px;'>Items marked with * are required</p>";
-
+                    else
+                    {
+                        echo "<p>Please select a table</p>";
+                    }
+                    
                     //Frees up the result set
                     mysql_free_result($result);
                 }
@@ -169,7 +189,7 @@ if (!$isCookieValidated && $isPasswordValidated)
                 mysql_close($datalink);
                 ?>
             </div>
-            <?php displayFooter(); ?>
+                <?php displayFooter(); ?>
         </div>
     </body>
 </html>
