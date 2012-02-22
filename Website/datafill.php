@@ -3,31 +3,33 @@
      * Password is checked against the masterpassword in datacredentials.php
      * Each column name is displayed with an input field next to it, allowing the user to input a new row into the table */
 
-//Page setup
-    $page_id = "datafill";
-//Contains the page components (header, content, footer, etc)
-    require("components.php");
-
-//Database
+    //Database credentials
     require('datacredentials.php');
-//Selects the database specified in datacredentials.php on the mysql link initiated in datacredentials.php
-    mysql_select_db($database_name) or die('Could not select database');
-
-//Gets the passed tablename from the page arguments
+    
+    //Gets the passed tablename from the page arguments
     $passed_table = strtolower(filter_input(INPUT_GET, 'table', FILTER_SANITIZE_SPECIAL_CHARS));
 
-//Password validation
-//Gets the password from the page arguments
+    //Password validation
+    //Gets the password from the page arguments
     $passed_password = filter_input(INPUT_GET, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
-//Checks for password validation
+    //Checks for password validation
     $isPasswordValidated = $passed_password == $masterpassword;
-//Checks for cookie validation
+    //Checks for cookie validation
     $isCookieValidated = array_key_exists("validation", $_COOKIE) ? $_COOKIE["validation"] == $masterpassword : false;
-//Sets cookie if the user is not already cookie validated and is password validated
+    //Sets cookie if the user is not already cookie validated and is password validated
     if (!$isCookieValidated && $isPasswordValidated)
     {
         setcookie("validation", $passed_password, 0, '', '', false, true);
     }
+    
+    //Page setup
+    $page_id = "datafill";
+    //Contains the page components (header, content, footer, etc)
+    require("components.php");
+
+    //Database selection
+    //Selects the database specified in datacredentials.php on the mysql link initiated in datacredentials.php
+    mysql_select_db($database_name) or die('Could not select database');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -105,6 +107,7 @@
                             }
                             else
                             {
+                                //Displays an error notification if the table is not valid
                                 echo "<div id='table_error' class='notification'>\nInvalid table</div>\n";
                             }
                         }
@@ -246,7 +249,7 @@
                                 //Closes the row
                                 echo "\t</tr>\n";
                             }
-                            //Closes the table
+                            //Closes the html table
                             echo "</table>\n";
 
                             //Submit button
@@ -258,7 +261,8 @@
                         }
                         else
                         {
-                            echo "<p>Please select a table</p>\n";
+                            //Displays a message asking the user to select a table
+                            echo "<div class='notification'>Please select a table</div>\n";
                         }
 
                         //Frees up the result set
@@ -270,7 +274,7 @@
                     else
                     {
                         //If the password is invalid or the user is not cookie validated, display this
-                        echo "<p>Invalid password</p>";
+                        echo "<div class='notification'>Invalid password</div>";
                     }
                 ?>
             </div>
