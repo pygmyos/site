@@ -5,7 +5,7 @@
 
     //Database credentials
     require('datacredentials.php');
-    
+
     //Gets the passed tablename from the page arguments
     $passed_table = strtolower(filter_input(INPUT_GET, 'table', FILTER_SANITIZE_SPECIAL_CHARS));
 
@@ -21,7 +21,7 @@
     {
         setcookie("validation", $passed_password, 0, '', '', false, true);
     }
-    
+
     //Page setup
     $page_id = "datafill";
     //Contains the page components (header, content, footer, etc)
@@ -47,7 +47,8 @@
                 displayHeader();
                 displayNavbar();
             ?>
-            <div id="content">
+            <div id="content" style="padding: 18px 18px 0 18px;">
+                <noscript><div class="notification">This page does not work without Javascript enabled.</div></noscript>
                 <?php
                     //Checks for correct password input or password cookie
                     if ($isPasswordValidated || $isCookieValidated)
@@ -91,16 +92,10 @@
                                 }
                                 unset($i);
 
-                                //Frees up the result set
-                                mysql_free_result($result);
-
                                 //Insert the values into the database based on the column names
                                 $query = "INSERT INTO $passed_table (" . implode(", ", $columnNames) . ") VALUES (" . implode(", ", $columnValues) . ")";
                                 ////Sends the query to the sql server and loads the results into $result
                                 mysql_query($query) or die('Query failed: ' . mysql_error() . '\nCode: ' . $query);
-
-                                //Closes data link
-                                mysql_close($datalink);
 
                                 //Refresh the page to clear the page arguments
                                 echo "<script>window.location=\"datafill.php?submit=Refresh&timestamp=" . date('h:i:s A') . "&table=$passed_table\";</script>";
@@ -110,6 +105,11 @@
                                 //Displays an error notification if the table is not valid
                                 echo "<div id='table_error' class='notification'>\nInvalid table</div>\n";
                             }
+                            //Frees up the result set
+                            mysql_free_result($result);
+
+                            //Closes data link
+                            mysql_close($datalink);
                         }
 
                         //Check to see if the page is receiving a refresh and displays a confirmation message
@@ -142,7 +142,7 @@
 
                         <?php
                         //Starts the table drop-down list
-                        echo "<select name='table' onchange='refreshFromDropdown()' id='table_dropdown' style='margin-bottom: 10px;'>";
+                        echo "<select name='table' onchange='refreshFromDropdown()' id='table_dropdown' style='margin-bottom: 15px;'>";
 
                         //The default blank option if a table is not selected
                         echo "<option value=''></option>";
@@ -167,8 +167,7 @@
                         echo "</select>\n";
 
                         //Gets the column names from the current table
-                        $query = "SELECT column_name, is_nullable, column_type, extra FROM INFORMATION_SCHEMA.columns WHERE table_name='" .
-                                 $passed_table . "'";
+                        $query = "SELECT column_name, is_nullable, column_type, extra FROM INFORMATION_SCHEMA.columns WHERE table_name='" . $passed_table . "'";
                         //Sends the query to the sql server and loads the results into $result
                         $result = mysql_query($query) or die('Query failed: ' . mysql_error());
                         //Gets the total number of tables returned
@@ -178,7 +177,7 @@
                         if ($numColumns > 0)
                         {
                             //HTML table for inputs and column names
-                            echo "<table style='margin-bottom: 5px;'>\n";
+                            echo "<table style='margin-bottom: 10px;' class='soft_table'>\n";
                             //Cycles through SQL table rows and loads each row's column values into the associative array "$line"
                             while ($line = mysql_fetch_array($result, MYSQL_ASSOC))
                             {
@@ -187,27 +186,27 @@
                                 $column_name = strToLower($line["column_name"]);
 
                                 //Skips column if it auto_increments
-                                if (strcontains($line["extra"], 'auto_increment'))
+                                if (strContains($line["extra"], 'auto_increment'))
                                 {
                                     continue;
                                 }
                                 //Starts html table row
                                 echo "\t<tr>\n";
                                 //Start html table column and put the column name in it
-                                echo "\t\t<td style='padding-right: 10px; padding-bottom: 5px; text-align: right;'>" . $line["column_name"];
+                                echo "\t\t<td style='text-align: right; border-right: 1px solid #e8edff;'>" . $line["column_name"];
                                 //If the column is required, puts an asterix next to it
                                 if ($line["is_nullable"] == 'NO')
                                 {
                                     echo "*";
                                 }
-                                //Puts a colon at the end and closes the html table column
-                                echo ":\n</td>\n";
+                                //Closes the html table column
+                                echo "\n</td>\n";
 
                                 //Starts the next column (for the inputs)
                                 echo "\t\t<td>\n";
 
                                 //Checks the column data type for enum types
-                                if (strcontains($column_type, "enum"))
+                                if (strContains($column_type, "enum"))
                                 {
                                     //Extracts the enum items from the column type
                                     $enumItems = getSqlEnumItems($column_type);
@@ -215,6 +214,7 @@
                                     echo "<select name='$columnName'>\n";
                                     //Adds the default blank option
                                     echo "<option value=''></option>";
+
                                     //Cycles through the enum items
                                     foreach ($enumItems as $enumItem)
                                     {
@@ -223,41 +223,37 @@
                                     //Removes the $enumItem variable
                                     unset($enumItem);
                                     //Closes enum drop-down list
-                                    echo "</select>\n";
+                                    echo "</select></td></tr>\n";
                                 }
                                 //Checks the column data type for the bit type
-                                else if (strcontains($column_type, "bit"))
+                                else if (strContains($column_type, "bit"))
                                 {
                                     //Radio buttons, Yes or no
                                     echo "<input type='radio' name='$column_name' value='1' /> Yes";
-                                    echo "<input type='radio' name='$column_name' value='0'  style='margin-left: 10px;' /> No";
+                                    echo "<input type='radio' name='$column_name' value='0'  style='margin-left: 10px;' /> No</td></tr>";
                                 }
                                 //Checks the column data type for the date type
-                                else if (strcontains($column_type, "date"))
+                                else if (strContains($column_type, "date"))
                                 {
-                                    //Text box with a default value that is the current date
-                                    echo "<input type='text' name='$column_name' value='" . date('Y\-m\-d') . "' />";
+                                    //Text box with the date format to its right
+                                    echo "<input type='text' name='$column_name' value='' /></td><td style='padding-left: 6px;'>YYYY-MM-DD</td></tr>\n";
                                 }
                                 //Checks the column data type for all other types including int and text data types
                                 else
                                 {
                                     //Text box
-                                    echo "<input type='text' name='$column_name' />";
+                                    echo "<input type='text' name='$column_name' /></td></tr>\n";
                                 }
-                                //Closes the column
-                                echo "</td>\n";
-                                //Closes the row
-                                echo "\t</tr>\n";
                             }
                             //Closes the html table
                             echo "</table>\n";
 
                             //Submit button
-                            echo "<input type='submit' name='submit' value='Submit' />\n";
+                            echo "<input type='submit' name='submit' value='Submit' style='margin-bottom:10px;' />\n";
                             //Closes the form
                             echo "</form>\n";
                             //A note to let the user know which items are required
-                            echo "<p style='margin-top: 15px;'>Items marked with * are required</p>\n";
+                            echo "<p>Items marked with * are required</p>\n";
                         }
                         else
                         {

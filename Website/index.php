@@ -1,6 +1,6 @@
 <?php
-$page_id = "home";
-require("components.php");
+    $page_id = "home";
+    require("components.php");
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -12,25 +12,25 @@ require("components.php");
     <body id=<?php echo $page_id ?>>
         <div id="container">
             <?php
-            displayHeader();
-            displayNavbar();
-            displayCarousel(array("images/boards/Nebula1.jpg"));
+                displayHeader();
+                displayNavbar();
+                displayCarousel(array("images/boards/Nebula1.jpg"));
             ?>
             <div id="content">
                 <h4>
                     About</h4>
                 <p>
-                    PygmyOS is an operating system originally intended for the MSP430 series. It has
-                    since outgrown the MSP430 and is now primarily intended for ARM, specifically STM32
-                    and other similar CortexM3 core MCUs. It is quick, flexible, and user friendly.
-                    Pygmy is built from the ground up with code that is both user and MCU friendly.
+                    PygmyOS is an operating system originally intended for the MSP430 series of microcontrollers. It has
+                    since outgrown the MSP430 and is now primarily intended for ARM, specifically the STM32
+                    and other similar CortexM3 core MCUs. PygmyOS was built from the ground up to be quick and flexible 
+                    with code that is both user and MCU friendly.
                 </p>
                 <h4>
                     Current status</h4>
                 <p>
                     PygmyOS is still a young project. We will have a full official release sometime
-                    soon. Until then, you can download our current source from one of our <a href="http://code.google.com/p/pygmyos/wiki/Source?tm=4">
-                        repositories</a>.
+                    soon. Until then, you can download the most current stable code base <a href="http://code.google.com/p/pygmyos/downloads/detail?name=PygmyOS%20Stable%202-23-12.zip">here</a>
+                    and browse the source repositories <a href="http://code.google.com/p/pygmyos/wiki/Source?tm=4">here</a>.
                 </p>
                 <h4>
                     Features</h4>
