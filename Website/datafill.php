@@ -5,6 +5,8 @@
 
     //Database credentials
     require('datacredentials.php');
+    //Selects the database specified in datacredentials.php on the mysql link initiated in datacredentials.php
+    mysql_select_db($database_name) or die('Could not select database');
 
     //Gets the passed tablename from the page arguments
     $passed_table = strtolower(filter_input(INPUT_GET, 'table', FILTER_SANITIZE_SPECIAL_CHARS));
@@ -26,10 +28,6 @@
     $page_id = "datafill";
     //Contains the page components (header, content, footer, etc)
     require("components.php");
-
-    //Database selection
-    //Selects the database specified in datacredentials.php on the mysql link initiated in datacredentials.php
-    mysql_select_db($database_name) or die('Could not select database');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -40,7 +38,7 @@
             loadHead("Datafill");
         ?>
     </head>
-    <body id=<?php echo $page_id ?>>
+    <body id=<?php echo "'$page_id'" ?>>
         <div id="container">
             <?php
                 //Page components
@@ -142,7 +140,7 @@
 
                         <?php
                         //Starts the table drop-down list
-                        echo "<select name='table' onchange='refreshFromDropdown()' id='table_dropdown' style='margin-bottom: 15px;'>";
+                        echo "<select name='table' onchange='refreshFromDropdown()' id='table_dropdown' style='margin-bottom: 10px;'>";
 
                         //The default blank option if a table is not selected
                         echo "<option value=''></option>";
@@ -181,7 +179,7 @@
                             //Cycles through SQL table rows and loads each row's column values into the associative array "$line"
                             while ($line = mysql_fetch_array($result, MYSQL_ASSOC))
                             {
-                                //Items used multiple times
+                                //Items used multiple times4
                                 $column_type = strToLower($line["column_type"]);
                                 $column_name = strToLower($line["column_name"]);
 
@@ -249,11 +247,11 @@
                             echo "</table>\n";
 
                             //Submit button
-                            echo "<input type='submit' name='submit' value='Submit' style='margin-bottom:10px;' />\n";
+                            echo "<input type='submit' name='submit' value='Submit' style='margin-bottom:18px;' class='button' />\n";
                             //Closes the form
                             echo "</form>\n";
                             //A note to let the user know which items are required
-                            echo "<p>Items marked with * are required</p>\n";
+                            //echo "<p>Items marked with * are required</p>\n";
                         }
                         else
                         {

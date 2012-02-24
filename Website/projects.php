@@ -1,6 +1,6 @@
 <?php
-$page_id = "projects";
-require("components.php");
+    $page_id = "projects";
+    require("components.php");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -11,8 +11,8 @@ require("components.php");
     <body id=<?php echo $page_id ?>>
         <div id="container">
             <?php
-            displayHeader();
-            displayNavbar();
+                displayHeader();
+                displayNavbar();
             ?>
             <div id="content">
                 <p>We are working on documentation for all Pygmy related projects. Until then, you can view the progress of some of our projects on our 

@@ -32,7 +32,7 @@
         ?>
         <div id="header">
             <a href="index.php">
-                <img src=<?php echo $icon ?> alt="Logo" width="90px" height="90px" id="logo" />
+                <img src=<?php echo "'$icon'" ?> alt="Logo" width="90px" height="90px" id="logo" />
             </a>
             <div id="header_text">
                 <h1 id="header_title">
@@ -99,7 +99,7 @@
                     <li class="facebook"><a href="http://www.facebook.com/PygmyOS" class="hidetext" target="_blank"><span>
                                 Facebook</span></a></li>
                     <li class="flickr"><a href="http://www.flickr.com/photos/58435130@N08/sets/72157627768508212/"
-                                          target="_blank" class="hidetext" target="_blank"><span>Flickr</span></a></li>
+                                          target="_blank" class="hidetext"><span>Flickr</span></a></li>
                     <li class="twitter"><a href="https://twitter.com/#!/PygmyOS" class="hidetext" target="_blank"><span>
                                 Twitter</span></a></li>
                     <li class="rss"><a href="http://pygmyos.wordpress.com/feed/" class="hidetext" target="_blank"><span>
@@ -124,7 +124,7 @@
                          <?php
                          foreach ($pictures as $picture)
                          {
-                             echo '<img src="' . $picture . '" alt="Pygmy pictures" />';
+                             echo "<img src='$picture' alt='Pygmy pictures' />";
                          }
                          ?>
                     </div>
@@ -152,7 +152,7 @@
 ?>
 
 <?php
-/* Utility functions */
+    /* Utility functions */
 
 //Checks string to see if it contains a substring
 //Based on: http://www.thetechrepo.com/main-articles/451-php-check-if-a-string-contains-a-substring

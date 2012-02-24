@@ -51,7 +51,7 @@ table
 .fancy_table
 {
     width: 710px;
-/*    width: auto;*/
+    /*    width: auto;*/
     text-align: left;
     border-collapse: collapse;
     margin-bottom: 20px;
@@ -816,7 +816,7 @@ body#home a#nav-home, body#code a#nav-code, body#boards a#nav-boards, body#proje
 #header_subtitle
 {
     font-size: 1em;
-    color: #b6b7af;
+    color: #bebfb7;
     font-family: Arial;
 }
 
@@ -856,4 +856,3 @@ body#home a#nav-home, body#code a#nav-code, body#boards a#nav-boards, body#proje
 {
     color: #599bdc;
 }
-
