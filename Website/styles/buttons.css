@@ -8,12 +8,13 @@ Based on: http://github.com/necolas/css3-github-buttons
     overflow: visible;
     display: inline-block;
     padding: 0.5em 1em;
-    border: 1px solid #ddd!important;
+    border: 1px solid #3072b3;
     margin: 0;
     text-decoration: none;
 /*    text-shadow: 1px 1px 0 #fff;*/
     font:11px/normal sans-serif;
-    color: #333;
+/*    color: #333;*/
+    color: #3072b3 !important;
     white-space: nowrap;
     cursor: pointer;
     outline: none;
@@ -26,9 +27,9 @@ Based on: http://github.com/necolas/css3-github-buttons
     -moz-background-clip: padding;
     -o-background-clip: padding-box;
     /*background-clip: padding-box;*/ /* commented out due to Opera 11.10 bug */
-    -webkit-border-radius: 0.5em;
-    -moz-border-radius: 0.5em;
-    border-radius: 0.5em;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
     /* IE hacks */
     zoom: 1;
     *display: inline;
@@ -43,7 +44,7 @@ Based on: http://github.com/necolas/css3-github-buttons
     border-bottom-color: #2a65a0;
     text-decoration: none;
 /*    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);*/
-    color: #FFF;
+    color: #FFF !important;
     background-color: #599bdc;
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#599bdc), to(#3072b3));
     background-image: -moz-linear-gradient(#599bdc, #3072b3);
