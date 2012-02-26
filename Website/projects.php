@@ -12,7 +12,7 @@
         <div id="container">
             <?php
                 displayHeader();
-                displayNavbar();
+                displayNavbar($page_id);
             ?>
             <div id="content">
                 <p>We are working on documentation for all Pygmy related projects. Until then, you can view the progress of some of our projects on our 

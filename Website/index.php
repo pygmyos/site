@@ -9,11 +9,11 @@
     <head>
         <?php loadHead("Home"); ?>
     </head>
-    <body id=<?php echo $page_id ?>>
+    <body id=<?php echo "'$page_id'" ?>>
         <div id="container">
             <?php
                 displayHeader();
-                displayNavbar();
+                displayNavbar($page_id);
                 displayCarousel(array("images/boards/Nebula1.jpg"));
             ?>
             <div id="content">

@@ -32,7 +32,7 @@
         ?>
         <div id="header">
             <a href="index.php">
-                <img src=<?php echo "'$icon'" ?> alt="Logo" width="90px" height="90px" id="logo" />
+                <img src=<?php echo "'$icon'" ?> alt="Logo" id="logo" />
             </a>
             <div id="header_text">
                 <h1 id="header_title">
@@ -47,33 +47,42 @@
     }
 
     //Displays the page navigation bar
-    function displayNavbar($links = array('index.php', 'code.php', 'boards.php', 'projects.php', 'contact.php'), $linkNames = array('Home', 'Code', 'Boards', 'Projects', 'Contact'), $linkPageIDs = array('nav-home', 'nav-code', 'nav-boards', 'nav-projects', 'nav-contact'))
+    function displayNavbar($selectedLink = '', $links = array('index.php', 'code.php', 'boards.php', 'projects.php', 'contact.php'), $linkNames = array('Home', 'Code', 'Boards', 'Projects', 'Contact'), $linkPageIDs = array('home', 'code', 'boards', 'projects', 'contact'))
     {
         ?>
         <div id="navbar">
             <div id="site-bar">
                 <?php
-                echo "<ul>\n";
+                //Checks to make sure the arguments are arrays
                 if (is_array($links) && is_array($linkNames) && is_array($linkPageIDs))
                 {
+                    //Checks to make sure the arguments are passed in equal quantities
                     if (count($links) == count($linkNames) && count($links) == count($linkPageIDs))
                     {
+                        //Displays the site bar
+                        echo "<ul>\n";
                         for ($i = 0; $i < count($links); $i++)
                         {
+                            //Stores special classes for the link (initiated as normal)
+                            $linkClass = "normallink";
+                            //First link
                             if ($i == 0)
                             {
-                                echo "<li class='firstlink'>\n";
+                                $linkClass = "firstlink";
                             }
+                            //Last links
                             else if ($i == count($links) - 1)
                             {
-                                echo "<li class='lastlink'>\n";
-                            }
-                            else
-                            {
-                                echo "<li>\n";
+                                $linkClass = "lastlink";
                             }
 
-                            echo "<a href='$links[$i]' id='$linkPageIDs[$i]'>$linkNames[$i]</a></li>\n";
+                            //Sets the currently selected link as the selected class
+                            if ($linkPageIDs[$i] == $selectedLink)
+                            {
+                               $linkClass = $linkClass . " selectedlink";
+                            }
+
+                            echo "<li class='$linkClass'>\n<a href='$links[$i]' id='nav-$linkPageIDs[$i]'>$linkNames[$i]</a></li>\n";
                         }
                     }
                     else

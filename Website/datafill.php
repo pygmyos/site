@@ -58,7 +58,7 @@
                             echo "<p>Submitting data...</p>";
 
                             //Gets the column names from the current table
-                            $query = "SELECT column_name FROM INFORMATION_SCHEMA.columns WHERE table_name='" . $passed_table . "'";
+                            $query = "SELECT column_name, column_type FROM INFORMATION_SCHEMA.columns WHERE table_name='" . mysql_real_escape_string($passed_table) . "'";
                             //Sends the query to the sql server and loads the results into $result
                             $result = mysql_query($query) or die('Query failed: ' . mysql_error());
                             //Gets the total number of columns returned
@@ -77,21 +77,31 @@
                                 {
                                     //Gets the current column name
                                     $columnName = strToLower($column["column_name"]);
+                                    //Gets the current column type
+                                    $columnType = strToLower($column["column_type"]);
+
                                     //Gets the value of the current column from the page arguments
                                     $columnValue = filter_input(INPUT_GET, $columnName, FILTER_SANITIZE_SPECIAL_CHARS);
                                     if ($columnValue != null && $columnValue != "")
                                     {
                                         //Loads the current column name into the array
-                                        $columnNames[$i] = $columnName;
-                                        //Loads the current column value into the array
-                                        $columnValues[$i] = "'" . $columnValue . "'";
+                                        $columnNames[$i] = mysql_real_escape_string($columnName);
+                                        //Loads the current column value into the array with quotes around it if it's a string
+                                        if (strContains($columnType, "int"))
+                                        {
+                                            $columnValues[$i] = mysql_real_escape_string($columnValue);
+                                        }
+                                        else
+                                        {
+                                            $columnValues[$i] = "'" . mysql_real_escape_string($columnValue) . "'";
+                                        }
                                     }
                                     $i++;
                                 }
                                 unset($i);
 
                                 //Insert the values into the database based on the column names
-                                $query = "INSERT INTO $passed_table (" . implode(", ", $columnNames) . ") VALUES (" . implode(", ", $columnValues) . ")";
+                                $query = "INSERT INTO " . mysql_real_escape_string($passed_table) . " (" . implode(", ", $columnNames) . ") VALUES (" . implode(", ", $columnValues) . ")";
                                 ////Sends the query to the sql server and loads the results into $result
                                 mysql_query($query) or die('Query failed: ' . mysql_error() . '\nCode: ' . $query);
 
@@ -105,9 +115,6 @@
                             }
                             //Frees up the result set
                             mysql_free_result($result);
-
-                            //Closes data link
-                            mysql_close($datalink);
                         }
 
                         //Check to see if the page is receiving a refresh and displays a confirmation message
@@ -120,7 +127,7 @@
                         echo "<form name='data_input'>\n";
 
                         //Gets all of the table names in the database
-                        $query = "SELECT table_name FROM INFORMATION_SCHEMA.tables WHERE table_schema='$database_name'";
+                        $query = "SELECT table_name FROM INFORMATION_SCHEMA.tables WHERE table_schema='" . mysql_real_escape_string($database_name) . "'";
                         //Sends the query to the sql server and loads the results into $result
                         $result = mysql_query($query) or die('Query failed: ' . mysql_error());
                         ?>
@@ -165,7 +172,7 @@
                         echo "</select>\n";
 
                         //Gets the column names from the current table
-                        $query = "SELECT column_name, is_nullable, column_type, extra FROM INFORMATION_SCHEMA.columns WHERE table_name='" . $passed_table . "'";
+                        $query = "SELECT column_name, is_nullable, column_type, extra FROM INFORMATION_SCHEMA.columns WHERE table_name='" . mysql_real_escape_string($passed_table) . "'";
                         //Sends the query to the sql server and loads the results into $result
                         $result = mysql_query($query) or die('Query failed: ' . mysql_error());
                         //Gets the total number of tables returned
@@ -268,7 +275,7 @@
                     else
                     {
                         //If the password is invalid or the user is not cookie validated, display this
-                        echo "<div class='notification'>Invalid password</div>";
+                        echo "<div class='notification' style='margin-bottom: 18px;'>Invalid password</div>";
                     }
                 ?>
             </div>

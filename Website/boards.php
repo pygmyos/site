@@ -12,7 +12,7 @@
         <div id="container">
             <?php
                 displayHeader();
-                displayNavbar();
+                displayNavbar($page_id);
             ?>
             <div id="content">
                 <h4>
