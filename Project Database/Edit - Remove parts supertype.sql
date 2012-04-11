@@ -1,49 +1,11 @@
 DROP TABLE parts;
+DROP TABLE incoming_orders;
+DROP TABLE incoming_part_orders;
+DROP TABLE outgoing_part_orders;
+DROP TABLE outgoing_orders;
+DROP TABLE part_prices;
+DROP TABLE pages;
 
-
--- People
-CREATE TABLE employees
-(
-Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-First_Name tinytext NOT NULL,
-Last_Name tinytext NOT NULL,
-Email tinytext NOT NULL,
-Gender enum('male', 'female') NOT NULL,
-Position tinytext NOT NULL,
-Hire_Date date NOT NULL,
-Username tinytext,
-Site tinytext,
-Phone_Number tinytext,
-Fax_Number tinytext,
-Address tinytext,
-City tinytext,
-State tinytext,
-Zipcode tinytext,
-PRIMARY KEY (Id)
-);
-
-CREATE TABLE customers
-(
-Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-Email tinytext NOT NULL,
-First_Name tinytext NOT NULL,
-Last_Name tinytext NOT NULL,
-Gender enum('male', 'female'),
-Username tinytext,
-Company tinytext,
-Site tinytext,
-Phone_Number tinytext,
-Fax_Number tinytext,
-Shipping_Address tinytext,
-Shipping_City tinytext,
-Shipping_State tinytext,
-Shipping_Zipcode tinytext,
-Billing_Address tinytext,
-Billing_City tinytext,
-Billing_State tinytext,
-Billing_Zipcode tinytext,
-PRIMARY KEY (Id)
-);
 
 -- Orders
 CREATE TABLE incoming_orders
@@ -111,27 +73,6 @@ FOREIGN KEY (Board_Id) REFERENCES Boards(Id),
 PRIMARY KEY (Order_Id, Board_Id)
 );
 
--- Carriers
-CREATE TABLE carriers
-(
-Id tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
-Name tinytext NOT NULL,
-Abbreviation tinytext,
-PRIMARY KEY (Id)
-);
-
-CREATE TABLE carrier_rates
-(
-Id tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
-Name tinytext,
-Delivery_Days_Min tinyint,
-Delivery_Days_Max tinyint,
-Visible bit NOT NULL,
-Carrier_Id tinyint UNSIGNED,
-FOREIGN KEY (Carrier_Id) REFERENCES Carriers(Id),
-PRIMARY KEY (Id, Carrier_Id)
-);
-
 -- Parts
 CREATE TABLE components
 (
@@ -176,26 +117,16 @@ FOREIGN KEY (Pcb_Id) REFERENCES Components(Id),
 PRIMARY KEY (Id)
 );
 
-CREATE TABLE tools
-(
-Id smallint UNSIGNED NOT NULL,
-Part_Type tinytext NOT NULL,
-Description text,
-Weight smallint,
-Material enum('Kapton', 'Mylar'),
-Margin tinyint UNSIGNED,
-PRIMARY KEY (Id)
-);
-
 -- Part related
 CREATE TABLE part_prices
 (
-
 Start_Date date NOT NULL,
 End_Date date,
 Value decimal(19,2) NOT NULL,
 Part_Id smallint UNSIGNED NOT NULL,
 FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
+Listing_Id smallint UNSIGNED NOT NULL,
+FOREIGN KEY (Listing_Id) REFERENCES Part_Listings(Id),
 PRIMARY KEY (Part_Id, Start_Date)
 );
 
@@ -209,31 +140,6 @@ FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
 PRIMARY KEY (Document_Id, Part_Id)
 );
 
-CREATE TABLE documents
-(
-Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-Url tinytext NOT NULL,
-Description text NOT NULL,
-PRIMARY KEY (Id)
-);
-
-CREATE TABLE features
-(
-Number smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-Text tinytext NOT NULL,
-On_Page bit NOT NULL DEFAULT 1,
-Part_Id smallint UNSIGNED NOT NULL,
-FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
-PRIMARY KEY (Part_Id, Number)
-);
-
-CREATE TABLE libraries
-(
-LibraryName tinytext NOT NULL,
-Description text,
-PRIMARY KEY (LibraryName(50))
-);
-
 CREATE TABLE part_ownerships
 (
 Quantity mediumint UNSIGNED NOT NULL,
@@ -242,26 +148,6 @@ Employee_Id mediumint UNSIGNED NOT NULL,
 FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
 FOREIGN KEY (Employee_Id) REFERENCES Employees(Id),
 PRIMARY KEY (Part_Id, Employee_Id)
-);
-
-CREATE TABLE manufacturer_components
-(
-Number tinytext NOT NULL,
-Url tinytext,
-Component_Id smallint UNSIGNED NOT NULL,
-Manufacturer_Id smallint UNSIGNED NOT NULL,
-FOREIGN KEY (Component_Id) REFERENCES Components(Id),
-FOREIGN KEY (Manufacturer_Id) REFERENCES Manufacturers(Id),
-PRIMARY KEY (Component_Id, Manufacturer_Id)
-);
-
-CREATE TABLE manufacturers
-(
-Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-Name tinytext NOT NULL,
-Email tinytext,
-Url tinytext,
-PRIMARY KEY (Id)
 );
 
 CREATE TABLE part_listings
@@ -273,19 +159,6 @@ Vendor_Id tinyint UNSIGNED NOT NULL,
 FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
 FOREIGN KEY (Vendor_Id) REFERENCES Vendors(Id),
 PRIMARY KEY (Part_Id, Vendor_Id)
-);
-
-CREATE TABLE vendors
-(
-Id tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
-Name tinytext NOT NULL,
-Url tinytext,
-Email tinytext,
-Address tinytext,
-City tinytext,
-State tinytext,
-Zipcode tinytext,
-PRIMARY KEY (Id)
 );
 
 -- Board (subtype) related
@@ -357,95 +230,4 @@ Picture_Id smallint UNSIGNED NOT NULL,
 FOREIGN KEY (Picture_Id) REFERENCES Pictures(Id),
 FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
 PRIMARY KEY (Picture_Id, Number)
-);
-
--- Pages
-CREATE TABLE pages
-(
-Id tinytext NOT NULL,
-Name tinytext NOT NULL,
-Title tinytext NOT NULL,
-Has_Header bit NOT NULL DEFAULT 1,
-Has_Navbar bit NOT NULL DEFAULT 1,
-Has_Socbar bit NOT NULL DEFAULT 1,
-Has_Footer bit NOT NULL DEFAULT 1,
-SetContent mediumtext NOT NULL,
-Archived bit NOT NULL DEFAULT 0,
-Url_Part tinytext NOT NULL,
-Part_Id smallint UNSIGNED,
-Code_Ref_Id smallint UNSIGNED,
-FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
-FOREIGN KEY (Code_Ref_Id) REFERENCES Code_Ref(Id),
-PRIMARY KEY (Id(255))
-);
-
-CREATE TABLE code_refs
-(
-Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-Name tinytext NOT NULL,
-Description text NOT NULL,
-Syntax tinytext NOT NULL,
-Type enum('Structural'),
-Returns tinytext,
-Applications tinytext NOT NULL,
-PRIMARY KEY (Id)
-)
-
-CREATE TABLE code_ref_examples
-(
-Number tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
-Code text,
-Output text,
-Code_Ref_Id smallint UNSIGNED,
-Picture_Id smallint UNSIGNED,
-FOREIGN KEY (Picture_Id) REFERENCES Pictures(Id),
-FOREIGN KEY (Code_Ref_Id) REFERENCES Code_Refs(Id),
-PRIMARY KEY (Code_Ref_Id, Number)
-)
-
-CREATE TABLE code_ref_parameters
-(
-Number tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
-Name tinytext NOT NULL,
-Type tinytext NOT NULL,
-Description tinytext NOT NULL,
-Code_Ref_Id smallint,
-FOREIGN KEY (Code_Ref_Id) REFERENCES Code_Refs(Id),
-PRIMARY KEY (Code_Ref_Id, Number)
-)
-
-CREATE TABLE page_relations
-(
-Visible bit NOT NULL DEFAULT 1,
-Page1_Id tinytext NOT NULL,
-Page2_Id tinytext NOT NULL,
-FOREIGN KEY (Page1_Id(255)) REFERENCES Pages(Id),
-FOREIGN KEY (Page2_Id(255)) REFERENCES Pages(Id),
-PRIMARY KEY (Page1_Id(100), Page2_Id(100))
-);
-
-CREATE TABLE alternative_nav_links
-(
-Text tinytext,
-Page1_Id tinytext NOT NULL,
-Page2_Id tinytext NOT NULL,
-FOREIGN KEY (Page1_Id(255)) REFERENCES Pages(Id),
-FOREIGN KEY (Page2_Id(255)) REFERENCES Pages(Id),
-PRIMARY KEY (Page1_Id(100), Page2_Id(100))
-);
-
-CREATE TABLE comments
-(
-Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-Page_Id smallint UNSIGNED NOT NULL,
-FOREIGN KEY (Page_Id) REFERENCES Pages(Id),
-PRIMARY KEY (Page_Id, Id)
-);
-
-CREATE TABLE comment_texts
-(
-Edit_Number tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
-Comment_Id smallint UNSIGNED NOT NULL,
-FOREIGN KEY (Comment_Id) REFERENCES Comments(Id),
-PRIMARY KEY (Comment_Id, Edit_Number)
 );
