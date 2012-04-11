@@ -1,3 +1,6 @@
+DROP TABLE parts;
+
+
 -- People
 CREATE TABLE employees
 (
@@ -56,14 +59,34 @@ Date_Received date,
 PRIMARY KEY (Id)
 );
 
-CREATE TABLE incoming_part_orders
+CREATE TABLE incoming_board_orders
 (
 Quantity mediumint UNSIGNED NOT NULL,
 Order_Id int UNSIGNED NOT NULL,
-Part_Id smallint UNSIGNED NOT NULL,
+Board_Id smallint UNSIGNED NOT NULL,
 FOREIGN KEY (Order_Id) REFERENCES Incoming_Orders(Id),
-FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
-PRIMARY KEY (Order_Id, Part_Id)
+FOREIGN KEY (Board_Id) REFERENCES Boards(Id),
+PRIMARY KEY (Order_Id, Board_Id)
+);
+
+CREATE TABLE incoming_component_orders
+(
+Quantity mediumint UNSIGNED NOT NULL,
+Order_Id int UNSIGNED NOT NULL,
+Component_Id smallint UNSIGNED NOT NULL,
+FOREIGN KEY (Order_Id) REFERENCES Incoming_Orders(Id),
+FOREIGN KEY (Component_Id) REFERENCES Components(Id),
+PRIMARY KEY (Order_Id, Component_Id)
+);
+
+CREATE TABLE incoming_stencil_orders
+(
+Quantity mediumint UNSIGNED NOT NULL,
+Order_Id int UNSIGNED NOT NULL,
+Stencil_Id smallint UNSIGNED NOT NULL,
+FOREIGN KEY (Order_Id) REFERENCES Incoming_Orders(Id),
+FOREIGN KEY (Stencil_Id) REFERENCES Stencils(Id),
+PRIMARY KEY (Order_Id, Stencil_Id)
 );
 
 CREATE TABLE outgoing_orders
@@ -78,16 +101,17 @@ Shipping_Cost decimal(19,2) NOT NULL,
 PRIMARY KEY (Id)
 );
 
-CREATE TABLE outgoing_part_orders
+CREATE TABLE outgoing_board_orders
 (
 Quantity mediumint UNSIGNED NOT NULL,
 Order_Id int UNSIGNED NOT NULL,
-Part_Id smallint UNSIGNED NOT NULL,
+Board_Id smallint UNSIGNED NOT NULL,
 FOREIGN KEY (Order_Id) REFERENCES Outgoing_Orders(Id),
-FOREIGN KEY (Part_Id) REFERENCES Parts(Id),
-PRIMARY KEY (Order_Id, Part_Id)
+FOREIGN KEY (Board_Id) REFERENCES Boards(Id),
+PRIMARY KEY (Order_Id, Board_Id)
 );
 
+-- Carriers
 CREATE TABLE carriers
 (
 Id tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -109,29 +133,12 @@ PRIMARY KEY (Id, Carrier_Id)
 );
 
 -- Parts
-CREATE TABLE parts
-(
-Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-Part_Type tinytext NOT NULL,
-CHECK(Part_Type IN ('component', 'board', 'stencil')),
-Description text,
-Weight smallint,
-PRIMARY KEY (Id)
-);
-
--- Part subtypes
 CREATE TABLE components
 (
 Id smallint UNSIGNED NOT NULL,
 Part_Type tinytext NOT NULL,
 Description text,
 Weight smallint,
-CHECK(Part_Type='component'),
-FOREIGN KEY (Id, Part_Type(10))
-REFERENCES Parts(Id, Part_Type) ON UPDATE CASCADE ON DELETE CASCADE,
-FOREIGN KEY (Description(900)) REFERENCES Parts (Description) ON UPDATE CASCADE ON DELETE CASCADE,
-FOREIGN KEY (Weight) REFERENCES Parts (Weight) ON UPDATE CASCADE ON DELETE CASCADE,
-PRIMARY KEY (Id),
 Type enum('Connector', 'Cable', 'Switch', 'Resistor', 'Protective', 
 'Capacitor', 'Inductive', 'Network', 'Piezoelectric', 'Power source', 
 'Sensor', 'Diode', 'Transistor', 'Integrated circuit', 'Optoelectronic', 
@@ -145,7 +152,8 @@ Heat_Max smallint,
 Heat_Min smallint,
 Reflow_Max smallint UNSIGNED,
 Library_Name tinytext,
-FOREIGN KEY (Library_Name(255)) REFERENCES Libraries(Name)
+FOREIGN KEY (Library_Name(255)) REFERENCES Libraries(Name),
+PRIMARY KEY (Id)
 );
 
 CREATE TABLE boards
@@ -154,12 +162,6 @@ Id smallint UNSIGNED NOT NULL,
 Part_Type tinytext NOT NULL,
 Description text,
 Weight smallint,
-CHECK(Part_Type='board'),
-FOREIGN KEY (Id, Part_Type(10))
-REFERENCES Parts(Id, Part_Type) ON UPDATE CASCADE ON DELETE CASCADE,
-FOREIGN KEY (Description(900)) REFERENCES Parts (Description) ON UPDATE CASCADE ON DELETE CASCADE,
-FOREIGN KEY (Weight) REFERENCES Parts (Weight) ON UPDATE CASCADE ON DELETE CASCADE,
-PRIMARY KEY (Id),
 Name tinytext NOT NULL,
 Type enum('Selling', 'Dev', 'Bought', 'Test', 'Other') NOT NULL,
 Repo_Subdir tinytext,
@@ -170,23 +172,19 @@ Color tinytext,
 Master_Id tinyint UNSIGNED,
 Pcb_Id tinyint UNSIGNED,
 FOREIGN KEY (Master_Id) REFERENCES Boards(Id),
-FOREIGN KEY (Pcb_Id) REFERENCES Components(Id)
+FOREIGN KEY (Pcb_Id) REFERENCES Components(Id),
+PRIMARY KEY (Id)
 );
 
-CREATE TABLE stencils
+CREATE TABLE tools
 (
 Id smallint UNSIGNED NOT NULL,
 Part_Type tinytext NOT NULL,
 Description text,
 Weight smallint,
-CHECK(Part_Type='stencil'),
-FOREIGN KEY (Id, Part_Type(10))
-REFERENCES Parts(Id, Part_Type) ON UPDATE CASCADE ON DELETE CASCADE,
-FOREIGN KEY (Description(900)) REFERENCES Parts (Description) ON UPDATE CASCADE ON DELETE CASCADE,
-FOREIGN KEY (Weight) REFERENCES Parts (Weight) ON UPDATE CASCADE ON DELETE CASCADE,
-PRIMARY KEY (Id),
 Material enum('Kapton', 'Mylar'),
-Margin tinyint UNSIGNED
+Margin tinyint UNSIGNED,
+PRIMARY KEY (Id)
 );
 
 -- Part related
