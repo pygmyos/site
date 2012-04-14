@@ -6,7 +6,7 @@ CREATE TABLE employees
     First_Name tinytext NOT NULL,
     Last_Name tinytext NOT NULL,
     Email tinytext NOT NULL,
-    Gender enum('male', 'female') NOT NULL,
+    Gender enum('Male', 'Female') NOT NULL,
     Position tinytext NOT NULL,
     Hire_Date date NOT NULL,
     Username tinytext NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE customers
     Email tinytext NOT NULL,
     First_Name tinytext NOT NULL,
     Last_Name tinytext NOT NULL,
-    Gender enum('male', 'female'),
+    Gender enum('Male', 'Female'),
     Username tinytext,
     Password tinytext,
     Company tinytext,
@@ -70,9 +70,11 @@ CREATE TABLE vendors
 -- Components
 CREATE TABLE libraries
 (
+    Id tinyint NOT NULL,
     Name tinytext NOT NULL,
     Description text,
-    PRIMARY KEY (Name(255))
+    UNIQUE (Name),
+    PRIMARY KEY (Id)
 );
 
 CREATE TABLE components
@@ -93,8 +95,29 @@ CREATE TABLE components
     Heat_Max smallint,
     Heat_Min smallint,
     Reflow_Max smallint UNSIGNED,
-    Library_Name tinytext,
-    FOREIGN KEY (Library_Name(255)) REFERENCES Libraries(Name)
+    Library_Id tinytext,
+    FOREIGN KEY (Library_Id) REFERENCES Libraries(Id)
+);
+
+CREATE TABLE component_packages
+(
+    Id smallint NOT NULL,
+    PRIMARY KEY (Id),
+    Package_Name tinytext NOT NULL,
+    UNIQUE (Package_Name),
+    Mount_Type enum('Surface mount', 'Through hole', 'Hybrid', 'Connector', 'Other'),
+    Number_pins smallint,
+    Description text,
+    Url tinytext
+);
+
+CREATE TABLE component_variants
+(
+    Component_Id smallint UNSIGNED NOT NULL,
+    Package_Id smallint UNSIGNED NOT NULL,
+    FOREIGN KEY (Component_Id) REFERENCES Components(Id),
+    FOREIGN KEY (Package_Id) REFERENCES Component_Packages(Id),
+    PRIMARY KEY (Component_Id, Package_Id)
 );
 
 CREATE TABLE component_listings
@@ -102,7 +125,7 @@ CREATE TABLE component_listings
     Url tinytext,
     Component_Id smallint UNSIGNED NOT NULL,
     Vendor_Id tinyint UNSIGNED NOT NULL,
-    FOREIGN KEY (Component_Id) REFERENCES Components(Id),
+    FOREIGN KEY (Component_Id) REFERENCES Variants(Id),
     FOREIGN KEY (Vendor_Id) REFERENCES Vendors(Id),
     PRIMARY KEY (Component_Id, Vendor_Id)
 );
@@ -147,7 +170,7 @@ CREATE TABLE component_ownerships
     PRIMARY KEY (Component_Id, Employee_Id)
 );
 
-CREATE TABLE manufacturers
+CREATE TABLE component_manufacturers
 (
     Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
     Name tinytext NOT NULL,
@@ -156,34 +179,15 @@ CREATE TABLE manufacturers
     PRIMARY KEY (Id)
 );
 
-CREATE TABLE manufacturer_components
+CREATE TABLE component_manufacturer_listings
 (
-    Number tinytext NOT NULL,
+    Manufacturer_Part_Number tinytext NOT NULL,
     Url tinytext,
     Component_Id smallint UNSIGNED NOT NULL,
     Manufacturer_Id smallint UNSIGNED NOT NULL,
     FOREIGN KEY (Component_Id) REFERENCES Components(Id),
     FOREIGN KEY (Manufacturer_Id) REFERENCES Manufacturers(Id),
     PRIMARY KEY (Component_Id, Manufacturer_Id)
-);
-
-CREATE TABLE packages
-(
-    Package_Name tinytext NOT NULL,
-    Mount_Type enum('Surface mount', 'Through hole', 'Hybrid', 'Connector', 'Other'),
-    Number_pins smallint,
-    Description text,
-    Url tinytext,
-    PRIMARY KEY (Package_Name(255))
-);
-
-CREATE TABLE variants
-(
-    Component_Id smallint UNSIGNED NOT NULL,
-    Package_Id smallint UNSIGNED NOT NULL,
-    FOREIGN KEY (Component_Id) REFERENCES Components(Id),
-    FOREIGN KEY (Package_Id) REFERENCES Packages(Id),
-    PRIMARY KEY (Component_Id, Package_Id)
 );
 
 -- Boards
@@ -211,7 +215,7 @@ CREATE TABLE boards
 
 CREATE TABLE board_doc_usages
 (
-    On_Page bit NOT NULL DEFAULT 1,
+    Visible bit NOT NULL DEFAULT 1,
     Document_Id smallint UNSIGNED,
     Board_Id smallint UNSIGNED,
     FOREIGN KEY (Document_Id) REFERENCES Documents(Id),
@@ -223,7 +227,7 @@ CREATE TABLE board_features
 (
     Number smallint UNSIGNED NOT NULL AUTO_INCREMENT,
     Text tinytext NOT NULL,
-    On_Page bit NOT NULL DEFAULT 1,
+    Visible bit NOT NULL DEFAULT 1,
     Board_Id smallint UNSIGNED NOT NULL,
     FOREIGN KEY (Board_Id) REFERENCES Boards(Id),
     UNIQUE (Board_Id),
