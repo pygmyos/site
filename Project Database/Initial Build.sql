@@ -128,7 +128,8 @@ CREATE TABLE components
     'Capacitor', 'Inductive', 'Network', 'Piezoelectric', 'Power source',
     'Sensor', 'Diode', 'Transistor', 'Integrated circuit', 'Optoelectronic',
     'Display', 'Valve', 'Discharge', 'Antenna', 'Module', 'Other') NOT NULL,
-    -- I plan on eventually changing the component value to a format better suited for sorting and filtering
+    -- I plan on eventually changing the component value to a format better
+    --   suited for sorting and filtering
     Value tinytext,
     Tolerance decimal(5, 3) UNSIGNED,
     Current_Draw int UNSIGNED,
@@ -185,7 +186,8 @@ CREATE TABLE component_variant_pins
     UNIQUE (Variant_Id, Number),
 
     Name tinytext NOT NULL,
-    Type enum('In', 'Out', 'IO', 'Power', 'Passive', 'NC', 'Other') NOT NULL DEFAULT 'IO',
+    Type enum('In', 'Out', 'IO', 'Power', 'Passive', 'NC',
+              'Other') NOT NULL DEFAULT 'IO',
 
     Voltage_Max decimal(4, 2),
     Voltage_Nom decimal(4, 2),
@@ -386,7 +388,8 @@ CREATE TABLE board_pins
     Number tinyint UNSIGNED NOT NULL,
     UNIQUE (Board_Id, Number),
 
-    Type enum('In', 'Out', 'IO', 'Power', 'Passive', 'NC', 'Other') NOT NULL DEFAULT 'IO',
+    Type enum('In', 'Out', 'IO', 'Power', 'Passive',
+              'NC', 'Other') NOT NULL DEFAULT 'IO',
     Name tinytext NOT NULL,
     Description tinytext,
     Voltage_Max decimal(4, 2),
@@ -446,7 +449,8 @@ CREATE TABLE orders_incoming
     FOREIGN KEY (Vendor_Id) REFERENCES Vendors(Id),
     FOREIGN KEY (Carrier_Rate_Id) REFERENCES Carrier_Rates(Id),
 
-    Status enum('Other', 'Shipping error', 'New order', 'Shipped', 'Received', 'Cancelled') NOT NULL,
+    Status enum('Other', 'Shipping error', 'New order', 'Shipped', 'Received',
+                'Cancelled') NOT NULL,
     Tracking_Number tinytext,
     Date_Created datetime NOT NULL,
     Date_Received date,
@@ -476,7 +480,8 @@ CREATE TABLE orders_outgoing
     FOREIGN KEY (Packing_Employee_Id) REFERENCES Profiles(Id),
     FOREIGN KEY (Carrier_Rate_Id) REFERENCES Carrier_Rates(Id),
 
-    Status enum('exception', 'new order', 'packed', 'label printed', 'ready to ship', 'shipped', 'cancelled') NOT NULL,
+    Status enum('Exception', 'New order', 'Packed', 'Label printed',
+                'Ready to ship', 'Shipped', 'Cancelled') NOT NULL,
     Tracking_Number tinytext,
     Date_Created datetime NOT NULL,
     Date_Packed date,
