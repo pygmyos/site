@@ -16,7 +16,7 @@ CREATE TABLE profiles
     Gender enum('Male', 'Female', 'Hidden', 'Other'),
     Home_Phone_Number tinytext,
     Cell_Phone_Number tinytext,
-    Fax_Number tinytext
+    Fax_Number tinytext,
 
     Bio text,
     Organizations text,
@@ -30,12 +30,12 @@ CREATE TABLE profiles
     Publications text
 );
 
-CREATE TABLE person_addresses
+CREATE TABLE profile_addresses
 (
     Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
-    Person_Id smallint UNSIGNED NOT NULL,
-    FOREIGN KEY (Person_Id) REFERENCES Persons(Id),
+    Profile_Id smallint UNSIGNED NOT NULL,
+    FOREIGN KEY (Profile_Id) REFERENCES Profiles(Id),
 
     Type enum('Shipping', 'Billing', 'Other'),
     Location enum('Home', 'Work', 'Other', 'Unknown'),
@@ -50,19 +50,20 @@ CREATE TABLE person_addresses
     City tinytext NOT NULL,
     State tinytext NOT NULL,
     Zipcode tinytext NOT NULL,
-    State tinytext NOT NULL,
-    Country tinytext NOT NULL,
+    Country tinytext NOT NULL
 );
 
 CREATE TABLE employment
 (
+    Id tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (Id),
     Profile_Id smallint UNSIGNED NOT NULL,
     FOREIGN KEY (Profile_Id) REFERENCES Profiles(Id),
 
     Position tinytext NOT NULL,
     Start_Date date NOT NULL,
-    End_Date date
-    Current_Status enum('Working', 'Working remote', 'Vacation'),
+    End_Date date,
+    Current_Status enum('Working', 'Working remote', 'Vacation')
 );
 
 -- Components / Boards
@@ -89,26 +90,25 @@ CREATE TABLE vendors
 
 CREATE TABLE vendor_addresses
 (
-    Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
+    Id tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
-    Vendor_Id smallint UNSIGNED NOT NULL,
+    Vendor_Id tinyint UNSIGNED NOT NULL,
     FOREIGN KEY (Vendor_Id) REFERENCES Vendors(Id),
 
-    Location enum('Offices', 'Warehouse', 'Storefront', 'Other')
+    Location enum('Offices', 'Warehouse', 'Storefront', 'Other'),
     Department tinytext,
     Address tinytext NOT NULL,
     Suite tinytext,
     City tinytext NOT NULL,
     State tinytext NOT NULL,
     Zipcode tinytext NOT NULL,
-    State tinytext NOT NULL,
-    Country tinytext NOT NULL,
+    Country tinytext NOT NULL
 );
 
 -- Components
-CREATE TABLE libraries
+CREATE TABLE component_libraries
 (
-    Id tinyint NOT NULL AUTO_INCREMENT,
+    Id tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
     Name tinytext NOT NULL,
     UNIQUE (Name(255)),
@@ -120,36 +120,45 @@ CREATE TABLE components
 (
     Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
-    Library_Id tinyint,
-    FOREIGN KEY (Library_Id) REFERENCES Libraries(Id),
+    Library_Id tinyint UNSIGNED,
+    FOREIGN KEY (Library_Id) REFERENCES Component_Libraries(Id),
     Description tinytext,
 
-    Type enum('Connector', 'Cable', 'Switch', 'Resistor', 'Protective', 
-    'Capacitor', 'Inductive', 'Network', 'Piezoelectric', 'Power source', 
-    'Sensor', 'Diode', 'Transistor', 'Integrated circuit', 'Optoelectronic', 
+    Type enum('Connector', 'Cable', 'Switch', 'Resistor', 'Protective',
+    'Capacitor', 'Inductive', 'Network', 'Piezoelectric', 'Power source',
+    'Sensor', 'Diode', 'Transistor', 'Integrated circuit', 'Optoelectronic',
     'Display', 'Valve', 'Discharge', 'Antenna', 'Module', 'Other') NOT NULL,
     -- I plan on eventually changing the component value to a format better suited for sorting and filtering
-    Value tinytext UNSIGNED,
-    Tolerance decimal(2,3) UNSIGNED,
+    Value tinytext,
+    Tolerance decimal(5, 3) UNSIGNED,
     Current_Draw int UNSIGNED,
     Heat_Max smallint,
     Heat_Min smallint,
     Reflow_Max smallint UNSIGNED
 );
 
+CREATE TABLE component_doc_usages
+(
+    Document_Id smallint UNSIGNED,
+    Component_Id smallint UNSIGNED,
+    FOREIGN KEY (Document_Id) REFERENCES Documents(Id),
+    FOREIGN KEY (Component_Id) REFERENCES Components(Id),
+    PRIMARY KEY (Document_Id, Component_Id)
+);
+
 CREATE TABLE component_packages
 (
-    Id smallint NOT NULL AUTO_INCREMENT,
+    Id tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
     Package_Name tinytext,
     UNIQUE (Package_Name(255)),
 
     Mount_Type enum('Surface mount', 'Through hole', 'Hybrid', 'Connector', 'Other'),
     Number_pins smallint,
-    Weight_Grams decimal(5,3) UNSIGNED,
-    Height_mm decimal(3,2) UNSIGNED,
-    Width_mm decimal(3,2) UNSIGNED,
-    Depth_mm decimal(3,2) UNSIGNED,
+    Weight_Grams decimal(8, 3) UNSIGNED,
+    Height_mm decimal(5, 2) UNSIGNED,
+    Width_mm decimal(5, 2) UNSIGNED,
+    Depth_mm decimal(5, 2) UNSIGNED,
     Description tinytext,
     Url tinytext
 );
@@ -159,7 +168,7 @@ CREATE TABLE component_variants
     Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
     Component_Id smallint UNSIGNED NOT NULL,
-    Package_Id smallint UNSIGNED NOT NULL,
+    Package_Id tinyint UNSIGNED NOT NULL,
     FOREIGN KEY (Component_Id) REFERENCES Components(Id),
     FOREIGN KEY (Package_Id) REFERENCES Component_Packages(Id),
 
@@ -173,16 +182,16 @@ CREATE TABLE component_variant_pins
     Variant_Id smallint UNSIGNED NOT NULL,
     FOREIGN KEY (Variant_Id) REFERENCES Component_Variants(Id),
     Number tinyint UNSIGNED NOT NULL,
-    UNIQUE (Variant_Id, Number)
+    UNIQUE (Variant_Id, Number),
 
     Name tinytext NOT NULL,
     Type enum('In', 'Out', 'IO', 'Power', 'Passive', 'NC', 'Other') NOT NULL DEFAULT 'IO',
-    
-    Voltage_Max decimal(2,2),
-    Voltage_Nom decimal(2,2),
-    Voltage_Min decimal(2,2),
-    Output_Current_mA decimal(5,3) UNSIGNED,
-    Input_Current_mA decimal(5,3) UNSIGNED,
+
+    Voltage_Max decimal(4, 2),
+    Voltage_Nom decimal(4, 2),
+    Voltage_Min decimal(4, 2),
+    Output_Current_mA decimal(8, 3) UNSIGNED,
+    Input_Current_mA decimal(8, 3) UNSIGNED
 );
 
 CREATE TABLE component_variant_listings
@@ -195,28 +204,19 @@ CREATE TABLE component_variant_listings
     FOREIGN KEY (Vendor_Id) REFERENCES Vendors(Id),
 
     Url tinytext,
-    UNIQUE (Url(255)),
+    UNIQUE (Url(255))
 );
 
 CREATE TABLE component_variant_listing_prices
 (
     Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
-    Listing_Id tinyint UNSIGNED NOT NULL,
+    Listing_Id smallint UNSIGNED NOT NULL,
     FOREIGN KEY (Listing_Id) REFERENCES component_variant_listings(Id),
 
     Start_Date datetime NOT NULL,
     End_Date datetime,
-    Price decimal(3,2) NOT NULL
-);
-
-CREATE TABLE component_doc_usages
-(
-    Document_Id smallint UNSIGNED,
-    Component_Id smallint UNSIGNED,
-    FOREIGN KEY (Document_Id) REFERENCES Documents(Id),
-    FOREIGN KEY (Component_Id) REFERENCES Components(Id),
-    PRIMARY KEY (Document_Id, Component_Id)
+    Price decimal(5, 2) NOT NULL
 );
 
 CREATE TABLE component_variant_ownerships
@@ -224,16 +224,16 @@ CREATE TABLE component_variant_ownerships
     Variant_Id smallint UNSIGNED NOT NULL,
     Employee_Id smallint UNSIGNED NOT NULL,
     FOREIGN KEY (Variant_Id) REFERENCES Component_Variants(Id),
-    FOREIGN KEY (Employee_Id) REFERENCES Employees(Id),
+    FOREIGN KEY (Employee_Id) REFERENCES Profiles(Id),
     PRIMARY KEY (Variant_Id, Employee_Id),
 
     Quantity mediumint UNSIGNED NOT NULL,
-    Quantity_Needed mediumint UNSIGNED NOT NULL DEFAULT 0,
+    Quantity_Needed mediumint UNSIGNED NOT NULL DEFAULT 0
 );
 
 CREATE TABLE component_manufacturers
 (
-    Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
+    Id tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
 
     Name tinytext NOT NULL,
@@ -244,10 +244,10 @@ CREATE TABLE component_manufacturers
 
 CREATE TABLE component_manufacturer_addresses
 (
-    Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
+    Id tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
-    Manufacturer_Id smallint UNSIGNED NOT NULL,
-    FOREIGN KEY (Manufacturer_Id) REFERENCES Manufacturers(Id),
+    Manufacturer_Id tinyint UNSIGNED NOT NULL,
+    FOREIGN KEY (Manufacturer_Id) REFERENCES Component_Manufacturers(Id),
 
     Location enum('Other', 'Offices', 'Warehouse', 'Storefront', 'Factory'),
     Department tinytext,
@@ -256,7 +256,6 @@ CREATE TABLE component_manufacturer_addresses
     City tinytext NOT NULL,
     State tinytext NOT NULL,
     Zipcode tinytext NOT NULL,
-    State tinytext NOT NULL,
     Country tinytext NOT NULL
 );
 
@@ -265,7 +264,7 @@ CREATE TABLE component_manufacturer_listings
     Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
     Component_Id smallint UNSIGNED NOT NULL,
-    Manufacturer_Id smallint UNSIGNED NOT NULL,
+    Manufacturer_Id tinyint UNSIGNED NOT NULL,
     FOREIGN KEY (Component_Id) REFERENCES Components(Id),
     FOREIGN KEY (Manufacturer_Id) REFERENCES Component_Manufacturers(Id),
     UNIQUE (Manufacturer_Id, Component_Id),
@@ -278,7 +277,7 @@ CREATE TABLE component_manufacturer_listings
 -- Boards
 CREATE TABLE boards
 (
-    Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
+    Id tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
     Shield_Master_Id tinyint UNSIGNED,
     FOREIGN KEY (Shield_Master_Id) REFERENCES Boards(Id),
@@ -293,37 +292,37 @@ CREATE TABLE boards
     First_Commit_Hash tinytext,
     On_Site bit NOT NULL DEFAULT 1,
 
-    Height_mm decimal(5,2) UNSIGNED,
-    Width_mm decimal(5,2) UNSIGNED,
-    Depth_mm decimal(5,2) UNSIGNED,
+    Height_mm decimal(7, 2) UNSIGNED,
+    Width_mm decimal(7, 2) UNSIGNED,
+    Depth_mm decimal(7, 2) UNSIGNED,
     Pcb_Thickness_mil tinyint UNSIGNED,
     Copper_Thickness_mil tinyint UNSIGNED,
     Min_Trace_mil tinyint UNSIGNED NOT NULL,
     Min_Via_mil tinyint UNSIGNED NOT NULL,
     Shape enum('Other', 'Rectangle', 'Rounded rectangle', 'Circle'),
     Color tinytext,
-    Weight_Grams decimal(5,3) UNSIGNED
+    Weight_Grams decimal(8, 3) UNSIGNED
 );
 
 CREATE TABLE board_doc_usages
 (
     Document_Id smallint UNSIGNED,
-    Board_Id smallint UNSIGNED,
+    Board_Id tinyint UNSIGNED,
     FOREIGN KEY (Document_Id) REFERENCES Documents(Id),
     FOREIGN KEY (Board_Id) REFERENCES Boards(Id),
-    PRIMARY KEY (Document_Id, Board_Id)
+    PRIMARY KEY (Document_Id, Board_Id),
 
-    On_Page bit NOT NULL DEFAULT 1,
+    On_Page bit NOT NULL DEFAULT 1
 );
 
 CREATE TABLE board_features
 (
     Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
-    Board_Id smallint UNSIGNED NOT NULL,
+    Board_Id tinyint UNSIGNED NOT NULL,
     FOREIGN KEY (Board_Id) REFERENCES Boards(Id),
-    Number smallint UNSIGNED NOT NULL,
-    UNIQUE (Board_Id, Number)
+    Number tinyint UNSIGNED NOT NULL,
+    UNIQUE (Board_Id, Number),
 
     Feature_Text tinytext NOT NULL,
     On_Page bit NOT NULL DEFAULT 1
@@ -331,24 +330,25 @@ CREATE TABLE board_features
 
 CREATE TABLE board_ownerships
 (
-    Board_Id smallint UNSIGNED NOT NULL,
+    Board_Id tinyint UNSIGNED NOT NULL,
     Employee_Id smallint UNSIGNED NOT NULL,
     FOREIGN KEY (Board_Id) REFERENCES Boards(Id),
-    FOREIGN KEY (Employee_Id) REFERENCES Employees(Id),
-    PRIMARY KEY (Board_Id, Employee_Id)
+    FOREIGN KEY (Employee_Id) REFERENCES Profiles(Id),
+    PRIMARY KEY (Board_Id, Employee_Id),
 
     Quantity_Assembled smallint UNSIGNED NOT NULL,
     Quantity_Unassembled smallint UNSIGNED NOT NULL,
-    Quantity_Needed smallint UNSIGNED NOT NULL,
+    Quantity_Needed smallint UNSIGNED NOT NULL
 );
 
 CREATE TABLE board_listings
 (
-    Board_Id smallint UNSIGNED NOT NULL,
+    Id tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (Id),
+    Board_Id tinyint UNSIGNED NOT NULL,
     Vendor_Id tinyint UNSIGNED NOT NULL,
     FOREIGN KEY (Board_Id) REFERENCES Boards(Id),
     FOREIGN KEY (Vendor_Id) REFERENCES Vendors(Id),
-    PRIMARY KEY (Board_Id, Vendor_Id)
 
     Url tinytext
 );
@@ -358,20 +358,20 @@ CREATE TABLE board_listing_prices
     Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
     Listing_Id tinyint UNSIGNED NOT NULL,
-    FOREIGN KEY (Listing_Id) REFERENCES board_listings(Id)
+    FOREIGN KEY (Listing_Id) REFERENCES board_listings(Id),
 
     Start_Date datetime NOT NULL,
     End_Date datetime,
-    Price decimal(3,2) NOT NULL,
+    Price decimal(5, 2) NOT NULL
 );
 
 CREATE TABLE board_component_variant_usages
 (
     Variant_Id smallint UNSIGNED NOT NULL,
-    Board_Id smallint UNSIGNED NOT NULL,
+    Board_Id tinyint UNSIGNED NOT NULL,
     FOREIGN KEY (Variant_Id) REFERENCES Component_Variants(Id),
     FOREIGN KEY (Board_Id) REFERENCES Boards(Id),
-    PRIMARY KEY (Board_Id, Variant_Id)
+    PRIMARY KEY (Board_Id, Variant_Id),
 
     Quantity tinyint UNSIGNED NOT NULL,
     Optional bit NOT NULL DEFAULT 0
@@ -381,30 +381,30 @@ CREATE TABLE board_pins
 (
     Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
-    Board_Id smallint UNSIGNED NOT NULL,
+    Board_Id tinyint UNSIGNED NOT NULL,
     FOREIGN KEY (Board_Id) REFERENCES Boards(Id),
     Number tinyint UNSIGNED NOT NULL,
-    UNIQUE (Board_Id, Number)
+    UNIQUE (Board_Id, Number),
 
     Type enum('In', 'Out', 'IO', 'Power', 'Passive', 'NC', 'Other') NOT NULL DEFAULT 'IO',
     Name tinytext NOT NULL,
     Description tinytext,
-    Voltage_Max decimal(2,2),
-    Voltage_Nom decimal(2,2),
-    Voltage_Min decimal(2,2),
-    Output_Current_mA decimal(5,2) UNSIGNED,
-    Input_Current_mA decimal(5,2) UNSIGNED
+    Voltage_Max decimal(4, 2),
+    Voltage_Nom decimal(4, 2),
+    Voltage_Min decimal(4, 2),
+    Output_Current_mA decimal(7, 2) UNSIGNED,
+    Input_Current_mA decimal(7, 2) UNSIGNED
 );
 
 CREATE TABLE board_relations
 (
-    Board1_Id smallint NOT NULL,
-    Board2_Id smallint NOT NULL,
+    Board1_Id tinyint UNSIGNED NOT NULL,
+    Board2_Id tinyint UNSIGNED NOT NULL,
     FOREIGN KEY (Board1_Id) REFERENCES Boards(Id),
     FOREIGN KEY (Board2_Id) REFERENCES Boards(Id),
-    PRIMARY KEY (Board1_Id, Board2_Id)
+    PRIMARY KEY (Board1_Id, Board2_Id),
 
-    On_Page bit NOT NULL DEFAULT 1,
+    On_Page bit NOT NULL DEFAULT 1
 );
 
 -- Orders
@@ -435,14 +435,14 @@ CREATE TABLE carrier_rates
     On_Site bit NOT NULL DEFAULT 1
 );
 
-CREATE TABLE incoming_orders
+CREATE TABLE orders_incoming
 (
     Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
     Employee_Id smallint UNSIGNED NOT NULL,
-    Vendor_Id smallint UNSIGNED NOT NULL,
+    Vendor_Id tinyint UNSIGNED NOT NULL,
     Carrier_Rate_Id tinyint UNSIGNED NOT NULL,
-    FOREIGN KEY (Employee_Id) REFERENCES Employees(Id),
+    FOREIGN KEY (Employee_Id) REFERENCES Profiles(Id),
     FOREIGN KEY (Vendor_Id) REFERENCES Vendors(Id),
     FOREIGN KEY (Carrier_Rate_Id) REFERENCES Carrier_Rates(Id),
 
@@ -450,30 +450,30 @@ CREATE TABLE incoming_orders
     Tracking_Number tinytext,
     Date_Created datetime NOT NULL,
     Date_Received date,
-    Tax decimal(5,2) NOT NULL,
-    Shipping_Cost decimal(3,2) NOT NULL,
+    Tax decimal(7, 2) NOT NULL,
+    Shipping_Cost decimal(5, 2) NOT NULL
 );
 
-CREATE TABLE incoming_component_variant_orders
+CREATE TABLE orders_incoming_components
 (
-    Order_Id int UNSIGNED NOT NULL,
+    Order_Id smallint UNSIGNED NOT NULL,
     Variant_Id smallint UNSIGNED NOT NULL,
-    FOREIGN KEY (Order_Id) REFERENCES Incoming_Orders(Id),
+    FOREIGN KEY (Order_Id) REFERENCES Orders_Incoming(Id),
     FOREIGN KEY (Variant_Id) REFERENCES Component_Variants(Id),
-    PRIMARY KEY (Order_Id, Variant_Id)
+    PRIMARY KEY (Order_Id, Variant_Id),
 
     Quantity mediumint UNSIGNED NOT NULL
 );
 
-CREATE TABLE outgoing_orders
+CREATE TABLE orders_outgoing
 (
-    Id mediumint UNSIGNED NOT NULL AUTO_INCREMENT,
+    Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
     Customer_Id smallint UNSIGNED NOT NULL,
     Packing_Employee_Id smallint UNSIGNED NOT NULL,
     Carrier_Rate_Id tinyint UNSIGNED NOT NULL,
-    FOREIGN KEY (Customer_Id) REFERENCES Customers(Id),
-    FOREIGN KEY (Packing_Employee_Id) REFERENCES Employees(Id),
+    FOREIGN KEY (Customer_Id) REFERENCES Profiles(Id),
+    FOREIGN KEY (Packing_Employee_Id) REFERENCES Profiles(Id),
     FOREIGN KEY (Carrier_Rate_Id) REFERENCES Carrier_Rates(Id),
 
     Status enum('exception', 'new order', 'packed', 'label printed', 'ready to ship', 'shipped', 'cancelled') NOT NULL,
@@ -481,15 +481,15 @@ CREATE TABLE outgoing_orders
     Date_Created datetime NOT NULL,
     Date_Packed date,
     Date_Shipped date,
-    Tax decimal(5,2) NOT NULL,
-    Shipping_Cost decimal(5,2) NOT NULL
+    Tax decimal(7, 2) NOT NULL,
+    Shipping_Cost decimal(7, 2) NOT NULL
 );
 
-CREATE TABLE outgoing_board_orders
+CREATE TABLE orders_outgoing_boards
 (
-    Order_Id mediumint UNSIGNED NOT NULL,
-    Board_Id smallint UNSIGNED NOT NULL,
-    FOREIGN KEY (Order_Id) REFERENCES Outgoing_Orders(Id),
+    Order_Id smallint UNSIGNED NOT NULL,
+    Board_Id tinyint UNSIGNED NOT NULL,
+    FOREIGN KEY (Order_Id) REFERENCES Orders_Outgoing(Id),
     FOREIGN KEY (Board_Id) REFERENCES Boards(Id),
     PRIMARY KEY (Order_Id, Board_Id),
 
@@ -500,28 +500,28 @@ CREATE TABLE outgoing_board_orders
 CREATE TABLE pictures
 (
     Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY (Id)
+    PRIMARY KEY (Id),
 
     Url tinytext NOT NULL,
     UNIQUE (Url(255)),
     Flickr_Url tinytext,
     Alt_Text tinytext NOT NULL,
-    Caption tinytext,
+    Caption tinytext
 );
 
 CREATE TABLE picture_tags
 (
-    Id tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
+    Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
     Picture_Id smallint UNSIGNED NOT NULL,
     FOREIGN KEY (Picture_Id) REFERENCES Pictures(Id),
 
     Item_Name tinytext,
     Variant_Id smallint UNSIGNED,
-    Person_Id smallint UNSIGNED,
-    Board_Id smallint UNSIGNED,
+    Profile_Id smallint UNSIGNED,
+    Board_Id tinyint UNSIGNED,
     FOREIGN KEY (Variant_Id) REFERENCES Component_Variants(Id),
-    FOREIGN KEY (Person_Id) REFERENCES Profiles(Id),
+    FOREIGN KEY (Profile_Id) REFERENCES Profiles(Id),
     FOREIGN KEY (Board_Id) REFERENCES Boards(Id),
 
     Left_Corner_X smallint UNSIGNED,
@@ -548,10 +548,21 @@ CREATE TABLE code_refs
     On_Site bit NOT NULL DEFAULT 1
 );
 
+CREATE TABLE code_ref_relations
+(
+    Code_Ref1_Id smallint UNSIGNED NOT NULL,
+    Code_Ref2_Id smallint UNSIGNED NOT NULL,
+    FOREIGN KEY (Code_Ref1_Id) REFERENCES Code_Refs(Id),
+    FOREIGN KEY (Code_Ref2_Id) REFERENCES Code_Refs(Id),
+    PRIMARY KEY (Code_Ref1_Id, Code_Ref2_Id),
+
+    On_Page bit NOT NULL DEFAULT 1
+);
+
 CREATE TABLE code_ref_support
 (
     Code_Ref_Id smallint UNSIGNED NOT NULL,
-    Board_Id smallint UNSIGNED NOT NULL,
+    Board_Id tinyint UNSIGNED NOT NULL,
     FOREIGN KEY (Code_Ref_Id) REFERENCES Code_Refs(Id),
     FOREIGN KEY (Board_Id) REFERENCES Boards(Id),
     PRIMARY KEY (Code_Ref_Id, Board_Id),
@@ -591,17 +602,6 @@ CREATE TABLE code_ref_parameters
     On_Page bit NOT NULL DEFAULT 1
 );
 
-CREATE TABLE code_ref_relations
-(
-    Code_Ref1_Id smallint UNSIGNED NOT NULL,
-    Code_Ref2_Id smallint UNSIGNED NOT NULL,
-    FOREIGN KEY (Code_Ref1_Id) REFERENCES Code_Refs(Id),
-    FOREIGN KEY (Code_Ref2_Id) REFERENCES Code_Refs(Id),
-    PRIMARY KEY (Code_Ref1_Id, Code_Ref2_Id),
-
-    On_Page bit NOT NULL DEFAULT 1
-);
-
 -- Comments
 CREATE TABLE comments
 (
@@ -610,7 +610,7 @@ CREATE TABLE comments
     Reply_To_Id smallint UNSIGNED,
     FOREIGN KEY (Reply_To_Id) REFERENCES Comments(Id),
 
-    Page tinytext UNSIGNED NOT NULL,
+    Page tinytext NOT NULL,
     Visible bit NOT NULL DEFAULT 1
 );
 
@@ -619,9 +619,9 @@ CREATE TABLE comment_edits
     Id smallint UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
     Comment_Id smallint UNSIGNED NOT NULL,
-    Writer_Id smallint UNSIGNED NOT NULL,
+    Writer_Profile_Id smallint UNSIGNED NOT NULL,
     FOREIGN KEY (Comment_Id) REFERENCES Comments(Id),
-    FOREIGN KEY (Writer_Id) REFERENCES Profiles(Id),
+    FOREIGN KEY (Writer_Profile_Id) REFERENCES Profiles(Id),
 
     Contents text NOT NULL,
     Start_Date datetime NOT NULL,
