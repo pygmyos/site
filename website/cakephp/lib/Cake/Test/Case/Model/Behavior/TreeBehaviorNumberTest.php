@@ -6,14 +6,14 @@
  *
  * PHP 5
  *
- * CakePHP(tm) Tests <http://book.cakephp.org/view/1196/Testing>
+ * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice
  *
  * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://book.cakephp.org/view/1196/Testing CakePHP(tm) Tests
+ * @link          http://book.cakephp.org/2.0/en/development/testing.html CakePHP(tm) Tests
  * @package       Cake.Test.Case.Model.Behavior
  * @since         CakePHP(tm) v 1.2.0.5330
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
@@ -915,6 +915,18 @@ class TreeBehaviorNumberTest extends CakeTestCase {
 	}
 
 /**
+ * Test deleting a record that doesn't exist.
+ *
+ * @return void
+ */
+	public function testDeleteDoesNotExist() {
+		extract($this->settings);
+		$this->Tree = new $modelClass();
+		$this->Tree->initialize(2, 2);
+		$this->Tree->delete(99999);
+	}
+
+/**
  * testRemove method
  *
  * @return void
@@ -1267,6 +1279,26 @@ class TreeBehaviorNumberTest extends CakeTestCase {
 		$result = $this->Tree->generateTreeList();
 		$expected = array(1 => '1. Root', 2 => '_1.1', 3 => '__1.1.1', 4 => '__1.1.2', 5 => '_1.2', 6 => '__1.2.1', 7 => '__1.2.2');
 		$this->assertSame($expected, $result);
+	}
+
+/**
+ * Test the formatting options of generateTreeList()
+ *
+ * @return void
+ */
+	public function testGenerateTreeListFormatting() {
+		extract($this->settings);
+		$this->Tree = new $modelClass();
+		$this->Tree->initialize(2, 2);
+
+		$result = $this->Tree->generateTreeList(
+			null,
+			"{n}.$modelClass.id",
+			array('%s - %s', "{n}.$modelClass.id", "{n}.$modelClass.name")
+		);
+		$this->assertEquals('1 - 1. Root', $result[1]);
+		$this->assertEquals('_2 - 1.1', $result[2]);
+		$this->assertEquals('__3 - 1.1.1', $result[3]);
 	}
 
 /**
