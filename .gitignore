@@ -3,3 +3,14 @@
 *.swo
 *~
 # }}}
+
+# website {{{
+website/app/Config/
+website/app/tmp/
+website/lib/Cake/Console/Templates/skel/tmp/
+website/plugins/
+website/vendors/
+website/build/
+website/dist/
+website/tags/
+# }}}
