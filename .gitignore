@@ -5,7 +5,6 @@
 # }}}
 
 # website {{{
-website/app/Config/
 website/app/tmp/
 website/lib/Cake/Console/Templates/skel/tmp/
 website/plugins/
