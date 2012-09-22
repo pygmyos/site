@@ -1,75 +1,82 @@
--- People
--- Note that passwords are currently unencrypted on the database side
+-- People {{{
 CREATE TABLE profiles
 (
+	-- id {{{
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
-	username TINYTEXT,
-	UNIQUE (username(255)),
-	account_password TINYTEXT NOT NULL,
+	-- }}}
 
-	creation_datetime DATETIME NOT NULL,
+	-- Identity {{{
 	email TINYTEXT NOT NULL,
 	UNIQUE (email(255)),
-	email_on_profile BIT NOT NULL DEFAULT 0,
-	profile_visibility ENUM('All', 'Members', 'None') NOT NULL DEFAULT 'Members',
-	gender ENUM('Other', 'Male', 'Female', 'Hidden'),
-	first_name TINYTEXT,
-	last_name TINYTEXT,
-	phone_number TINYTEXT,
-	fax_number TINYTEXT,
+	username TINYTEXT,
+	UNIQUE (username(255)),
+	name TINYTEXT,
+	password TINYTEXT NOT NULL,
+	created DATETIME NOT NULL,
+	--- }}}
 
+	-- Info {{{
+	phone TINYTEXT,
+	fax TINYTEXT,
+
+	gender ENUM('Other', 'Male', 'Female'),
+	profile_visibility ENUM('All', 'Members', 'None') NOT NULL DEFAULT 'Members',
+	email_visible BIT NOT NULL DEFAULT 0,
 	uses_gravatar BIT NOT NULL DEFAULT 1,
 	country TINYTEXT,
-	bio TEXT,
-	organizations TEXT,
-	spoken_languages TEXT,
-	programming_languages TEXT,
-	associations TEXT,
-	universities TEXT,
-	expertise TEXT,
-	interests TEXT,
-	websites TEXT,
-	publications TEXT,
+	profile_text TEXT,
 	sanitize_profile BIT NOT NULL DEFAULT 1
+	--- }}}
 );
 
 CREATE TABLE profile_addresses
 (
+	-- id, profile_id {{{
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	profile_id SMALLINT UNSIGNED NOT NULL,
 	FOREIGN KEY (profile_id) REFERENCES profiles(id),
+	-- }}}
 
+	-- Identity {{{
 	location ENUM('Other', 'Home', 'Work'),
-	datetime_added DATETIME NOT NULL,
-	datetime_removed DATETIME,
+	created DATETIME NOT NULL,
+	removed DATETIME,
+	-- }}}
 
-	first_name TINYTEXT NOT NULL,
-	last_name TINYTEXT NOT NULL,
+	-- Info {{{
+	name TINYTEXT NOT NULL,
 	company TINYTEXT,
 	address TINYTEXT NOT NULL,
 	suite TINYTEXT,
 	city TINYTEXT NOT NULL,
 	state TINYTEXT NOT NULL,
 	zipcode TINYTEXT NOT NULL,
-	country TINYTEXT NOT NULL
+	country TINYTEXT NOT NULL,
+	UNIQUE(name, company, address, suite, city, state, zipcode, country)
+	-- }}}
 );
 
 CREATE TABLE ip_addresses
 (
+	-- id {{{
 	address TINYINT UNSIGNED NOT NULL,
 	PRIMARY KEY (address),
+	-- }}}
 
+	-- Info {{{
 	first_occurence DATETIME NOT NULL,
 	last_occurence DATETIME NOT NULL,
 	banned BIT NOT NULL DEFAULT 0
+	-- }}}
 );
 
 CREATE TABLE login_instances
 (
 	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
+
 	profile_id SMALLINT UNSIGNED NOT NULL,
 	ip_address TINYINT UNSIGNED NOT NULL,
 	FOREIGN KEY (profile_id) REFERENCES profiles(id),
@@ -91,6 +98,7 @@ CREATE TABLE employment
 	work_email TINYTEXT,
 	working_status ENUM('Other', 'Working', 'Working remote', 'Vacation') NOT NULL
 );
+-- }}}
 
 -- Components / Boards
 CREATE TABLE documents
@@ -100,7 +108,7 @@ CREATE TABLE documents
 	company_id SMALLINT UNSIGNED,
 	FOREIGN KEY (company_id) REFERENCES companies(id),
 
-	datetime_added DATETIME NOT NULL,
+	created DATETIME NOT NULL,
 	remote_url TINYTEXT,
 	local_url TINYTEXT,
 	torrent_magnet TINYTEXT,
@@ -211,7 +219,7 @@ CREATE TABLE components
 	description TEXT,
 	description_summary TINYTEXT,
 
-	datetime_added DATETIME NOT NULL,
+	created DATETIME NOT NULL,
 	datetime_lastupdated DATETIME NOT NULL,
 	category ENUM('Other', 'Connector', 'Cable', 'Switch', 'Resistor', 'Protective',
 	'Capacitor', 'Inductive', 'Network', 'Piezoelectric', 'Power source',
@@ -252,7 +260,7 @@ CREATE TABLE component_packages
 	package_name TINYTEXT,
 	UNIQUE (package_name(255)),
 
-	datetime_added DATETIME NOT NULL,
+	created DATETIME NOT NULL,
 	mount_type ENUM('Surface mount', 'Through hole', 'Hybrid', 'Connector', 'Other'),
 	number_pins SMALLINT,
 	color TINYTEXT,
@@ -360,7 +368,7 @@ CREATE TABLE component_library_instances
 	FOREIGN KEY (library_id) REFERENCES component_libraries(id),
 	PRIMARY KEY (variant_id, library_id),
 
-	datetime_added DATETIME,
+	created DATETIME,
 	needs_fixes BIT NOT NULL DEFAULT 0,
 	proven BIT NOT NULL DEFAULT 0,
 	preferred BIT NOT NULL DEFAULT 0,
@@ -460,7 +468,7 @@ CREATE TABLE board_features
 	number TINYINT UNSIGNED NOT NULL,
 	UNIQUE (board_id, number),
 
-	datetime_added DATETIME NOT NULL,
+	created DATETIME NOT NULL,
 	feature_text TINYTEXT NOT NULL,
 	on_page BIT NOT NULL DEFAULT 1
 );
@@ -662,7 +670,7 @@ CREATE TABLE pictures
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 
-	datetime_added DATETIME NOT NULL,
+	created DATETIME NOT NULL,
 	url TINYTEXT NOT NULL,
 	UNIQUE (url(255)),
 	flickr_url TINYTEXT,
@@ -677,7 +685,7 @@ CREATE TABLE picture_tags
 	picture_id SMALLINT UNSIGNED NOT NULL,
 	FOREIGN KEY (picture_id) REFERENCES pictures(id),
 
-	datetime_added DATETIME NOT NULL,
+	created DATETIME NOT NULL,
 	item_name TINYTEXT,
 	variant_id SMALLINT UNSIGNED,
 	profile_id SMALLINT UNSIGNED,
@@ -733,7 +741,7 @@ CREATE TABLE code_refs
 	difficulty_level ENUM('Beginner', 'Moderate', 'Advanced', 'Super advanced'),
 	name TINYTEXT NOT NULL,
 
-	datetime_added DATETIME NOT NULL,
+	created DATETIME NOT NULL,
 	last_updated DATETIME NOT NULL,
 	description TEXT NOT NULL,
 	syntax TINYTEXT NOT NULL,
@@ -817,7 +825,7 @@ CREATE TABLE content_page_edits
 	FOREIGN KEY (page_id) REFERENCES content_pages(id),
 	FOREIGN KEY (writer_profile_id) REFERENCES profiles(id),
 
-	start_datetime DATETIME NOT NULL,
+	started DATETIME NOT NULL,
 	end_datetime DATETIME,
 	contents TEXT NOT NULL,
 	sanitize BIT NOT NULL DEFAULT 1
