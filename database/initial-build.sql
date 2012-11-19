@@ -1,10 +1,9 @@
 -- People {{{
-CREATE TABLE profiles
-(
+CREATE TABLE profiles (
 	-- id {{{
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
-	-- }}}
+	--}}}
 
 	-- Identity {{{
 	email TINYTEXT NOT NULL,
@@ -14,7 +13,7 @@ CREATE TABLE profiles
 	name TINYTEXT,
 	password TINYTEXT NOT NULL,
 	created DATETIME NOT NULL,
-	--- }}}
+	---}}}
 
 	-- Info {{{
 	phone TINYTEXT,
@@ -27,23 +26,22 @@ CREATE TABLE profiles
 	country TINYTEXT,
 	profile_text TEXT,
 	sanitize_profile BIT NOT NULL DEFAULT 1
-	--- }}}
+	---}}}
 );
 
-CREATE TABLE profile_addresses
-(
+CREATE TABLE profile_addresses (
 	-- id, profile_id {{{
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	profile_id SMALLINT UNSIGNED NOT NULL,
 	FOREIGN KEY (profile_id) REFERENCES profiles(id),
-	-- }}}
+	--}}}
 
 	-- Identity {{{
 	location ENUM('Other', 'Home', 'Work'),
 	created DATETIME NOT NULL,
 	removed DATETIME,
-	-- }}}
+	--}}}
 
 	-- Info {{{
 	name TINYTEXT NOT NULL,
@@ -55,38 +53,23 @@ CREATE TABLE profile_addresses
 	zipcode TINYTEXT NOT NULL,
 	country TINYTEXT NOT NULL,
 	UNIQUE(name, company, address, suite, city, state, zipcode, country)
-	-- }}}
+	--}}}
 );
 
-CREATE TABLE ip_addresses
-(
+CREATE TABLE ip_addresses (
 	-- id {{{
 	address TINYINT UNSIGNED NOT NULL,
 	PRIMARY KEY (address),
-	-- }}}
+	--}}}
 
 	-- Info {{{
 	first_occurence DATETIME NOT NULL,
 	last_occurence DATETIME NOT NULL,
 	banned BIT NOT NULL DEFAULT 0
-	-- }}}
+	--}}}
 );
 
-CREATE TABLE login_instances
-(
-	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-	PRIMARY KEY (id),
-
-	profile_id SMALLINT UNSIGNED NOT NULL,
-	ip_address TINYINT UNSIGNED NOT NULL,
-	FOREIGN KEY (profile_id) REFERENCES profiles(id),
-	FOREIGN KEY (ip_address) REFERENCES ip_addresses(address),
-
-	instance_datetime DATETIME NOT NULL
-);
-
-CREATE TABLE employment
-(
+CREATE TABLE employment (
 	id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	profile_id SMALLINT UNSIGNED NOT NULL,
@@ -98,11 +81,10 @@ CREATE TABLE employment
 	work_email TINYTEXT,
 	working_status ENUM('Other', 'Working', 'Working remote', 'Vacation') NOT NULL
 );
--- }}}
+--}}}
 
--- Components / Boards
-CREATE TABLE documents
-(
+-- Documents {{{
+CREATE TABLE documents (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	company_id SMALLINT UNSIGNED,
@@ -115,9 +97,10 @@ CREATE TABLE documents
 	title TINYTEXT NOT NULL,
 	description TEXT
 );
+--}}}
 
-CREATE TABLE companies
-(
+-- Companies {{{
+CREATE TABLE companies (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	logo_id SMALLINT UNSIGNED NOT NULL,
@@ -128,13 +111,12 @@ CREATE TABLE companies
 	description TINYTEXT,
 
 	services ENUM('Other', 'PCB fab', 'Board assembly',
-				  'PCB fab / Board Assembly', 'Shipping'),
+	              'PCB fab / Board Assembly', 'Shipping'),
 	sells ENUM('Other', 'Tools', 'Boards', 'Components',
-			   'Boards / Components')
+              'Boards / Components')
 );
 
-CREATE TABLE company_urls
-(
+CREATE TABLE company_urls (
 	id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	company_id SMALLINT UNSIGNED NOT NULL,
@@ -147,8 +129,7 @@ CREATE TABLE company_urls
 	is_site_root BIT NOT NULL DEFAULT 1
 );
 
-CREATE TABLE company_emails
-(
+CREATE TABLE company_emails (
 	id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	company_id SMALLINT UNSIGNED NOT NULL,
@@ -161,8 +142,7 @@ CREATE TABLE company_emails
 	description TINYTEXT
 );
 
-CREATE TABLE company_addresses
-(
+CREATE TABLE company_addresses (
 	id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	company_id SMALLINT UNSIGNED NOT NULL,
@@ -180,38 +160,10 @@ CREATE TABLE company_addresses
 	zipcode TINYTEXT NOT NULL,
 	country TINYTEXT NOT NULL
 );
+--}}}
 
-CREATE TABLE programs
-(
-	id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
-	PRIMARY KEY (id),
-	company_id SMALLINT UNSIGNED NOT NULL,
-	icon_id SMALLINT UNSIGNED NOT NULL,
-	FOREIGN KEY (company_id) REFERENCES companies(id),
-	FOREIGN KEY (icon_id) REFERENCES pictures(id),
-
-	program_name TINYTEXT,
-	abbreviation TINYTEXT,
-	software_type ENUM('Other', 'Utility', 'ECAD', 'CAD', 'IDE'),
-	source_location TINYTEXT,
-
-	on_site BIT NOT NULL DEFAULT 1
-);
-
-CREATE TABLE program_doc_usages
-(
-	document_id SMALLINT UNSIGNED,
-	program_id TINYINT UNSIGNED,
-	FOREIGN KEY (document_id) REFERENCES documents(id),
-	FOREIGN KEY (program_id) REFERENCES programs(id),
-	PRIMARY KEY (document_id, board_id),
-
-	on_page BIT NOT NULL DEFAULT 1
-);
-
--- Components
-CREATE TABLE components
-(
+-- Components {{{
+CREATE TABLE components (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	library_id TINYINT UNSIGNED,
@@ -242,8 +194,7 @@ CREATE TABLE components
 	on_site BIT NOT NULL DEFAULT 1
 );
 
-CREATE TABLE component_doc_usages
-(
+CREATE TABLE component_doc_usages (
 	document_id SMALLINT UNSIGNED,
 	component_id SMALLINT UNSIGNED,
 	FOREIGN KEY (document_id) REFERENCES documents(id),
@@ -253,8 +204,7 @@ CREATE TABLE component_doc_usages
 	on_page BIT NOT NULL DEFAULT 1
 );
 
-CREATE TABLE component_packages
-(
+CREATE TABLE component_packages (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	package_name TINYTEXT,
@@ -273,8 +223,7 @@ CREATE TABLE component_packages
 	url TINYTEXT
 );
 
-CREATE TABLE component_variants
-(
+CREATE TABLE component_variants (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	component_id SMALLINT UNSIGNED NOT NULL,
@@ -285,8 +234,7 @@ CREATE TABLE component_variants
 	description TEXT
 );
 
-CREATE TABLE component_pins
-(
+CREATE TABLE component_pins (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	variant_id SMALLINT UNSIGNED NOT NULL,
@@ -305,8 +253,7 @@ CREATE TABLE component_pins
 	input_current_ma DECIMAL(8, 3) UNSIGNED
 );
 
-CREATE TABLE component_vendor_listings
-(
+CREATE TABLE component_vendor_listings (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	variant_id SMALLINT UNSIGNED NOT NULL,
@@ -320,8 +267,7 @@ CREATE TABLE component_vendor_listings
 	UNIQUE (vendor_id, vendor_part_number(255))
 );
 
-CREATE TABLE component_vendor_listing_prices
-(
+CREATE TABLE component_vendor_listing_prices (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	listing_id SMALLINT UNSIGNED NOT NULL,
@@ -333,8 +279,7 @@ CREATE TABLE component_vendor_listing_prices
 	discount_per_ten DECIMAL (7, 4) NOT NULL
 );
 
-CREATE TABLE component_ownerships
-(
+CREATE TABLE component_ownerships (
 	variant_id SMALLINT UNSIGNED NOT NULL,
 	employee_id SMALLINT UNSIGNED NOT NULL,
 	FOREIGN KEY (variant_id) REFERENCES component_variants(id),
@@ -348,8 +293,7 @@ CREATE TABLE component_ownerships
 	is_estimated BIT NOT NULL DEFAULT 0
 );
 
-CREATE TABLE component_libraries
-(
+CREATE TABLE component_libraries (
 	id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	program_id SMALLINT UNSIGNED NOT NULL,
@@ -360,8 +304,7 @@ CREATE TABLE component_libraries
 	description TEXT
 );
 
-CREATE TABLE component_library_instances
-(
+CREATE TABLE component_library_instances (
 	variant_id SMALLINT UNSIGNED NOT NULL,
 	library_id TINYINT UNSIGNED NOT NULL,
 	FOREIGN KEY (variant_id) REFERENCES component_variants(id),
@@ -375,8 +318,7 @@ CREATE TABLE component_library_instances
 	UNIQUE (variant_id, preferred)
 );
 
-CREATE TABLE component_manufacturer_listings
-(
+CREATE TABLE component_manufacturer_listings (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	component_id SMALLINT UNSIGNED NOT NULL,
@@ -392,10 +334,10 @@ CREATE TABLE component_manufacturer_listings
 	url TINYTEXT,
 	deprecated BIT NOT NULL DEFAULT 0
 );
+--}}}
 
--- Boards
-CREATE TABLE boards
-(
+-- Boards {{{
+CREATE TABLE boards (
 	id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	shield_master_id TINYINT UNSIGNED,
@@ -431,8 +373,7 @@ CREATE TABLE boards
 	weight_grams DECIMAL(8, 3) UNSIGNED
 );
 
-CREATE TABLE board_manufacturer_rates
-(
+CREATE TABLE board_manufacturer_rates (
 	id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	manufacturer_id SMALLINT UNSIGNED NOT NULL,
@@ -448,8 +389,7 @@ CREATE TABLE board_manufacturer_rates
 );
 
 
-CREATE TABLE board_doc_usages
-(
+CREATE TABLE board_doc_usages (
 	document_id SMALLINT UNSIGNED,
 	board_id TINYINT UNSIGNED,
 	FOREIGN KEY (document_id) REFERENCES documents(id),
@@ -459,8 +399,7 @@ CREATE TABLE board_doc_usages
 	on_page BIT NOT NULL DEFAULT 1
 );
 
-CREATE TABLE board_features
-(
+CREATE TABLE board_features (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	board_id TINYINT UNSIGNED NOT NULL,
@@ -473,8 +412,7 @@ CREATE TABLE board_features
 	on_page BIT NOT NULL DEFAULT 1
 );
 
-CREATE TABLE board_ownerships
-(
+CREATE TABLE board_ownerships (
 	board_id TINYINT UNSIGNED NOT NULL,
 	employee_id SMALLINT UNSIGNED NOT NULL,
 	FOREIGN KEY (board_id) REFERENCES boards(id),
@@ -489,8 +427,7 @@ CREATE TABLE board_ownerships
 	quantity_needed SMALLINT UNSIGNED NOT NULL
 );
 
-CREATE TABLE board_vendor_listings
-(
+CREATE TABLE board_vendor_listings (
 	id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	board_id TINYINT UNSIGNED NOT NULL,
@@ -501,8 +438,7 @@ CREATE TABLE board_vendor_listings
 	url TINYTEXT
 );
 
-CREATE TABLE board_vendor_listing_prices
-(
+CREATE TABLE board_vendor_listing_prices (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	listing_id TINYINT UNSIGNED NOT NULL,
@@ -513,8 +449,7 @@ CREATE TABLE board_vendor_listing_prices
 	price DECIMAL(5, 2) NOT NULL
 );
 
-CREATE TABLE board_component_usages
-(
+CREATE TABLE board_component_usages (
 	variant_id SMALLINT UNSIGNED NOT NULL,
 	board_id TINYINT UNSIGNED NOT NULL,
 	FOREIGN KEY (variant_id) REFERENCES component_variants(id),
@@ -524,8 +459,7 @@ CREATE TABLE board_component_usages
 	quantity TINYINT UNSIGNED NOT NULL
 );
 
-CREATE TABLE board_pins
-(
+CREATE TABLE board_pins (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	board_id TINYINT UNSIGNED NOT NULL,
@@ -545,8 +479,7 @@ CREATE TABLE board_pins
 	input_current_ma DECIMAL(8, 2) UNSIGNED
 );
 
-CREATE TABLE board_relations
-(
+CREATE TABLE board_relations (
 	board1_id TINYINT UNSIGNED NOT NULL,
 	board2_id TINYINT UNSIGNED NOT NULL,
 	FOREIGN KEY (board1_id) REFERENCES boards(id),
@@ -555,10 +488,10 @@ CREATE TABLE board_relations
 
 	on_page BIT NOT NULL DEFAULT 1
 );
+--}}}
 
--- Orders
-CREATE TABLE carrier_rates
-(
+-- Orders {{{
+CREATE TABLE carrier_rates (
 	id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	carrier_id TINYINT UNSIGNED,
@@ -573,8 +506,7 @@ CREATE TABLE carrier_rates
 	on_site BIT NOT NULL DEFAULT 1
 );
 
-CREATE TABLE orders_incoming
-(
+CREATE TABLE orders_incoming (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	employee_address_id SMALLINT UNSIGNED NOT NULL,
@@ -595,8 +527,7 @@ CREATE TABLE orders_incoming
 	charged DECIMAL(10, 2) NOT NULL
 );
 
-CREATE TABLE orders_incoming_components
-(
+CREATE TABLE orders_incoming_components (
 	order_id SMALLINT UNSIGNED NOT NULL,
 	variant_id SMALLINT UNSIGNED NOT NULL,
 	FOREIGN KEY (order_id) REFERENCES orders_incoming(id),
@@ -606,8 +537,7 @@ CREATE TABLE orders_incoming_components
 	quantity MEDIUMINT UNSIGNED NOT NULL
 );
 
-CREATE TABLE orders_incoming_boards
-(
+CREATE TABLE orders_incoming_boards (
 	order_id SMALLINT UNSIGNED NOT NULL,
 	board_id SMALLINT UNSIGNED NOT NULL,
 	FOREIGN KEY (order_id) REFERENCES orders_incoming(id),
@@ -617,8 +547,7 @@ CREATE TABLE orders_incoming_boards
 	quantity MEDIUMINT UNSIGNED NOT NULL
 );
 
-CREATE TABLE orders_outgoing
-(
+CREATE TABLE orders_outgoing (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	customer_address_id SMALLINT UNSIGNED NOT NULL,
@@ -642,8 +571,7 @@ CREATE TABLE orders_outgoing
 	charged DECIMAL(10, 2) NOT NULL
 );
 
-CREATE TABLE orders_outgoing_components
-(
+CREATE TABLE orders_outgoing_components (
 	order_id SMALLINT UNSIGNED NOT NULL,
 	variant_id SMALLINT UNSIGNED NOT NULL,
 	FOREIGN KEY (order_id) REFERENCES orders_outgoing(id),
@@ -653,8 +581,7 @@ CREATE TABLE orders_outgoing_components
 	quantity MEDIUMINT UNSIGNED NOT NULL
 );
 
-CREATE TABLE orders_outgoing_boards
-(
+CREATE TABLE orders_outgoing_boards (
 	order_id SMALLINT UNSIGNED NOT NULL,
 	board_id TINYINT UNSIGNED NOT NULL,
 	FOREIGN KEY (order_id) REFERENCES orders_outgoing(id),
@@ -663,10 +590,10 @@ CREATE TABLE orders_outgoing_boards
 
 	quantity SMALLINT UNSIGNED NOT NULL
 );
+--}}}
 
--- Pictures
-CREATE TABLE pictures
-(
+-- Pictures {{{
+CREATE TABLE pictures (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 
@@ -678,8 +605,7 @@ CREATE TABLE pictures
 	caption TINYTEXT
 );
 
-CREATE TABLE picture_tags
-(
+CREATE TABLE picture_tags (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	picture_id SMALLINT UNSIGNED NOT NULL,
@@ -702,10 +628,10 @@ CREATE TABLE picture_tags
 	right_corner_y SMALLINT UNSIGNED,
 	visible BIT NOT NULL DEFAULT 1
 );
+--}}}
 
--- Code refs
-CREATE TABLE code_libraries
-(
+-- Code refs {{{
+CREATE TABLE code_libraries (
 	id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	picture_id SMALLINT UNSIGNED NOT NULL,
@@ -718,8 +644,7 @@ CREATE TABLE code_libraries
 	download_url TINYTEXT
 );
 
-CREATE TABLE code_ref_categories
-(
+CREATE TABLE code_ref_categories (
 	id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	master_id TINYINT UNSIGNED,
@@ -731,8 +656,7 @@ CREATE TABLE code_ref_categories
 	description TEXT
 );
 
-CREATE TABLE code_refs
-(
+CREATE TABLE code_refs (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	category_id TINYINT UNSIGNED,
@@ -750,8 +674,7 @@ CREATE TABLE code_refs
 	on_site BIT NOT NULL DEFAULT 1
 );
 
-CREATE TABLE code_ref_relations
-(
+CREATE TABLE code_ref_relations (
 	code_ref1_id SMALLINT UNSIGNED NOT NULL,
 	code_ref2_id SMALLINT UNSIGNED NOT NULL,
 	FOREIGN KEY (code_ref1_id) REFERENCES code_refs(id),
@@ -761,8 +684,7 @@ CREATE TABLE code_ref_relations
 	on_page BIT NOT NULL DEFAULT 1
 );
 
-CREATE TABLE code_ref_support
-(
+CREATE TABLE code_ref_support (
 	code_ref_id SMALLINT UNSIGNED NOT NULL,
 	board_id TINYINT UNSIGNED NOT NULL,
 	FOREIGN KEY (code_ref_id) REFERENCES code_refs(id),
@@ -772,8 +694,7 @@ CREATE TABLE code_ref_support
 	on_page BIT NOT NULL DEFAULT 1
 );
 
-CREATE TABLE code_ref_examples
-(
+CREATE TABLE code_ref_examples (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	code_ref_id SMALLINT UNSIGNED NOT NULL,
@@ -789,8 +710,7 @@ CREATE TABLE code_ref_examples
 	on_page BIT NOT NULL DEFAULT 1
 );
 
-CREATE TABLE code_ref_parameters
-(
+CREATE TABLE code_ref_parameters (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	code_ref_id SMALLINT UNSIGNED,
@@ -803,57 +723,38 @@ CREATE TABLE code_ref_parameters
 	description TINYTEXT NOT NULL,
 	on_page BIT NOT NULL DEFAULT 1
 );
+--}}}
 
--- Content pages
-CREATE TABLE content_pages
-(
+-- Content pages {{{
+CREATE TABLE content_pages (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 
 	page_group ENUM('Tutorial', 'Project', 'Blog post'),
-	difficulty_level ENUM('Beginner', 'Moderate', 'Advanced', 'Super advanced'),
+	difficulty_level ENUM('Beginner', 'Moderate', 'Advanced'),
 	title TINYTEXT NOT NULL,
 	description TEXT NOT NULL
-);
 
-CREATE TABLE content_page_edits
-(
-	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-	PRIMARY KEY (id),
-	page_id SMALLINT UNSIGNED NOT NULL,
-	writer_profile_id SMALLINT UNSIGNED NOT NULL,
-	FOREIGN KEY (page_id) REFERENCES content_pages(id),
-	FOREIGN KEY (writer_profile_id) REFERENCES profiles(id),
-
-	started DATETIME NOT NULL,
-	end_datetime DATETIME,
+	date DATETIME NOT NULL,
+	archived DATETIME,
 	contents TEXT NOT NULL,
-	sanitize BIT NOT NULL DEFAULT 1
 );
+--}}}
 
--- Comments
-CREATE TABLE comments
-(
+-- Comments {{{
+CREATE TABLE comments (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id),
 	reply_to_id SMALLINT UNSIGNED,
 	FOREIGN KEY (reply_to_id) REFERENCES comments(id),
+	writer_profile_id SMALLINT UNSIGNED NOT NULL,
+	FOREIGN KEY (writer_profile_id) REFERENCES profiles(id),
 
 	page TINYTEXT NOT NULL,
 	visible BIT NOT NULL DEFAULT 1
-);
 
-CREATE TABLE comment_edits
-(
-	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-	PRIMARY KEY (id),
-	comment_id SMALLINT UNSIGNED NOT NULL,
-	writer_profile_id SMALLINT UNSIGNED NOT NULL,
-	FOREIGN KEY (comment_id) REFERENCES comments(id),
-	FOREIGN KEY (writer_profile_id) REFERENCES profiles(id),
-
-	start_datetime DATETIME NOT NULL,
-	end_datetime DATETIME,
+	date DATETIME NOT NULL,
+	archived DATETIME,
 	contents TEXT NOT NULL,
-	sanitize BIT NOT NULL DEFAULT 1
 );
+--}}}
